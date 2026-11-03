@@ -24,7 +24,7 @@ Este repositório é o contexto do gestor de tráfego particular do Eduardo. Ele
 ## Otimização de verba (a partir de prints)
 Quando o Eduardo pedir para otimizar a verba com base em resultados de prints:
 - **Nunca analisar métricas do gerenciador de anúncios.** Usar só as métricas que ele fornecer em prints da dashboard.
-- Considerar **MQLs e AGDs (agendamentos)**. Priorizar o que é **escalável**, não só o mais barato: estruturas que já gastaram bem e mantiveram CPA baixo.
+- Usar as métricas de resultado do funil do cliente que aparecem nos prints (ex.: leads, MQLs, AGDs/agendamentos, vendas, mensagens). Se o print não deixar claro qual é a métrica principal do funil, perguntar. Priorizar o que é **escalável**, não só o mais barato: estruturas que já gastaram bem e mantiveram CPA baixo.
 - Cuidado com aumentos muito altos em estruturas pouco escaladas ou com pouco volume de dados.
 - Toda alteração de verba vem com uma tabela: `Nome da Campanha/Conjunto/Anúncio | Valor i (inicial) | Valor f (final) | Variação líquida | Variação %`.
 - Apresentar a sugestão e esperar a aprovação. **Aprovado, aplicar direto.**
@@ -35,13 +35,17 @@ Quando o Eduardo pedir para otimizar a verba com base em resultados de prints:
 - Ajuste proporcional direto ("aumente para X proporcionalmente") segue a skill `gestor-trafego-meta-ads` e não precisa de aprovação prévia.
 
 ## Orçamento por funil
-Formato simples e direto:
+Os funis e seus nomes mudam de cliente para cliente (ex.: APD-INTER, APD-BR, DIAG-INTER, ou outros). Usar sempre os nomes de funil que o cliente já usa nas campanhas ou que o Eduardo indicar. Se não estiver claro qual campanha pertence a qual funil, perguntar antes de somar, e registrar o mapeamento no guia do cliente em `docs/`.
+
+Formato simples e direto, uma linha por funil:
 ```
-APD-INTER: R$ XYZ
-APD-BR: R$ XYZ
-DIAG-INTER: R$ XYZ
+<FUNIL 1>: R$ XYZ
+<FUNIL 2>: R$ XYZ
+<FUNIL N>: R$ XYZ
 TOTAL DIÁRIO: R$ xyz
 ```
+Em contas USD, usar US$ no lugar de R$.
+
 Regra de leitura:
 - Campanha **CBO** (tem `daily_budget` na campanha): usar o valor da campanha e ignorar os conjuntos filhos.
 - Campanha **ABO** (`daily_budget` da campanha aparece como "Not available / Uses ad set budget"): somar o `daily_budget` de todos os conjuntos ativos dela.
