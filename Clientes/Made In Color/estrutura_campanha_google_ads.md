@@ -1,7 +1,24 @@
 # Made In Color — Estrutura de campanha de Pesquisa (Google Ads)
 
-**Status: PROPOSTA para aprovação (nada foi criado em conta; sem integração de API).** Data: 11/11/2026.
+**Status: RASCUNHO/PROPOSTA para validação e aprovação (nada foi criado em conta; sem integração de API).** Data: 11/11/2026.
 Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta de ROAS), confirmação de frete/prazo por país, relatório LNE.
+
+## 0. O que está verificado e o que é suposição (ler antes de usar)
+
+| Item | Situação |
+|---|---|
+| Preços, conteúdo do kit, envio em 12 h, devolução de 30 dias, FR/EN no site | **Verificado no site em 11/11** (navegador) |
+| Lista de países e idiomas por campanha | **Decisão do Eduardo**; o encaixe de idioma por país é raciocínio meu |
+| Limites de caracteres dos anúncios | **Verificado** por contagem |
+| Relatório LNE, classificação de segurança do líquido | **Alegação do site, não conferido** |
+| Prazo de entrega por país (NL, DE, LU) | **Não confirmado** |
+| Palavras-chave, volumes e CPC | **Hipótese**: nada foi validado no Planejador de Palavras-chave |
+| Divisão de verba (€24 / €16) | **Suposição minha**, sem dado; ajustar com CPC e conversão reais |
+| Mínimos de conversão para o lance automático (15–30/mês) | Regra prática, não número garantido |
+| Alcance em inglês na Alemanha, Países Baixos e Luxemburgo | **Incerto**; pode ser baixo |
+| Tag do Google Ads e compra com valor no site | Tag detectada; **disparo da conversão não testado** |
+
+**Esta estrutura é um rascunho para validar, não uma decisão final.** Antes de subir: Planejador de Palavras-chave (volume e CPC por país), CID, briefing, margem, relatório LNE e prazo de entrega por país.
 
 ## 1. Premissas fechadas
 - **Verba total:** €40/dia.
