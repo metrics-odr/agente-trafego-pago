@@ -5,7 +5,7 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 
 **Legenda de confiança:** ✅ confirmado em fonte · 🟡 informado pelo cliente/Eduardo, não verificado de forma independente · 🔶 inferência minha (hipótese a testar) · ❓ não encontrei dado.
 
-> Limites desta pesquisa: foi feita por busca na web, sem acesso a Planejador de Palavras-chave, Auction Insights, Similarweb nem dados da conta. **Não há volume de busca, CPC nem share de mercado aqui.** O site antigo (`shop.madeincolors.com`) estava fora da rede liberada da sessão e não foi lido.
+> Limites desta pesquisa: foi feita por busca na web, sem acesso a Planejador de Palavras-chave, Auction Insights, Similarweb nem dados da conta. **Não há volume de busca, CPC nem share de mercado aqui.** **Não consegui ver as imagens do site** (a leitura é só de texto), então o que depende de foto veio do Eduardo. O site antigo (`shop.madeincolors.com`) estava fora da rede liberada da sessão e não foi lido.
 
 ---
 
@@ -14,7 +14,7 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 1. Produto de **nicho**: lamparina com **chama colorida (verde)**, sem fumaça nem odor, vendida para **decoração** e **presente**. O diferencial real e visual é a **cor da chama**.
 2. Dois públicos de compra: **(A)** quem não tem a lâmpada (kit completo) e **(B)** quem já tem e precisa de **refil**. O refil tem ticket menor e recompra natural.
 3. Em Pesquisa, a demanda **de marca será pequena** (marca pequena). O volume vem de buscas por **categoria** (lâmpada de chama/lamparina decorativa, presente original, decoração de mesa) e de **refil/líquido**.
-4. **Risco regulatório e de política** é o ponto mais sensível: combustível líquido, afirmações de segurança ("pode beber", "não queima"), rotulagem europeia. Isso afeta **texto de anúncio** e **aprovação** (ver seção 7).
+4. **Risco regulatório e de política** continua sendo o ponto mais sensível: combustível líquido, afirmações de segurança ("pode beber", "não queima"), rotulagem europeia. Isso afeta **texto de anúncio** e **aprovação** (ver seção 7).
 5. Prova social forte, mas que precisa de comprovação: **10.000 chamas no fosso da Torre de Londres (2018)** — o evento é real; a participação da marca é 🟡 (ver seção 5).
 6. Concorrência direta com chama verde de verdade: **não encontrei** (❓). Concorrência por **substituição**: velas, lâmpadas de tempestade LED com efeito chama, lamparinas de óleo tradicionais, lâmpadas catalíticas (Maison Berger).
 
@@ -27,7 +27,7 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 | Marca | Marca francesa de "chamas decorativas de cor"; se posiciona como "a primeira chama decorativa colorida do mundo" | ✅ site |
 | Linha (site atual) | Lâmpada **Serenity** €39,95 (de €49,95); combos €59,95 e €69,95; líquido **Green Flame** 500 ml €18,95, 1 L €24,95, 3 L €59,85; Proteção Colis €3,90 | ✅ site (09/11) |
 | Linha (site antigo, via buscas) | Líquido "It's Green", "Color Flamme Stick", vela/lamparina "INGREEN" (20h+ de chama verde, segundo a página), tocha de exterior (~5h, segundo revendedor suíço) | 🟡 trechos de busca, não abri as páginas |
-| Chama | Verde; sem fumaça, sem odor | ✅ site / 🟡 cliente |
+| Chama | **Só a chama é verde; o líquido é transparente (incolor)** (informado pelo Eduardo, 11/11). Sem fumaça, sem odor | 🟡 Eduardo / ✅ site (texto) |
 | Segurança (cliente) | Líquido que respinga não queima; "pode até beber, embora não seja indicado" | 🟡 call — **não usar em anúncio** (seção 7) |
 | Pavio | **Fibra de vidro** | 🟡 call |
 | Compatibilidade | Marca diz que o líquido funciona em lamparinas antigas de parafina e tochas de bambu | 🟡 trecho de busca |
@@ -113,8 +113,10 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 ## 7. Políticas e legislação (a checar ANTES de criar)
 
 1. **Google Ads — Produtos perigosos:** a política (support.google.com/adspolicy/answer/6014299) cita explosivos, armas, etc. **Não encontrei** menção explícita a combustível de lamparina; **não está confirmado** que seja permitido. O Google também aplica o **padrão global** e a lei local. Mesma ideia no Merchant Center (answer/6150004). 🟡 **Ação:** consultar o Policy Manager da conta e, se houver Shopping/PMax, o diagnóstico do Merchant Center no primeiro envio. Começar por Pesquisa (revisão de texto) e conferir reprovações.
-2. **REACH Anexo XVII, entrada 3 (UE):** líquidos usados como combustível em **lamparinas decorativas** vendidos ao público e com classificação de **perigo por aspiração (H304)** têm restrições: **não podem conter corante ou perfume**, devem ter **aviso** de risco para crianças e de dano pulmonar, **embalagem preta opaca ≤ 1 L**, e as lamparinas devem seguir a **EN 14059**. O texto pode ter sido alterado (rascunho de 2020 não confirmado) → **verificar o texto consolidado vigente**. ✅ (resumo de fonte oficial; interpretação jurídica é do cliente).
-   - **Implicação:** o líquido verde é **colorido**. A marca afirma que é **não inflamável e pode ser ingerido**; isso sugere que o produto **não** é classificado como H304, o que **explicaria** o posicionamento. 🔶 **Pedir ao cliente:** **FDS/SDS**, classificação CLP, conformidade **EN 14059** da lâmpada e rótulos. Sem isso, **não prometer segurança em anúncios**.
+2. **REACH Anexo XVII, entrada 3 (UE):** líquidos usados como combustível em **lamparinas decorativas** vendidos ao público e com classificação de **perigo por aspiração (H304)** têm restrições: **não podem conter corante ou perfume** (o texto pode ter sido alterado; um rascunho de 2020 não foi confirmado por mim), devem ter **aviso** de risco para crianças e de dano pulmonar, **embalagem preta opaca ≤ 1 L**, e as lamparinas devem seguir a **EN 14059**. ✅ (resumo de fonte oficial; interpretação jurídica é do cliente).
+   - **Correção (11/11):** eu havia presumido que o líquido era colorido. **Não é: é transparente e só a chama é verde.** Então a restrição de corante tende a não ser o problema. Mas **a cor da chama vem de algum aditivo** (❓ não sei qual) e **nada disso substitui a classificação do produto**.
+   - **Embalagem:** se o líquido for H304, a embalagem opaca preta ≤ 1 L passa a ser exigida. O site vende **3 L** (€59,85); conferir com o cliente. 🔶
+   - **Pedir ao cliente:** **FDS/SDS**, classificação CLP (H304 ou não), conformidade **EN 14059** da lâmpada e rótulos. Sem isso, **não prometer segurança em anúncios**.
 3. **Afirmações de segurança em anúncio:** evitar **"pode beber"**, **"não queima"**, **"100% seguro"**, **"sem risco"**. Alegações absolutas de segurança/saúde costumam gerar reprovação e risco jurídico. Alternativas: **"Chama sem fumaça e sem odor"**, **"Pensada para uso seguro em ambiente"**, **"Veja instruções de uso"** (confirmar com cliente e SDS).
 4. **Transporte:** limitações para líquidos por país/transportadora (a "Proteção Colis" e o frete 24–48h precisam bater com a realidade). Não anunciar entrega para país que não atende.
 5. **LGPD/GDPR:** na UE, **Consent Mode v2** + CMP certificado para medir conversões e fazer remarketing. ✅ prática padrão.
