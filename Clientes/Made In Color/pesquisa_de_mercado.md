@@ -199,6 +199,57 @@ PESQ | EN | UK/IE | ...                 -> 2ª onda
 
 ---
 
+## 11. Quem compra, o que pesquisa e como alcançar
+
+> **Confiança:** dados demográficos confiáveis da Europa para este nicho **não encontrei** (as fontes achadas são genéricas de velas, pagas ou sem origem clara). O perfil abaixo é **hipótese** construída a partir do **posicionamento do próprio site** e do comportamento típico de compra de decoração/presente. Validar com **dados do Shopify/GA4 do cliente** (idade, sexo, país, produto, recompra) e com os primeiros 30 dias de campanha.
+
+### 11.1 Quem compra (hipóteses)
+| Perfil | Motivo de compra | Sinais no site | Mensagem |
+|---|---|---|---|
+| **Presenteador** (provável maior grupo) | Quer um presente original que "surpreenda" | FAQ: presente é "uma das principais razões de compra"; coffret pronto para oferecer; 2 coffrets "um para você, um para presentear" | "Idée cadeau originale", prazo de entrega, coffret |
+| **Decoração/ambiente** | Dar identidade ao espaço (sala, mesa, varanda) | Fotos de mesa, sofá, rooftop; "l'art de l'ambiance" | Cor única, estética, "pas une simple bougie" |
+| **Bem-estar/ritual** | Relaxar, ler, yoga, meditação | Usos citados na FAQ e nos reviews ("chaleureuse", "apaisante") | Sem fumaça nem odor, ritual |
+| **Colecionador/curioso** | Gosta de objeto raro, "édition limitée" | "Les collectionneurs", série limitada | Exclusividade |
+| **Quem já tem a lâmpada** | Refil | Líquido vendido em 3 tamanhos, com mecha | Preço por hora de chama, compatibilidade |
+| **Profissional** | Hotéis, restaurantes, casamentos, lojistas | Página Professionnels, ≥ 50 un. | Orçamento, personalização |
+
+- **Dado fraco de referência (não é da marca):** em velas, estudos citam maioria feminina entre compradores e alta presença de millennials/Gen Z em autocuidado, mas as fontes que achei não são verificáveis para a Europa. **Não usar como segmentação rígida**; testar idade/sexo em **observação** e olhar o que converte.
+- **Ticket:** kit €40–60, refil €19–60. O comprador **não é impulsivo barato**: valoriza estética e presente.
+
+### 11.2 O que pesquisam (por estágio) — ⚠️ sem volumes
+Produto de **descoberta visual**: pouca gente busca "flamme verte lampe" **antes de conhecer**. A maior parte da demanda de Pesquisa vem de **categorias vizinhas** (presente, decoração, lamparina) e, depois, de **marca** e **refil**.
+
+| Estágio | Intenção | Exemplos FR | Exemplos EN | Observação |
+|---|---|---|---|---|
+| **1. Problema/ocasião** | Precisa de presente/ideia | `idée cadeau original`, `cadeau original pour femme/homme`, `cadeau crémaillère`, `cadeau déco maison`, `idée cadeau noël original` | `unique gift ideas`, `original housewarming gift` | **Alto volume, alta concorrência, baixa conversão** (genérico). Sazonal. |
+| **2. Categoria** | Quer decorar com chama/ambiente | `lampe à huile décorative`, `lampe d'ambiance`, `lampe flamme décorative`, `déco table flamme`, `lampe à huile design`, `bougie sans fumée` | `decorative oil lamp`, `modern oil lamp`, `smokeless candle alternative` | Melhor equilíbrio volume × intenção. Competem Empereur, lâmpadas LED, velas. |
+| **3. Diferencial** | Já sabe o que quer | `flamme colorée`, `flamme verte`, `lampe flamme verte`, `lampe à flamme de couleur` | `colored flame lamp`, `green flame lamp` | **Volume pequeno e ruído** (química: sais, cobre, borax). Negativar. |
+| **4. Produto/marca** | Já conhece | `madeincolors`, `made in colors`, `serenity lampe`, `green flame liquide` | `madeincolors`, `made in colors green flame` | Volume tende a ser pequeno; cresce com Meta/YouTube/PR. Proteger a marca. |
+| **5. Refil** | Já tem a lâmpada | `recharge lampe à huile`, `liquide lampe à huile`, `huile lampe sans odeur`, `mèche lampe à huile`, `liquide flamme verte` | `oil lamp refill`, `lamp oil refill`, `smokeless lamp oil` | Intenção alta; público menor; o site diz que o líquido serve em lamparinas de parafina antigas (ampliar com cautela). |
+| **6. Profissional** | B2B | `décoration table mariage`, `cadeau d'entreprise original`, `lampe personnalisée gravée`, `déco restaurant ambiance` | `custom engraved oil lamp`, `wedding table decor flame` | Baixo volume, lead por orçamento. |
+
+**Negativas críticas** (já listadas na seção 6): LED/elétrico/piles, parfum/diffuseur, expérience/chimie/sel/cuivre/borax, DIY/comment faire, kérosène/pétrole, fumigène/feu d'artifice, gratuit.
+**Para descobrir os termos reais:** Planejador de Palavras-chave (FR/BE/CH; UK/IE em EN), **Termos de pesquisa** depois de rodar, e Google Trends (França, categoria Casa e Jardim, últimos 12 meses) comparando `lampe à huile` × `bougie` × `idée cadeau original`.
+
+### 11.3 Como alcançar (e o que o Google Search resolve)
+Para um produto **que vende pela experiência visual**, a Pesquisa **captura demanda**, mas **não a cria**. Plano em camadas (🔶 recomendação):
+
+| Camada | Canal | Papel | Prioridade |
+|---|---|---|---|
+| **Captura** | **Pesquisa**: categoria + presente (est. 1–2), refil (5), marca (4) | Pega quem já procura; refil e marca têm melhor CPA | **Primeira campanha** |
+| **Captura com vitrine** | **Shopping/PMax com feed** (Shopify → Merchant Center) | Produto com foto/preço na busca de presente e categoria | 2ª fase, **depois de resolver política do produto** e feed |
+| **Criação de demanda** | **YouTube / Demand Gen** (vídeo curto da chama, vertical e horizontal) | Mostra a cor da chama, que é o diferencial; público: in-market presente/decoração, segmentos personalizados com termos do estágio 2–3 | 2ª fase |
+| **Remarketing** | **Display/Demand Gen/Pesquisa (RLSA)** + Meta | Visitou e não comprou, viu o vídeo | Ao ter tráfego |
+| **Recompra** | **Customer Match** + e-mail | Compradores → **refil**; excluir da aquisição | Contínuo |
+| **Social/Conteúdo** | Meta/Instagram/TikTok, creators | Impulsiona busca de marca e prova social; o próprio site fala em conteúdo "viral" e em parceria com criadores | Em paralelo (fora do Google) |
+| **B2B** | Pesquisa estreita + formulário | Eventos, hotéis, casamentos | Baixa prioridade, campanha separada |
+
+**Calendário:** Black Friday/Natal (pico de presente, buscas de presente sobem a partir de meados de novembro), Saint-Valentin, Fête des Mères, verão (eventos/casamentos), Halloween e Saint-Patrick (verde) como ganchos de teste. Hoje é **11/11**: a janela do Natal já está **aberta**, e **prazo de entrega e frete** precisam estar nos anúncios.
+
+**Expectativa honesta:** a Pesquisa sozinha **provavelmente terá volume limitado** (nicho + diferencial pouco buscado). Sem Planejador de Palavras-chave não dá para estimar. A campanha deve ser **enxuta** (3–4 grupos), medir CPA/ROAS por grupo e usar o resultado para decidir se escalar com vídeo/Demand Gen.
+
+---
+
 ## Fontes consultadas
 - Site do cliente: https://madeincolors.com/ (e `?lang=en`); trechos de busca de shop.madeincolors.com (não abertas): líquido It's Green, Color Flamme Stick, INGREEN; revendedor cadeaux24.ch.
 - Torre de Londres 2018: [ITV](https://itv.com/news/2018-11-04/thousands-of-flames-used-to-mark-end-of-first-world-war-centenary), [ABC News](https://abcnews.com/news/story/10000-torches-lit-night-london-ahead-100th-anniversary-58974336), [HuffPost UK](https://huffingtonpost.co.uk/entry/first-world-war-tower-of-london-flames_uk_5bdf72a8e4b01ffb1d035381), [Wikipedia](https://www.wikipedia.org/wiki/Beyond_the_Deepening_Shadow), [IWM](https://www.iwm.org.uk/partnerships/mapping-the-centenary/projects/beyond-the-deepening-shadow-the-tower-remembers).
