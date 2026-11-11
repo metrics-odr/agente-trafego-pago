@@ -58,25 +58,82 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 | Ativos | Sitelinks, snippets, preço, promoção, imagem, logo |
 | Medição | Consent Mode v2 + CMP verificado na UE; auto-tagging ligado; UTMs conforme análise anterior |
 
-## 4. Palavras-chave (frase e exata; volumes ainda não medidos)
+## 4. Palavras-chave (frase e exata) — mesmas palavras em FR e EN, lado a lado
 
-### A — Francês
-**Grupo Kit:** `lampe à huile décorative`, `lampe d'ambiance`, `lampe à flamme décorative`, `déco de table flamme`, `flamme colorée`, `flamme verte`, `lampe flamme verte`, `cadeau déco maison`, `cadeau original déco`, `cadeau lampe à huile`
-**Grupo Marca + Refil:** `madeincolors`, `made in colors`, `serenity lampe`, `green flame liquide`, `recharge lampe à huile`, `liquide pour lampe à huile`, `huile pour lampe sans odeur`, `mèche pour lampe à huile`, `liquide flamme verte`
+A campanha A usa só a coluna FR; a campanha B usa só a coluna EN. Cada linha é o mesmo conceito. **Volumes e CPC não validados.**
 
-### B — Inglês
-**Grupo Kit:** `decorative oil lamp`, `modern oil lamp`, `table oil lamp`, `colored flame lamp`, `green flame lamp`, `colored flame oil lamp`, `unique home decor gift`
-**Grupo Marca + Refil:** `madeincolors`, `made in colors`, `madeincolors serenity`, `green flame liquid`, `oil lamp refill`, `lamp oil refill`, `smokeless lamp oil`
+### Grupo 1 — Kit
+| # | Conceito | FR (campanha A) | EN (campanha B) |
+|---|---|---|---|
+| 1 | Lâmpada a óleo decorativa | `lampe à huile décorative` | `decorative oil lamp` |
+| 2 | Lâmpada de ambiente | `lampe d'ambiance` | `ambient lamp` |
+| 3 | Lâmpada de chama decorativa | `lampe à flamme décorative` | `decorative flame lamp` |
+| 4 | Decoração de mesa com chama | `déco de table flamme` | `flame table decor` |
+| 5 | Chama colorida | `flamme colorée` | `colored flame` |
+| 6 | Chama verde | `flamme verte` | `green flame` |
+| 7 | Lâmpada de chama verde | `lampe flamme verte` | `green flame lamp` |
+| 8 | Lâmpada de chama colorida | `lampe flamme colorée` | `colored flame lamp` |
+| 9 | Presente decoração da casa | `cadeau déco maison` | `home decor gift` |
+| 10 | Presente de decoração original | `cadeau original déco` | `unique decor gift` |
+| 11 | Presente lâmpada a óleo | `cadeau lampe à huile` | `oil lamp gift` |
 
-- Não incluir `idée cadeau original` isolado (genérico e caro).
-- Marca + Refil: o anúncio manda para a página de refil nos termos de refil e para a home nos termos de marca (URL final por anúncio ou por palavra-chave).
+### Grupo 2 — Marca + Refil
+| # | Conceito | FR (campanha A) | EN (campanha B) |
+|---|---|---|---|
+| 1 | Marca | `madeincolors` | `madeincolors` |
+| 2 | Marca (separado) | `made in colors` | `made in colors` |
+| 3 | Marca + produto | `madeincolors serenity` | `madeincolors serenity` |
+| 4 | Líquido Green Flame (nome do produto) | `green flame liquide` | `green flame liquid` |
+| 5 | Refil de lâmpada a óleo | `recharge lampe à huile` | `oil lamp refill` |
+| 6 | Líquido para lâmpada a óleo | `liquide pour lampe à huile` | `lamp oil` |
+| 7 | Óleo de lâmpada sem cheiro | `huile pour lampe sans odeur` | `odorless lamp oil` |
+| 8 | Óleo de lâmpada sem fumaça | `huile pour lampe sans fumée` | `smokeless lamp oil` |
+| 9 | Pavio de lâmpada a óleo | `mèche pour lampe à huile` | `oil lamp wick` |
+| 10 | Refil de chama verde | `liquide flamme verte` | `green flame refill` |
 
-## 5. Negativas (listas compartilhadas por idioma)
+**Observações sobre as palavras (a validar):**
+- `serenity lampe` foi **removida**: "Lampe Serenity" também é um produto da Maison Berger, e a palavra traria tráfego de outro produto. Fica `madeincolors serenity`.
+- Em inglês, `green flame` e `colored flame` (linhas 5–6) tendem a trazer ruído (jogos, química). Em francês, `flamme verte` também traz química. Ficam em frase/exata com negativas.
+- `lamp oil` (inglês) é um termo amplo que também atrai compradores de querosene e parafina. Fica com as negativas abaixo.
+- Grafia `colored` (EUA) e `coloured` (Reino Unido): checar no Planejador qual aparece mais em NL e DE.
 
-**FR:** `led`, `électrique`, `piles`, `batterie`, `solaire`, `parfum`, `diffuseur`, `catalytique`, `maison berger`, `pétrole`, `kérosène`, `essence`, `alcool`, `éthanol`, `expérience`, `chimie`, `sel`, `cuivre`, `borax`, `acide borique`, `comment faire`, `diy`, `tuto`, `feu d'artifice`, `fumigène`, `gratuit`, `occasion`, `lampe à lave`, `jeu`
-**EN:** `led`, `electric`, `battery`, `solar`, `perfume`, `diffuser`, `kerosene`, `paraffin`, `ethanol`, `alcohol`, `experiment`, `chemistry`, `salt`, `copper`, `borax`, `boric acid`, `how to`, `diy`, `tutorial`, `fireworks`, `smoke bomb`, `free`, `used`, `lava lamp`, `game`, `minecraft`
+## 5. Negativas (mesmos termos em FR e EN)
 
-Negativas cruzadas entre grupos A/B (para um grupo não roubar o termo do outro) devem ser conferidas no relatório de termos na 1ª semana.
+| Conceito | FR | EN |
+|---|---|---|
+| LED | `led` | `led` |
+| Elétrico | `électrique` | `electric` |
+| Pilhas | `piles` | `batteries` |
+| Bateria | `batterie` | `battery` |
+| Solar | `solaire` | `solar` |
+| Perfume | `parfum` | `perfume` |
+| Difusor | `diffuseur` | `diffuser` |
+| Catalítica | `catalytique` | `catalytic` |
+| Maison Berger | `maison berger` | `maison berger` |
+| Petróleo | `pétrole` | `petroleum` |
+| Querosene | `kérosène` | `kerosene` |
+| Gasolina | `essence` | `gasoline` |
+| Parafina | `paraffine` | `paraffin` |
+| Álcool | `alcool` | `alcohol` |
+| Etanol | `éthanol` | `ethanol` |
+| Experimento | `expérience` | `experiment` |
+| Química | `chimie` | `chemistry` |
+| Sal | `sel` | `salt` |
+| Cobre | `cuivre` | `copper` |
+| Bórax | `borax` | `borax` |
+| Ácido bórico | `acide borique` | `boric acid` |
+| Como fazer | `comment faire` | `how to` |
+| Faça você mesmo | `diy` | `diy` |
+| Tutorial | `tuto` | `tutorial` |
+| Fogos de artifício | `feu d'artifice` | `fireworks` |
+| Fumígeno | `fumigène` | `smoke bomb` |
+| Grátis | `gratuit` | `free` |
+| Usado | `occasion` | `used` |
+| Lâmpada de lava | `lampe à lave` | `lava lamp` |
+| Jogo | `jeu` | `game` |
+| Minecraft | `minecraft` | `minecraft` |
+
+Atenção: `jeu` e `gratuit` podem bloquear buscas legítimas (ex.: "jeu de lumière", "livraison gratuite"). Rever no relatório de termos na 1ª semana. Negativas cruzadas entre grupos A/B conferidas também na 1ª semana.
 
 ## 6. Anúncios (RSA) — rascunho
 
