@@ -6,14 +6,14 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 ## 1. Premissas fechadas
 - **Verba total:** €40/dia.
 - **Países:** França, Bélgica, Países Baixos, Alemanha, Luxemburgo.
-- **Idiomas do site:** francês e inglês. Francês para França e Bélgica; inglês para os demais.
+- **Idiomas do site:** francês e inglês. Francês para França, Bélgica e Luxemburgo; inglês para Países Baixos, Alemanha, Luxemburgo e Bélgica.
 - Todos os países são da UE (moeda EUR, sem alfândega). Alemanha e Países Baixos em **inglês** alcançam só quem pesquisa em inglês (ver riscos).
 
 ## 2. Estrutura (simplificada: 2 campanhas, 2 grupos cada)
 
 | # | Campanha | Países | Idioma (do usuário) | Verba/dia | Destino |
 |---|---|---|---|---|---|
-| A | `PESQ | FR | França+Bélgica` | França, Bélgica | Francês | €24 | `madeincolors.com/` |
+| A | `PESQ | FR | FR+BE+LU` | França, Bélgica, Luxemburgo | Francês | €24 | `madeincolors.com/` |
 | B | `PESQ | EN | NL+DE+LU+BE` | Países Baixos, Alemanha, Luxemburgo, Bélgica | Inglês | €16 | `madeincolors.com/en/` |
 
 **Grupos (iguais em A e B, no idioma de cada campanha):**
@@ -23,7 +23,7 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 - O orçamento é da **campanha**, não do grupo. Menos grupos não economiza verba, mas dá menos dispersão de anúncios e dados.
 - Não juntar **Kit** com **Refil** num grupo só: são produtos, páginas e preços diferentes e o RSA ficaria genérico.
 - A **marca dentro de aquisição** pode mascarar o CPA de quem ainda não conhece o produto. Ver por grupo no relatório.
-- A **Bélgica** entra em A e B sem sobreposição: o idioma do usuário separa as campanhas.
+- **Bélgica e Luxemburgo** entram em A (francês) e em B (inglês) sem sobreposição: o idioma do usuário separa as campanhas. O francês é muito usado em Luxemburgo (junto com luxemburguês e alemão).
 - Alemães e holandeses com Google no idioma local **não são alcançados** por A nem por B (ver riscos).
 - **Nomes definitivos** devem seguir o padrão do cliente/Eduardo; os de cima são provisórios.
 
