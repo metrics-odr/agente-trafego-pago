@@ -10,6 +10,15 @@ description: Use para qualquer pedido sobre Google Ads (Pesquisa, Performance Ma
 2. Leia o guia do cliente em `docs/` (se existir) e o briefing. Sem briefing no repositório/projeto, peça ao Eduardo onde está.
 3. Confira se há **MCP/API de Google Ads** disponível na sessão (procure por ferramentas de Google Ads). **Se não houver, não finja executar**: entregue plano/estrutura/tabelas/passo a passo e diga claramente que não foi aplicado na conta.
 
+## 0.1 Checklist obrigatório (não pular)
+Em **todo** trabalho de Google Ads, antes de responder:
+1. **Reler** o guia do tipo de campanha **inteiro** (ex.: `pesquisa.md`) e os guias de `medicao-e-conversoes.md`, `publicos-e-segmentacao.md` e `conta-politicas-e-ferramentas.md`. Não responder de memória.
+2. **Conferir a entrega contra o guia** (estrutura, grupos, correspondência, negativas, lance, orçamento, anúncios, ativos, políticas, medição) e **listar desvios**, inclusive os que decorrem de decisão do Eduardo.
+3. Se o Eduardo decidir contra o guia, **aplicar a decisão** e registrar o risco **uma vez**, de forma curta, sem insistir.
+4. Separar sempre o que foi **verificado** do que é **suposição**. Nunca apresentar chute como recomendação.
+5. Cliente é real: conferir idioma, país, preço e prazo no site, e **não prometer o que o site não comprova**.
+6. Salvar o que aprender de novo em `docs/google-ads/`.
+
 ## 1. Regras de operação (iguais às do Meta)
 - Autorização geral: não pedir confirmação para ações necessárias do pedido. Perguntar só com ambiguidade que possa atingir a **conta errada**.
 - Fazer **só o que foi pedido**. Pausar/criar/apagar só com pedido explícito.

@@ -215,5 +215,17 @@ Atenção: no Google Ads, "Conversões" depende das ações marcadas como primá
 - **Smart Bidding + ampla**: combinação recomendada pelo Google; funciona com conversão limpa. Sem isso, preferir frase/exata.
 - **DSA** é gradualmente absorvido por esses recursos; checar a interface atual.
 
-## 19. Referências cruzadas
+## 19. Campanhas multi-país e multi-idioma (aprendizados)
+- **Uma campanha por idioma.** O idioma da campanha é o do usuário; palavra-chave, anúncio e página precisam estar no mesmo idioma. O Google **não traduz** palavras-chave.
+- **O mesmo país pode estar em campanhas de idiomas diferentes** (ex.: Bélgica em FR e EN) sem sobreposição, porque o idioma do usuário separa o público. Com verba pequena, concentrar mais vale que cobrir tudo.
+- **Paridade:** se o cliente quer as mesmas palavras em dois idiomas, montar uma tabela lado a lado, conceito por conceito.
+- **Checar colisão de nome:** antes de usar o nome de um produto como palavra-chave, buscar se outra marca vende algo com o mesmo nome (ex.: "Lampe Serenity" é também da Maison Berger).
+- **Checar conflito entre negativas e palavras-chave** próprias (uma negativa pode bloquear o que você quer comprar).
+- **Superlativos** ("o primeiro", "o melhor") só com comprovação.
+- **Um grupo com muitas intenções** reduz relevância e QS; se o cliente optar por isso, usar **URL final por palavra-chave** e registrar o risco.
+- **O orçamento diário vale como média**: o gasto de um dia pode chegar a 2×.
+- **Antes de definir lance automático**, ver o histórico de conversões da conta; sem histórico, começar manual ou com cliques limitados.
+- **Conferir duplicidade de conversão** entre tag nativa e GA4.
+
+## 20. Referências cruzadas
 Ver [`fundamentos.md`](fundamentos.md), [`medicao-e-conversoes.md`](medicao-e-conversoes.md), [`publicos-e-segmentacao.md`](publicos-e-segmentacao.md), [`analise-e-relatorios.md`](analise-e-relatorios.md).

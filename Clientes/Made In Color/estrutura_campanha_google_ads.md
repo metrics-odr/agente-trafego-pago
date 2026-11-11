@@ -237,7 +237,7 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 ### Francês (A)
 **Títulos (até 15):**
 1. Flamme Verte Décorative
-2. La Première Flamme de Couleur
+2. Lampe à Flamme Verte
 3. Lampe à Huile Décorative
 4. Sans Fumée, Sans Odeur
 5. Idée Cadeau Originale
@@ -259,7 +259,7 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 4. Rechargez votre lampe : liquide Green Flame dès 18,95 €, mèche offerte.
 
 ### Inglês (B)
-**Títulos:** Green Flame Decorative Lamp · The First Colored Flame Lamp · Decorative Oil Lamp · No Smoke, No Odor · Original Gift Idea · Gift-Ready Box · Real Colored Flame · Green Flame Refill · French Brand · From €39.95 · 30-Day Returns · Unique Home Ambiance · Fast Shipping in Europe
+**Títulos:** Green Flame Decorative Lamp · Green Flame Oil Lamp · Decorative Oil Lamp · No Smoke, No Odor · Original Gift Idea · Gift-Ready Box · Real Colored Flame · Green Flame Refill · French Brand · From €39.95 · 30-Day Returns · Unique Home Ambiance · Fast Shipping in Europe
 **Descrições:**
 1. A real green flame with no smoke or odor. Serenity box from €39.95.
 2. Lamp, liquid and wicks included. Gift-ready, shipped within 12 hours.
@@ -271,6 +271,9 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 - **Verificar antes de publicar:** preço (€39,95 / €18,95), "expédié sous 12 h" e "30 jours" (confirmados no site em 11/11); prazo de entrega por país (a promessa "24–48h" pode não valer para NL/DE/LU).
 - Com grupo único, o RSA cobre lâmpada, presente, marca e refil: usar títulos de todos os temas e **não fixar** posições, para o Google combinar.
 - Torre de Londres: **não** usar em anúncio sem comprovação da marca; manter só no sitelink/página.
+
+**Caminhos de exibição (path 1 / path 2, até 15 caracteres cada):** FR `flamme-verte` / `lampe-a-huile` · EN `green-flame` / `oil-lamp`.
+**Títulos com superlativo removidos:** "La Première Flamme de Couleur" e "The First Colored Flame Lamp" foram trocados, porque superlativos exigem comprovação (guia, seção 14). Só voltam se o cliente comprovar.
 
 ## 7. Ativos
 **Sitelinks:** Serenity (`/products/serenity`) · Liquide/Refil (`/collections/green-flame-liquide`) · Nos Coffrets (`/collections/serenity-pack`) · Notre histoire (`/pages/notre-histoire`) · Instructions (`/pages/instructions`) · Rapport LNE (`/pages/rapport-dessai-officiel`)
@@ -292,3 +295,28 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 4. Cadastrar RSAs e ativos; conferir reprovações.
 5. Semanas 1–2: sem alterar lances/metas; checar termos de pesquisa a cada 2–3 dias.
 6. Dia 14–21: avaliar CPA/ROAS por campanha e por país; só então definir meta de ROAS e redistribuir verba.
+
+## 10. Auditoria contra o guia `docs/google-ads/` (11/11)
+
+Feita depois de reler `pesquisa.md`, `medicao-e-conversoes.md` e `publicos-e-segmentacao.md`. Antes eu havia montado a estrutura sem reler os guias.
+
+### Corrigido
+| Item | O que o guia diz | O que fiz |
+|---|---|---|
+| Superlativos nos títulos | Evitar superlativos não comprovados (seção 14) | Troquei "La Première Flamme de Couleur" e "The First Colored Flame Lamp" |
+| Caminhos de exibição | Path 1/2 reforçam relevância (seção 5) | Adicionados |
+| Palavra-chave nos títulos | Incluir a principal em 1–2 títulos (seção 5) | "Lampe à Flamme Verte" e "Green Flame Oil Lamp" entram nos títulos |
+
+### Pontos em que a estrutura escolhida contraria o guia (decisão sua; registro o risco)
+1. **Um grupo com 38 palavras de intenções diferentes.** O guia diz "um grupo = uma intenção; evitar grupos com palavras desconexas" (seção 2). Efeito: o anúncio fala de tudo ao mesmo tempo, o Nível de Qualidade (relevância do anúncio) tende a cair e o CPC a subir. Mitigação já prevista: URL final por palavra-chave.
+2. **Marca, refil e aquisição na mesma campanha.** O guia lista "juntar marca e não-marca" como erro comum (seção 15, item 7) e recomenda campanha de marca separada (seção 11). Efeito: o CPA de marca, mais barato, mascara o CPA de aquisição.
+3. **Verba pequena para lance automático.** O guia diz que orçamento abaixo de ~10× o CPA alvo dá pouco espaço para aprender (seção 7). Com ticket de ~€50 e CPA alvo em torno de €20–25, 10× seria €200–250/dia; temos €24 e €16.
+Se quiser reduzir esses riscos sem mudar o orçamento nem o número de campanhas, o caminho é dividir cada campanha em 2–3 grupos (por exemplo: Produto, Presente, Marca+Refil). Decisão do Eduardo.
+
+### Faltava avisar
+- **Gasto diário pode chegar a 2× o orçamento** em alguns dias (guia, seção 8). Os €40/dia valem como **média mensal** (~€1.216 por mês, 30,4 × €40). Em um dia ruim o gasto pode passar de €40.
+- **Estratégia de lance depende do histórico.** O guia indica CPC manual para conta nova sem dados e "maximizar conversões" quando há volume (seção 7). Eu havia definido "maximizar conversões sem meta" sem conhecer o histórico da conta. **Definir depois de ver o CID:** se a conta não tiver conversões de compra registradas, começar com CPC manual ou maximizar cliques com limite de CPC até aparecerem as primeiras conversões.
+- **Risco de conversão duplicada.** O site tem tag do Google Ads e GA4. O guia manda não duplicar a mesma conversão (seção 10). Conferir se a compra não está sendo contada duas vezes (importada do GA4 e pela tag nativa).
+- **Negativas só bloqueiam o termo literal** (seção 4): `led` não bloqueia `leds`/`lampe led` como sinônimo de outra forma. Revisar no relatório de termos.
+- **Público em observação** (seção 9): adicionar segmentos "em mercado" e listas de remarketing em modo observação, sem restringir alcance.
+
