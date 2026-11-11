@@ -260,11 +260,28 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 
 ### Inglês (B)
 **Títulos (15, verificados ≤ 30 caracteres):** Green Flame Oil Lamp · Decorative Oil Lamp · Real Colored Flame · No Smoke, No Odor · Original Gift Idea · Gift-Ready Box · Green Flame Refill · Refill With Free Wick · Complete Kit From €39.95 · Shipped Within 12 Hours · 30-Day Returns · Made in Colors Green Flame · Unique Home Decor Gift · Lamp, Liquid & Wicks Included · Create a Unique Ambiance
-**Descrições (4, verificadas ≤ 90 caracteres):**
-1. A real green flame with no smoke or odor. Discover the Serenity box from €39.95.
-2. Lamp, liquid and 2 wicks included. Gift-ready box, shipped within 12 hours.
-3. Set the mood for dinners, quiet evenings or meditation. A gift people remember.
-4. Refill your lamp with Green Flame liquid from €18.95, free wick included. 30-day returns.
+**Descrições (4, verificadas ≤ 90 caracteres) — foco em matar objeção:**
+1. A real flame, not LED. Glows green in soft light, no smoke or odor. Shop the Serenity box.
+2. Lamp, liquid, 2 wicks and funnel included. Fill, light, enjoy about 40 hours of flame.
+3. A gift they'll remember: gift-ready box, ships in 12 hours, 30-day returns, no questions.
+4. Already own the lamp? Green Flame refill from €18.95, free wick included. Easy to refill.
+
+**Substituta condicional (só publicar com o relatório LNE em mãos):** trocar a descrição 2 ou 3 por: *Liquid tested by LNE, France's national lab. A real green flame, no smoke, no odor.* (83 caracteres).
+
+**Mapa de objeções → resposta (verificado no site em 11/11):**
+| Objeção do visitante | Resposta usada | Onde está comprovado |
+|---|---|---|
+| "É fogo de verdade ou LED?" | "A real flame, not LED" | FAQ: "véritable flamme colorée… pas un éclairage LED" |
+| "A cor aparece mesmo?" | "Glows green in soft light" | FAQ: cor mais visível em ambiente suave, à noite |
+| "Cheira ou solta fumaça como vela?" | "no smoke or odor" | Site e FAQ |
+| "É complicado? O que vem na caixa?" | "Lamp, liquid, 2 wicks and funnel… Fill, light, enjoy" | Página do kit (lâmpada, 0,5 L, 2 mechas, funil) |
+| "Quanto dura / quanto custa manter?" | "about 40 hours of flame" | Página do kit e FAQ (500 ml ≈ 35–40 h) |
+| "Serve de presente?" | "gift-ready box" | Página do kit e FAQ |
+| "E se eu não gostar / demorar?" | "ships in 12 hours, 30-day returns, no questions" | Página do kit |
+| "Já tenho a lâmpada, onde compro o líquido?" | "refill from €18.95, free wick included" | Página de refil |
+| "É seguro?" | **Não respondido em anúncio sem o relatório LNE** (substituta acima) | Alegação do site, relatório não conferido |
+
+**Não usei, de propósito:** "tested by LNE" sem relatório; "safe / non-toxic / non-flammable"; "limited edition" (só se o cliente confirmar que é verdade); "Tower of London" (sem comprovação da marca); nota de avaliação (o site mostra 5,0·87 e 4,96·24); prazo de entrega por país; "free delivery" (frete grátis só vimos nos pacotes em francês).
 
 ### Regras de copy
 - **Não usar:** "pode beber", "não queima", "100% seguro", "não tóxico", "não inflamável". "Testé par le LNE" só com o relatório em mãos.
