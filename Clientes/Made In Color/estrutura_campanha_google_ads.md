@@ -23,7 +23,7 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 ## 1. Premissas fechadas
 - **Verba total:** €40/dia.
 - **Países:** França, Bélgica, Países Baixos, Alemanha, Luxemburgo.
-- **Idiomas do site:** francês e inglês. Francês para França, Bélgica e Luxemburgo; inglês para Países Baixos, Alemanha, Luxemburgo e Bélgica.
+- **Idiomas do site:** francês e inglês. Francês para França, Bélgica e Luxemburgo (campanha A); inglês para Países Baixos e Alemanha (campanha B).
 - Todos os países são da UE (moeda EUR, sem alfândega). Alemanha e Países Baixos em **inglês** alcançam só quem pesquisa em inglês (ver riscos).
 
 ## 2. Estrutura (simplificada: 2 campanhas, 2 grupos cada)
@@ -31,7 +31,7 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 | # | Campanha | Países | Idioma (do usuário) | Verba/dia | Destino |
 |---|---|---|---|---|---|
 | A | `PESQ | FR | FR+BE+LU` | França, Bélgica, Luxemburgo | Francês | €24 | `madeincolors.com/` |
-| B | `PESQ | EN | NL+DE+LU+BE` | Países Baixos, Alemanha, Luxemburgo, Bélgica | Inglês | €16 | `madeincolors.com/en/` |
+| B | `PESQ | EN | NL+DE` | Países Baixos, Alemanha | Inglês | €16 | `madeincolors.com/en/` |
 
 **Grupos (iguais em A e B, no idioma de cada campanha):**
 1. **Kit** — categoria + diferencial + presente. Mesmo produto e mesma página; os títulos do RSA cobrem lâmpada, flamme/flame verte e ideia de presente.
@@ -40,7 +40,7 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 - O orçamento é da **campanha**, não do grupo. Menos grupos não economiza verba, mas dá menos dispersão de anúncios e dados.
 - Não juntar **Kit** com **Refil** num grupo só: são produtos, páginas e preços diferentes e o RSA ficaria genérico.
 - A **marca dentro de aquisição** pode mascarar o CPA de quem ainda não conhece o produto. Ver por grupo no relatório.
-- **Bélgica e Luxemburgo** entram em A (francês) e em B (inglês) sem sobreposição: o idioma do usuário separa as campanhas. O francês é muito usado em Luxemburgo (junto com luxemburguês e alemão).
+- **Bélgica e Luxemburgo ficam só em A (francês).** Poderiam estar também em B (sem sobreposição, porque o idioma do usuário separa as campanhas) para alcançar expatriados e flamengos com Google em inglês, mas com €16/dia foi decidido **concentrar B em NL+DE**. Reavaliar com dados. O francês é muito usado em Luxemburgo (junto com luxemburguês e alemão).
 - Alemães e holandeses com Google no idioma local **não são alcançados** por A nem por B (ver riscos).
 - **Nomes definitivos** devem seguir o padrão do cliente/Eduardo; os de cima são provisórios.
 
