@@ -259,7 +259,7 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 4. Rechargez votre lampe : liquide Green Flame dès 18,95 €, mèche offerte.
 
 ### Inglês (B)
-**Títulos:** Green Flame Decorative Lamp · Green Flame Oil Lamp · Decorative Oil Lamp · No Smoke, No Odor · Original Gift Idea · Gift-Ready Box · Real Colored Flame · Green Flame Refill · French Brand · From €39.95 · 30-Day Returns · Unique Home Ambiance · Fast Shipping in Europe
+**Títulos (15, verificados ≤ 30 caracteres):** Green Flame Oil Lamp · Decorative Oil Lamp · Real Colored Flame · No Smoke, No Odor · Original Gift Idea · Gift-Ready Box · Green Flame Refill · Refill With Free Wick · Complete Kit From €39.95 · Shipped Within 12 Hours · 30-Day Returns · Made in Colors Green Flame · Unique Home Decor Gift · Lamp, Liquid & Wicks Included · Create a Unique Ambiance
 **Descrições:**
 1. A real green flame with no smoke or odor. Serenity box from €39.95.
 2. Lamp, liquid and wicks included. Gift-ready, shipped within 12 hours.
