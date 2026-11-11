@@ -93,7 +93,7 @@ A campanha A usa a coluna FR; a campanha B usa a coluna EN. Cada linha é o mesm
 | 32 | Refil de chama verde | `liquide flamme verte` | `green flame refill` |  |
 | 33 | Combustível de lâmpada a óleo | `combustible lampe à huile` | `oil lamp fuel` | ➕ |
 
-**Total: 33 palavras por campanha** (cada uma em frase e exata).
+**Total (tabela acima): 33 palavras por campanha; com as buscas simples da seção 4.1 são 38** (cada uma em frase e exata).
 
 **Observações (a validar):**
 - `serenity lampe` foi **removida**: "Lampe Serenity" também é produto da Maison Berger e traria tráfego de outro produto.
@@ -102,6 +102,95 @@ A campanha A usa a coluna FR; a campanha B usa a coluna EN. Cada linha é o mesm
 - `madeincolors code promo` / `promo code` atrai caçadores de cupom: só manter se houver cupom real.
 - `cadeau pendaison de crémaillère` / `housewarming gift` é genérico: vigiar no relatório de termos.
 - Grafia `colored` (EUA) × `coloured` (Reino Unido): checar no Planejador qual predomina em NL e DE.
+
+### 4.1 Listas para copiar (ordem = prioridade estimada, **sem dado**; 38 por campanha; mesma ordem nos dois idiomas)
+
+Adicionadas em 11/11 por sugestão do Eduardo (buscas simples): `lampe à huile verte` / `green oil lamp`, `lampe à huile flamme verte` / `green flame oil lamp`, `lampe à huile flamme colorée` / `colored flame oil lamp`, `bougie flamme verte` / `green flame candle`, `bougie flamme colorée` / `colored flame candle`.
+Atenção: `green oil lamp` / `lampe à huile verte` também casa com lâmpadas de **vidro verde**; `bougie flamme verte` / `green flame candle` atrai quem busca **vela**. Vigiar no relatório de termos.
+
+**FR (campanha A):**
+```
+madeincolors
+made in colors
+madeincolors serenity
+green flame liquide
+recharge lampe à huile
+lampe flamme verte
+lampe à huile verte
+lampe à huile flamme verte
+lampe à huile décorative
+lampe flamme colorée
+lampe à huile flamme colorée
+liquide flamme verte
+lampe à flamme décorative
+liquide pour lampe à huile
+huile pour lampe sans odeur
+huile pour lampe sans fumée
+mèche pour lampe à huile
+lampe d'ambiance
+flamme verte décorative
+flamme colorée
+flamme verte
+bougie flamme verte
+bougie flamme colorée
+déco de table flamme
+cadeau déco maison
+cadeau lampe à huile
+cadeau original déco
+lampe à huile design
+lampe à huile moderne
+lampe à huile en verre
+décoration flamme verte
+made in colors flamme verte
+made in color
+madeincolors avis
+combustible lampe à huile
+cadeau noël déco
+cadeau pendaison de crémaillère
+madeincolors code promo
+```
+
+**EN (campanha B):**
+```
+madeincolors
+made in colors
+madeincolors serenity
+green flame liquid
+oil lamp refill
+green flame lamp
+green oil lamp
+green flame oil lamp
+decorative oil lamp
+colored flame lamp
+colored flame oil lamp
+green flame refill
+decorative flame lamp
+lamp oil
+odorless lamp oil
+smokeless lamp oil
+oil lamp wick
+ambient lamp
+decorative green flame
+colored flame
+green flame
+green flame candle
+colored flame candle
+flame table decor
+home decor gift
+oil lamp gift
+unique decor gift
+design oil lamp
+modern oil lamp
+glass oil lamp
+green flame decor
+made in colors green flame
+made in color
+madeincolors reviews
+oil lamp fuel
+christmas decor gift
+housewarming gift
+madeincolors promo code
+```
 
 ## 5. Negativas (mesmos termos em FR e EN)
 
