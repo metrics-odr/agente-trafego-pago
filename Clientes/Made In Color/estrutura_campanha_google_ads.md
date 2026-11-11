@@ -260,11 +260,11 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 
 ### Inglês (B)
 **Títulos (15, verificados ≤ 30 caracteres):** Green Flame Oil Lamp · Decorative Oil Lamp · Real Colored Flame · No Smoke, No Odor · Original Gift Idea · Gift-Ready Box · Green Flame Refill · Refill With Free Wick · Complete Kit From €39.95 · Shipped Within 12 Hours · 30-Day Returns · Made in Colors Green Flame · Unique Home Decor Gift · Lamp, Liquid & Wicks Included · Create a Unique Ambiance
-**Descrições:**
-1. A real green flame with no smoke or odor. Serenity box from €39.95.
-2. Lamp, liquid and wicks included. Gift-ready, shipped within 12 hours.
-3. 30-day returns. Liquid tested by the LNE lab. Discover the green flame.
-4. Refill your lamp: Green Flame liquid from €18.95, wick included.
+**Descrições (4, verificadas ≤ 90 caracteres):**
+1. A real green flame with no smoke or odor. Discover the Serenity box from €39.95.
+2. Lamp, liquid and 2 wicks included. Gift-ready box, shipped within 12 hours.
+3. Set the mood for dinners, quiet evenings or meditation. A gift people remember.
+4. Refill your lamp with Green Flame liquid from €18.95, free wick included. 30-day returns.
 
 ### Regras de copy
 - **Não usar:** "pode beber", "não queima", "100% seguro", "não tóxico", "não inflamável". "Testé par le LNE" só com o relatório em mãos.
