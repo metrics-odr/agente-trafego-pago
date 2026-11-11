@@ -1,6 +1,6 @@
 # Google Ads — Rede de Pesquisa (guia de referência)
 
-Base de conhecimento para o gestor de tráfego. Complementa o fluxo de Meta Ads; **não há skill nem MCP de Google Ads neste repositório ainda**, então este guia serve para análise, planejamento e criação de estrutura, não para execução automática.
+Guia de Rede de Pesquisa. Índice geral: [`README.md`](README.md). Complementa o fluxo de Meta Ads; **não há skill nem MCP de Google Ads conectado neste repositório**, então este guia serve para análise, planejamento e criação de estrutura.
 
 > Regra do repositório vale aqui também: estrutura primeiro, depois confirmação, depois execução. Consultar o briefing do cliente antes de criar campanhas.
 
@@ -203,3 +203,17 @@ Atenção: no Google Ads, "Conversões" depende das ações marcadas como primá
 - **GCLID**: identificador de clique do Google (para conversões offline).
 - **Termo de pesquisa**: o que o usuário digitou; **palavra-chave**: o que você licita.
 - **Negativa**: termo que bloqueia exibição.
+
+---
+
+## 18. AI Max for Search e correspondência ampla (evolução recente)
+
+- **AI Max for Search**: pacote de recursos ligável por campanha de Pesquisa. Inclui **expansão de termos de pesquisa** (vai além das palavras-chave, estilo ampla/DSA), **personalização de texto** (ajusta títulos/descrições ao termo e à página) e **expansão de URL final** (pode enviar a outra página do site).
+- **Controles**: exclusões de marca / inclusão de marca, **negativas**, **exclusões de URL**, **segmentação de local por intenção**; relatórios de termos com correspondência por origem.
+- **Quando testar**: conta com conversões confiáveis e volume, para achar demanda nova. **Cuidado** em nichos regulados (saúde, jurídico, finanças): pode gerar texto/URL não revisados.
+- **Boa prática**: testar em **experimento** (50/50) antes de ligar na campanha principal; manter exata/frase nas intenções críticas; vigiar termos irrelevantes e a página de destino escolhida.
+- **Smart Bidding + ampla**: combinação recomendada pelo Google; funciona com conversão limpa. Sem isso, preferir frase/exata.
+- **DSA** é gradualmente absorvido por esses recursos; checar a interface atual.
+
+## 19. Referências cruzadas
+Ver [`fundamentos.md`](fundamentos.md), [`medicao-e-conversoes.md`](medicao-e-conversoes.md), [`publicos-e-segmentacao.md`](publicos-e-segmentacao.md), [`analise-e-relatorios.md`](analise-e-relatorios.md).

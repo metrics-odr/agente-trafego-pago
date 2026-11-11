@@ -4,6 +4,7 @@ Este repositório é o contexto do gestor de tráfego particular do Eduardo. Ele
 
 ## Como operar
 - Para qualquer pedido de Meta Ads (verba, ativar/pausar, checagem), siga a skill `.claude/skills/gestor-trafego-meta-ads/SKILL.md`.
+- Para qualquer pedido de **Google Ads** (Pesquisa, Performance Max, Display, YouTube, Shopping, Demand Gen, App), **ler antes `docs/google-ads/README.md`** e o guia do tipo de campanha, e seguir a skill `.claude/skills/gestor-trafego-google-ads/SKILL.md`. Não há integração de API do Google Ads conectada: sem ela, entregar plano/estrutura/passo a passo e não declarar execução.
 - Autorização geral: **não pedir confirmação** para ações necessárias do pedido. Só perguntar quando houver ambiguidade que possa atingir a conta errada.
 - Fazer apenas o que foi pedido. Pausar, criar ou apagar exige pedido explícito.
 - Identificar a conta pelo nome do cliente/business, confirmar o ID antes de alterar e nunca mexer em outra conta. Tolerar erros de digitação ("Mex Nexus" = MedNexus).
