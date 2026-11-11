@@ -9,23 +9,23 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 - **Idiomas do site:** francês e inglês. Francês para França e Bélgica; inglês para os demais.
 - Todos os países são da UE (moeda EUR, sem alfândega). Alemanha e Países Baixos em **inglês** alcançam só quem pesquisa em inglês (ver riscos).
 
-## 2. Estrutura
+## 2. Estrutura (simplificada: 2 campanhas, 2 grupos cada)
 
 | # | Campanha | Países | Idioma (do usuário) | Verba/dia | Destino |
 |---|---|---|---|---|---|
-| A | `PESQ | FR | França+Bélgica | Aquisição` | França, Bélgica | Francês | €22 | `madeincolors.com/` |
-| B | `PESQ | EN | NL+DE+LU+BE | Aquisição` | Países Baixos, Alemanha, Luxemburgo, Bélgica | Inglês | €14 | `madeincolors.com/en/` |
-| C | `PESQ | Marca | 5 países` | Todos os 5 | **Todos os idiomas** | €4 | `/` (FR) e `/en/` (EN) por anúncio |
+| A | `PESQ | FR | França+Bélgica` | França, Bélgica | Francês | €24 | `madeincolors.com/` |
+| B | `PESQ | EN | NL+DE+LU+BE` | Países Baixos, Alemanha, Luxemburgo, Bélgica | Inglês | €16 | `madeincolors.com/en/` |
 
-- A **Bélgica** entra em A (francês) e em B (inglês). Não há sobreposição, porque o idioma da campanha separa os usuários (um flamengo com Google em inglês cai em B; um valão com Google em francês cai em A). Quem usa holandês/alemão no navegador **não é alcançado** por A nem B.
-- **Nomes definitivos** devem seguir o padrão do cliente/Eduardo (ex.: `MADEINCOLORS_VEN_FRIO_SEARCH_..._2026-11-11_...`); os de cima são provisórios.
+**Grupos (iguais em A e B, no idioma de cada campanha):**
+1. **Kit** — categoria + diferencial + presente. Mesmo produto e mesma página; os títulos do RSA cobrem lâmpada, flamme/flame verte e ideia de presente.
+2. **Marca + Refil** — quem já conhece a marca ou já tem a lâmpada. Intenção alta.
 
-### Grupos de anúncios
-**A (FR):** Categoria · Diferencial · Presente · Refil
-**B (EN):** Categoria · Diferencial · Presente (opcional, ver nota) · Refil
-**C (Marca):** Marca (um grupo FR, um EN)
-
-> Nota: com €14 em B, começar B **sem** "Presente" e com 3 grupos (Categoria, Diferencial, Refil). Presente em inglês é genérico e caro.
+- O orçamento é da **campanha**, não do grupo. Menos grupos não economiza verba, mas dá menos dispersão de anúncios e dados.
+- Não juntar **Kit** com **Refil** num grupo só: são produtos, páginas e preços diferentes e o RSA ficaria genérico.
+- A **marca dentro de aquisição** pode mascarar o CPA de quem ainda não conhece o produto. Ver por grupo no relatório.
+- A **Bélgica** entra em A e B sem sobreposição: o idioma do usuário separa as campanhas.
+- Alemães e holandeses com Google no idioma local **não são alcançados** por A nem por B (ver riscos).
+- **Nomes definitivos** devem seguir o padrão do cliente/Eduardo; os de cima são provisórios.
 
 ## 3. Configurações comuns
 | Item | Valor |
@@ -34,7 +34,6 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 | Local | "Presença" (não "presença ou interesse") |
 | Correspondência | **Frase e exata**; sem ampla; AI Max desligado |
 | Lance (semanas 1–2) | **Maximizar conversões**, sem meta de CPA |
-| Lance C | Maximizar conversões, ou participação de impressões ~90% no topo |
 | Conversão primária | **Compra com valor** (só primária relevante; adicionar ao carrinho como secundária) |
 | Programação | Todos os dias, 24 h |
 | Dispositivos | Todos |
@@ -45,19 +44,15 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 ## 4. Palavras-chave (frase e exata; volumes ainda não medidos)
 
 ### A — Francês
-**Categoria:** `lampe à huile décorative`, `lampe d'ambiance`, `lampe à flamme décorative`, `déco de table flamme`, `lampe à huile design`
-**Diferencial:** `flamme colorée`, `flamme verte`, `lampe flamme verte`, `lampe à flamme de couleur`
-**Presente:** `cadeau déco maison`, `cadeau original déco`, `cadeau pendaison de crémaillère`, `cadeau lampe à huile`
-**Refil:** `recharge lampe à huile`, `liquide pour lampe à huile`, `huile pour lampe sans odeur`, `mèche pour lampe à huile`, `liquide flamme verte`
+**Grupo Kit:** `lampe à huile décorative`, `lampe d'ambiance`, `lampe à flamme décorative`, `déco de table flamme`, `flamme colorée`, `flamme verte`, `lampe flamme verte`, `cadeau déco maison`, `cadeau original déco`, `cadeau lampe à huile`
+**Grupo Marca + Refil:** `madeincolors`, `made in colors`, `serenity lampe`, `green flame liquide`, `recharge lampe à huile`, `liquide pour lampe à huile`, `huile pour lampe sans odeur`, `mèche pour lampe à huile`, `liquide flamme verte`
 
 ### B — Inglês
-**Categoria:** `decorative oil lamp`, `modern oil lamp`, `table oil lamp`, `ambient lamp with flame`
-**Diferencial:** `colored flame lamp`, `green flame lamp`, `colored flame oil lamp`
-**Refil:** `oil lamp refill`, `lamp oil refill`, `smokeless lamp oil`, `green flame liquid`
-*(Presente opcional: `gift for home decor`, `unique home decor gift`)*
+**Grupo Kit:** `decorative oil lamp`, `modern oil lamp`, `table oil lamp`, `colored flame lamp`, `green flame lamp`, `colored flame oil lamp`, `unique home decor gift`
+**Grupo Marca + Refil:** `madeincolors`, `made in colors`, `madeincolors serenity`, `green flame liquid`, `oil lamp refill`, `lamp oil refill`, `smokeless lamp oil`
 
-### C — Marca (mesmas palavras em qualquer idioma)
-`madeincolors`, `made in colors`, `madeincolors serenity`, `serenity lampe madeincolors`, `green flame liquide`
+- Não incluir `idée cadeau original` isolado (genérico e caro).
+- Marca + Refil: o anúncio manda para a página de refil nos termos de refil e para a home nos termos de marca (URL final por anúncio ou por palavra-chave).
 
 ## 5. Negativas (listas compartilhadas por idioma)
 
@@ -105,7 +100,7 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 ### Regras de copy
 - **Não usar:** "pode beber", "não queima", "100% seguro", "não tóxico", "não inflamável". "Testé par le LNE" só com o relatório em mãos.
 - **Verificar antes de publicar:** preço (€39,95 / €18,95), "expédié sous 12 h" e "30 jours" (confirmados no site em 11/11); prazo de entrega por país (a promessa "24–48h" pode não valer para NL/DE/LU).
-- Distribuir cada grupo para os títulos mais relevantes (ex.: Refil usa 9, 7, 14; Presente usa 5, 6, 13); fixar o mínimo possível.
+- **Kit** usa títulos 1–7, 11–15 (lâmpada, flamme verte, cadeau); **Marca + Refil** usa 2, 7, 8, 9, 10, 14. Fixar o mínimo possível.
 - Torre de Londres: **não** usar em anúncio sem comprovação da marca; manter só no sitelink/página.
 
 ## 7. Ativos
@@ -116,7 +111,7 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 
 ## 8. Riscos e limites
 1. **Alemanha e Países Baixos em inglês:** só pegam quem tem Google em inglês. O volume pode ser baixo e a conversão menor. Se não render nas 2–3 primeiras semanas, o caminho é traduzir o site (DE/NL) e criar campanhas por idioma.
-2. **B com €14/dia:** pode ficar abaixo do mínimo para o lance automático aprender. Se acontecer, concentrar B em Países Baixos + Bélgica.
+2. **B com €16/dia:** pode ficar abaixo do mínimo para o lance automático aprender. Se acontecer, concentrar B em Países Baixos + Bélgica.
 3. **Natal:** CPC mais alto em nov/dez. Janela de aprendizado de 2 semanas já consome parte.
 4. **Ainda sem validar:** volume de busca, CPC e taxa de conversão; política de produto do líquido (checar no Policy Manager ao subir).
 5. **Dados do site a corrigir:** avaliações inconsistentes (5,0·87 vs 4,96·24); escassez ("édition limitée"); consentimento de cookies.
@@ -124,7 +119,7 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 ## 9. Passo a passo de lançamento
 1. Confirmar CID, briefing, margem, relatório LNE, frete por país.
 2. Conferir Consent Mode v2 e a conversão de compra com valor.
-3. Criar A, B e C com as configurações da seção 3; subir negativas.
+3. Criar A e B com as configurações da seção 3; subir negativas.
 4. Cadastrar RSAs e ativos; conferir reprovações.
 5. Semanas 1–2: sem alterar lances/metas; checar termos de pesquisa a cada 2–3 dias.
 6. Dia 14–21: avaliar CPA/ROAS por campanha e por país; só então definir meta de ROAS e redistribuir verba.
