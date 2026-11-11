@@ -15,7 +15,7 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 | Palavras-chave, volumes e CPC | **Hipótese**: nada foi validado no Planejador de Palavras-chave |
 | Divisão de verba (€24 / €16) | **Suposição minha**, sem dado; ajustar com CPC e conversão reais |
 | Mínimos de conversão para o lance automático (15–30/mês) | Regra prática, não número garantido |
-| Alcance em inglês na Alemanha, Países Baixos e Luxemburgo | **Incerto**; pode ser baixo |
+| Alcance em inglês na Alemanha e nos Países Baixos | **Incerto**; pode ser baixo |
 | Tag do Google Ads e compra com valor no site | Tag detectada; **disparo da conversão não testado** |
 
 **Esta estrutura é um rascunho para validar, não uma decisão final.** Antes de subir: Planejador de Palavras-chave (volume e CPC por país), CID, briefing, margem, relatório LNE e prazo de entrega por país.
