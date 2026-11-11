@@ -5,7 +5,7 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 
 **Legenda de confiança:** ✅ confirmado em fonte · 🟡 informado pelo cliente/Eduardo, não verificado de forma independente · 🔶 inferência minha (hipótese a testar) · ❓ não encontrei dado.
 
-> Limites desta pesquisa: foi feita por busca na web, sem acesso a Planejador de Palavras-chave, Auction Insights, Similarweb nem dados da conta. **Não há volume de busca, CPC nem share de mercado aqui.** **Não consegui ver as imagens do site** (a leitura é só de texto), então o que depende de foto veio do Eduardo. O site antigo (`shop.madeincolors.com`) estava fora da rede liberada da sessão e não foi lido.
+> Limites desta pesquisa: foi feita por busca na web, sem acesso a Planejador de Palavras-chave, Auction Insights, Similarweb nem dados da conta. **Não há volume de busca, CPC nem share de mercado aqui.** **Revisão no navegador em 11/11** (home, Serenity, Liquide, Professionnels, carrinho, com capturas de tela e texto das FAQs). A primeira versão desta pesquisa foi feita só por leitura de texto e teve erros, corrigidos abaixo. O site antigo (`shop.madeincolors.com`) estava fora da rede liberada da sessão e não foi lido.
 
 ---
 
@@ -15,7 +15,7 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 2. Dois públicos de compra: **(A)** quem não tem a lâmpada (kit completo) e **(B)** quem já tem e precisa de **refil**. O refil tem ticket menor e recompra natural.
 3. Em Pesquisa, a demanda **de marca será pequena** (marca pequena). O volume vem de buscas por **categoria** (lâmpada de chama/lamparina decorativa, presente original, decoração de mesa) e de **refil/líquido**.
 4. **Risco regulatório e de política** continua sendo o ponto mais sensível: combustível líquido, afirmações de segurança ("pode beber", "não queima"), rotulagem europeia. Isso afeta **texto de anúncio** e **aprovação** (ver seção 7).
-5. Prova social forte, mas que precisa de comprovação: **10.000 chamas no fosso da Torre de Londres (2018)** — o evento é real; a participação da marca é 🟡 (ver seção 5).
+5. Prova social forte: **10.000 chamas no fosso da Torre de Londres (2018)**. O evento é real; a participação da marca é afirmada pelo próprio site ("10.000 de nos flammes ont été choisies") e a imprensa que li não cita a marca (🟡, ver seção 5). O site também tem **selo de teste LNE** e **reviews verificadas**.
 6. Concorrência direta com chama verde de verdade: **não encontrei** (❓). Concorrência por **substituição**: velas, lâmpadas de tempestade LED com efeito chama, lamparinas de óleo tradicionais, lâmpadas catalíticas (Maison Berger).
 
 ---
@@ -25,9 +25,14 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 | Item | Informação | Confiança |
 |---|---|---|
 | Marca | Marca francesa de "chamas decorativas de cor"; se posiciona como "a primeira chama decorativa colorida do mundo" | ✅ site |
-| Linha (site atual) | Lâmpada **Serenity** €39,95 (de €49,95); combos €59,95 e €69,95; líquido **Green Flame** 500 ml €18,95, 1 L €24,95, 3 L €59,85; Proteção Colis €3,90 | ✅ site (09/11) |
+| Linha (site atual) | **Coffret Serenity** €39,95 (de €49,95): lâmpada + **0,5 L** de líquido + **2 mechas** + funil, ~35–40 h de chama. **Serenity + 1 L** €59,95 (1,5 L, ~120 h, frete grátis, "le plus choisi"). **2 Coffrets** €69,95 (80 h, frete grátis). **Refil Green Flame** 500 ml €18,95, 1 L €24,95, 3 L €59,85 (todos com 1 mecha grátis). Proteção Colis €3,90 | ✅ site (11/11) |
+| Duração (FAQ) | 500 ml ≈ 35–40 h; 1 L ≈ 70–80 h | ✅ site |
+| Prazo/devolução | Envio em 12 h, entrega 1–2 dias úteis, toda a Europa; **30 dias** para devolver | ✅ site |
+| Reviews | Topo da página: **5,0 · 87 avis**; widget da mesma página: **4,96 · 24 avis** (23 de 5 estrelas). Os números **não batem** | ✅ site, inconsistência a corrigir |
+| Escassez | "Édition limitée — Première série Green Flame — expédié demain" | ✅ site |
 | Linha (site antigo, via buscas) | Líquido "It's Green", "Color Flamme Stick", vela/lamparina "INGREEN" (20h+ de chama verde, segundo a página), tocha de exterior (~5h, segundo revendedor suíço) | 🟡 trechos de busca, não abri as páginas |
-| Chama | **Só a chama é verde; o líquido é transparente (incolor)** (informado pelo Eduardo, 11/11). Sem fumaça, sem odor | 🟡 Eduardo / ✅ site (texto) |
+| Chama | **Só a chama é verde; o líquido é transparente (incolor)**. A cor vem de **"minerais específicos presentes no líquido"** (FAQ do site). Sem fumaça, sem odor. É chama real, não LED | 🟡 Eduardo / ✅ site |
+| Embalagem | Lâmpada de vidro transparente baixa (estilo lamparina), garrafa **âmbar/escura** do líquido, caixa preta de presente | ✅ capturas do site |
 | Segurança (cliente) | Líquido que respinga não queima; "pode até beber, embora não seja indicado" | 🟡 call — **não usar em anúncio** (seção 7) |
 | Pavio | **Fibra de vidro** | 🟡 call |
 | Compatibilidade | Marca diz que o líquido funciona em lamparinas antigas de parafina e tochas de bambu | 🟡 trecho de busca |
@@ -35,13 +40,33 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 | Pagamento | Cartões, PayPal, Apple/Google Pay, Klarna, Bancontact, BLIK, Satispay, MobilePay etc. | ✅ site |
 | Plataforma | Shopify (checkout/login típicos) | 🔶 |
 
-**Observação de estoque:** o site mostrava itens "Épuisé" (esgotado) em seções. Antes de mandar tráfego: confirmar disponibilidade, senão a campanha paga por clique em página sem estoque.
+**Observação de estoque:** na primeira leitura de texto apareceu "Épuisé" em seções; **na revisão no navegador não vi nada esgotado** em Serenity, Liquide nem no carrinho. Ainda assim, confirmar estoque real e que a mensagem "édition limitée / expédié demain" é verdadeira (consistência entre anúncio e página é política do Google).
 
 ### Pavio de fibra de vidro — explicação para leigos
 - A **fibra de vidro não queima**. O pavio só **conduz o líquido por capilaridade** até a ponta, e **quem queima é o líquido**, não o pavio. Por isso esses pavios costumam durar muito e não precisam ser trocados com frequência (manual de fabricante de pavios de fibra de vidro; patentes citam ponto de fusão em torno de **680 °C**). ✅ fontes técnicas, mas de **pavios em geral**, não do pavio da MadeinColors.
 - **Por que a marca vende isso como vantagem:** pavio que não se consome = chama estável, menos manutenção, menos resíduo no pavio. 🔶 inferência.
 - **Cuidados técnicos citados nas fontes:** a fibra de vidro puxa mal alguns combustíveis; pode "entupir" ao trocar de combustível e o fabricante do pavio desaconselha misturar com solventes/querosene. 🔶 **Hipótese útil para marketing:** o argumento "use o refil original para o pavio funcionar bem" é forte para **vender refil** — validar com o cliente se é verdade para o produto dele.
 - Atenção a copy: "fibra de vidro" no anúncio **não ajuda** quem busca; é argumento de **página** e de **FAQ**, não de título.
+
+---
+
+## 2.1 Análise do site (navegador, 11/11)
+
+**Estrutura:** home → Serenity (produto único com seletor de pack) → Liquide (3 tamanhos) → Nos Coffrets → Notre Histoire → Professionnels → Contact. Versão **FR** (`/`) e **EN** (`/en/...`); o `hreflang` só tem **fr** e **en**.
+
+**Narrativa da página:** foco em **atmosfera, ritual e presente** ("le cadeau dont on reparle", "le cadeau que personne n'oublie"), 4 perfis (passionnés, créateurs, épicuriens, collectionneurs), seção "Science invisible de la flamme", a Torre de Londres ("10.000 flammes"), FAQ e avaliações (Judge.me). Usos citados: jantar, relaxar à noite, yoga/meditação, presente (a FAQ diz que é "uma das principais razões de compra").
+
+**O que ajuda a converter:** preço claro, pack mais escolhido destacado, frete grátis nos packs maiores, envio em 12 h, 30 dias de devolução, reviews verificadas, selo de teste LNE, pagamentos locais.
+
+**Pontos fracos / a corrigir antes de pagar tráfego:**
+1. **Nota e nº de avaliações inconsistentes** (5,0·87 no topo vs 4,96·24 no widget). Anúncio com extensão de avaliação ou página com dado contraditório derruba a confiança.
+2. **Mensagem de escassez** ("édition limitée", "expédié demain") precisa ser verdadeira e atual.
+3. **Banner de cookies/consentimento não apareceu** nas capturas (navegador sem interface, o que pode influenciar; há API de consentimento do Shopify). Na UE, **verificar CMP e Consent Mode v2** num navegador real antes de ligar campanhas.
+4. **Página "Liquide"** é simples (3 produtos sem descrição, sem imagens de uso nem FAQ do refil). Para campanhas de **refil**, a página precisa responder: compatibilidade, duração por tamanho, mecha incluída, como recarregar.
+5. **Idioma:** só FR/EN. Não enviar tráfego de DE/NL/IT/ES para página em outro idioma sem teste.
+6. **B2B:** a página Professionnels pede orçamento (mín. 50 un.). Se for anunciar, precisa de **formulário rastreado** como conversão separada.
+
+**Rastreamento detectado (carregamento da página):** tag do **Google Ads** (conversão/remarketing) e **GA4** presentes; **Pixel da Meta**; contêineres do Google Tag (integração de canal do Shopify); **Judge.me**; API de consentimento do Shopify. ✅ Há tag do Google Ads na loja, **mas não verifiquei se o evento de compra com valor dispara** nem a qual conta pertence. **Pergunta:** a conta Google Ads já existe e qual o CID?
 
 ---
 
@@ -75,7 +100,7 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 |---|---|---|---|---|
 | **A1. Decoração (sem lâmpada)** | Quer ambiente diferente, mesa, varanda, sala, loja | "lampe à flamme décorative", "lampe d'ambiance", "flamme colorée" | Serenity (kit) | Estética, cor única |
 | **A2. Presente** | Quer ideia original | "idée cadeau original", "cadeau déco", "cadeau Noël" | Serenity/combos | Embalagem/coffret, prazo |
-| **A3. Profissional/Eventos** (há página "professionnels") | Restaurantes, hotéis, casamentos, eventos | "décoration table mariage", "flamme décorative restaurant" | Volume | B2B; 🔶 pouco volume, testar depois |
+| **A3. Profissional/Eventos** (página "Professionnels") | Hotéis/spas, restaurantes/rooftops, decoradores, lojistas/revendedores, criadores de conteúdo, casamentos/eventos | "décoration table mariage", "cadeau d'entreprise", "lampe gravée personnalisée" | **Edição sob medida: a partir de 50 unidades**, gravação de logo/nome no vidro, coffret corporativo; a conversão é **pedido de orçamento** (lead), não compra | B2B; 🔶 volume de busca pequeno, campanha separada, conversão diferente |
 | **B. Refil** | Já tem lâmpada (ou lamparina antiga compatível) | "recharge", "liquide pour lampe à huile", "liquide flamme verte" | Líquido 500 ml/1 L/3 L | Preço, rapidez, mecha |
 
 - **Valor por público (hipótese):** ticket de kit €40–70; refil €19–60. Refil tem **margem/recompra provável** (❓ confirmar margem). O público B é mais **fundo de funil** e pode aceitar CPA mais baixo.
@@ -113,11 +138,11 @@ Uso: base para a primeira campanha de **Rede de Pesquisa (Google Ads)** para o p
 ## 7. Políticas e legislação (a checar ANTES de criar)
 
 1. **Google Ads — Produtos perigosos:** a política (support.google.com/adspolicy/answer/6014299) cita explosivos, armas, etc. **Não encontrei** menção explícita a combustível de lamparina; **não está confirmado** que seja permitido. O Google também aplica o **padrão global** e a lei local. Mesma ideia no Merchant Center (answer/6150004). 🟡 **Ação:** consultar o Policy Manager da conta e, se houver Shopping/PMax, o diagnóstico do Merchant Center no primeiro envio. Começar por Pesquisa (revisão de texto) e conferir reprovações.
-2. **REACH Anexo XVII, entrada 3 (UE):** líquidos usados como combustível em **lamparinas decorativas** vendidos ao público e com classificação de **perigo por aspiração (H304)** têm restrições: **não podem conter corante ou perfume** (o texto pode ter sido alterado; um rascunho de 2020 não foi confirmado por mim), devem ter **aviso** de risco para crianças e de dano pulmonar, **embalagem preta opaca ≤ 1 L**, e as lamparinas devem seguir a **EN 14059**. ✅ (resumo de fonte oficial; interpretação jurídica é do cliente).
-   - **Correção (11/11):** eu havia presumido que o líquido era colorido. **Não é: é transparente e só a chama é verde.** Então a restrição de corante tende a não ser o problema. Mas **a cor da chama vem de algum aditivo** (❓ não sei qual) e **nada disso substitui a classificação do produto**.
-   - **Embalagem:** se o líquido for H304, a embalagem opaca preta ≤ 1 L passa a ser exigida. O site vende **3 L** (€59,85); conferir com o cliente. 🔶
-   - **Pedir ao cliente:** **FDS/SDS**, classificação CLP (H304 ou não), conformidade **EN 14059** da lâmpada e rótulos. Sem isso, **não prometer segurança em anúncios**.
-3. **Afirmações de segurança em anúncio:** evitar **"pode beber"**, **"não queima"**, **"100% seguro"**, **"sem risco"**. Alegações absolutas de segurança/saúde costumam gerar reprovação e risco jurídico. Alternativas: **"Chama sem fumaça e sem odor"**, **"Pensada para uso seguro em ambiente"**, **"Veja instruções de uso"** (confirmar com cliente e SDS).
+2. **REACH Anexo XVII, entrada 3 (UE):** líquidos usados como combustível em **lamparinas decorativas** vendidos ao público e com classificação de **perigo por aspiração (H304)** têm restrições: **não podem conter corante ou perfume**, devem ter **aviso** de risco para crianças e de dano pulmonar, **embalagem preta opaca ≤ 1 L**, e as lamparinas devem seguir a **EN 14059**. (Texto pode ter sido alterado; um rascunho de 2020 não foi confirmado por mim.) ✅ resumo de fonte oficial; interpretação jurídica é do cliente.
+   - **O que o site afirma** (FAQ e seção "Science invisible"): líquido **testado pelo LNE** (Laboratoire National de Métrologie et d'Essais), **"non classé comme produit dangereux"**, "non toxique", "non inflammable même renversé", "sécurité certifiée", "conforme aux normes européennes", com link para **"Voir le rapport d'essai officiel"** (`/pages/rapport-dessai-officiel`) e **LNE** no rodapé. 🟡 São **alegações do cliente**; não li o relatório.
+   - **Leitura:** se o líquido realmente **não é classificado** (sem H304), as restrições acima **não se aplicam**. Isso **reduz** o risco regulatório que levantei antes, mas **não** o risco de **política de anúncios** (o Google avalia o que o anúncio promete, não só a classificação).
+   - **Pedir ao cliente:** o **relatório LNE completo**, a **FDS/SDS** e a prova de conformidade **EN 14059** da lâmpada. Sem isso, **não prometer segurança em anúncios**.
+3. **Afirmações de segurança em anúncio:** o **site** já usa "non toxique", "non inflammable" e "sécurité certifiée". Para **anúncio**, evitar **"pode beber"**, **"não queima"**, **"100% seguro"**, **"sem risco"**, **"não tóxico"** e **"não inflamável"** (um líquido que alimenta uma chama gera dúvida e reprovação). Usar só o que o relatório LNE sustentar, citando-o (ex.: "Liquide testé par le LNE"). Alegações absolutas de segurança/saúde costumam gerar reprovação e risco jurídico. Alternativas: **"Chama sem fumaça e sem odor"**, **"Pensada para uso seguro em ambiente"**, **"Veja instruções de uso"** (confirmar com cliente e SDS).
 4. **Transporte:** limitações para líquidos por país/transportadora (a "Proteção Colis" e o frete 24–48h precisam bater com a realidade). Não anunciar entrega para país que não atende.
 5. **LGPD/GDPR:** na UE, **Consent Mode v2** + CMP certificado para medir conversões e fazer remarketing. ✅ prática padrão.
 6. **Direitos de marca:** não usar "Maison Berger"/"Lampe Berger" em texto de anúncio sem estratégia clara (marca registrada de terceiro).
