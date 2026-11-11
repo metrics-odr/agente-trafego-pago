@@ -11,6 +11,9 @@ Este repositório é o contexto do gestor de tráfego particular do Eduardo. Ele
 - Regra de ouro: o que estava ativo continua ativo e o que estava pausado continua pausado. Retrato antes, releitura ao vivo depois.
 - Nunca declarar concluído sem reler a conta.
 
+## Análise de sites de clientes
+Quando o Eduardo mandar um site, **analisar de verdade**: abrir no navegador (Playwright, com capturas de tela de home, produto/serviço, categoria, carrinho/formulário), **olhar as imagens**, ler o texto completo incluindo FAQs e avaliações, checar idiomas (`hreflang`), rastreamento (tags do Google/Meta, consentimento) e inconsistências. Leitura só de texto não basta. Separar o que foi **visto/confirmado** do que é **inferência**, e nunca presumir o que a imagem mostra.
+
 ## Padrões de criação
 - Pixel padrão: **Pixel1**. Página padrão: **Página1**. Usar em toda campanha nova, salvo pedido diferente.
 - Consultar sempre o briefing do cliente antes de criar ou modificar campanhas novas. (Se o briefing não estiver no repositório nem no projeto, pedir ao Eduardo onde está antes de seguir.)
