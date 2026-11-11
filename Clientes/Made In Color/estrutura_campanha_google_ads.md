@@ -26,22 +26,17 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 - **Idiomas do site:** francês e inglês. Francês para França, Bélgica e Luxemburgo (campanha A); inglês para Países Baixos e Alemanha (campanha B).
 - Todos os países são da UE (moeda EUR, sem alfândega). Alemanha e Países Baixos em **inglês** alcançam só quem pesquisa em inglês (ver riscos).
 
-## 2. Estrutura (simplificada: 2 campanhas, 2 grupos cada)
+## 2. Estrutura (decisão do Eduardo: 2 campanhas, 1 grupo cada, todas as palavras-chave juntas)
 
-| # | Campanha | Países | Idioma (do usuário) | Verba/dia | Destino |
-|---|---|---|---|---|---|
-| A | `PESQ | FR | FR+BE+LU` | França, Bélgica, Luxemburgo | Francês | €24 | `madeincolors.com/` |
-| B | `PESQ | EN | NL+DE` | Países Baixos, Alemanha | Inglês | €16 | `madeincolors.com/en/` |
+| # | Campanha | Países | Idioma (do usuário) | Verba/dia | Grupo | Destino padrão |
+|---|---|---|---|---|---|---|
+| A | `PESQ | FR | FR+BE+LU` | França, Bélgica, Luxemburgo | Francês | €24 | 1 grupo com todas as palavras-chave FR | `madeincolors.com/` |
+| B | `PESQ | EN | NL+DE` | Países Baixos, Alemanha | Inglês | €16 | 1 grupo com todas as palavras-chave EN | `madeincolors.com/en/` |
 
-**Grupos (iguais em A e B, no idioma de cada campanha):**
-1. **Kit** — categoria + diferencial + presente. Mesmo produto e mesma página; os títulos do RSA cobrem lâmpada, flamme/flame verte e ideia de presente.
-2. **Marca + Refil** — quem já conhece a marca ou já tem a lâmpada. Intenção alta.
-
-- O orçamento é da **campanha**, não do grupo. Menos grupos não economiza verba, mas dá menos dispersão de anúncios e dados.
-- Não juntar **Kit** com **Refil** num grupo só: são produtos, páginas e preços diferentes e o RSA ficaria genérico.
-- A **marca dentro de aquisição** pode mascarar o CPA de quem ainda não conhece o produto. Ver por grupo no relatório.
-- **Bélgica e Luxemburgo ficam só em A (francês).** Poderiam estar também em B (sem sobreposição, porque o idioma do usuário separa as campanhas) para alcançar expatriados e flamengos com Google em inglês, mas com €16/dia foi decidido **concentrar B em NL+DE**. Reavaliar com dados. O francês é muito usado em Luxemburgo (junto com luxemburguês e alemão).
-- Alemães e holandeses com Google no idioma local **não são alcançados** por A nem por B (ver riscos).
+- O orçamento é da **campanha**. O grupo único recebe todo o gasto.
+- **URL final por palavra-chave** (recurso do Google Ads): palavras de refil → página de refil (`/collections/green-flame-liquide`, versão `/en/` em B); palavras de marca → home; demais → `/products/serenity` ou a home. Sem isso, todas as buscas caem na mesma página.
+- O **RSA** do grupo único precisa cobrir lâmpada, presente, marca e refil (ver seção 6). A mensagem fica menos específica do que com grupos separados; decisão do Eduardo, a avaliar com dados.
+- **Bélgica e Luxemburgo ficam só em A** (francês); B só tem NL e DE.
 - **Nomes definitivos** devem seguir o padrão do cliente/Eduardo; os de cima são provisórios.
 
 ## 3. Configurações comuns
@@ -58,44 +53,55 @@ Pendências antes de subir: CID da conta, briefing do cliente, margem (para meta
 | Ativos | Sitelinks, snippets, preço, promoção, imagem, logo |
 | Medição | Consent Mode v2 + CMP verificado na UE; auto-tagging ligado; UTMs conforme análise anterior |
 
-## 4. Palavras-chave (frase e exata) — mesmas palavras em FR e EN, lado a lado
+## 4. Palavras-chave (frase e exata) — 1 grupo por campanha, mesmas palavras em FR e EN
 
-A campanha A usa só a coluna FR; a campanha B usa só a coluna EN. Cada linha é o mesmo conceito. **Volumes e CPC não validados.**
+A campanha A usa a coluna FR; a campanha B usa a coluna EN. Cada linha é o mesmo conceito. **➕ = candidata nova, ainda mais incerta.** **Volumes e CPC não validados.** A lista **não é exaustiva**: a definitiva sai do Planejador de Palavras-chave antes de subir e do relatório de termos de pesquisa depois.
 
-### Grupo 1 — Kit
-| # | Conceito | FR (campanha A) | EN (campanha B) |
-|---|---|---|---|
-| 1 | Lâmpada a óleo decorativa | `lampe à huile décorative` | `decorative oil lamp` |
-| 2 | Lâmpada de ambiente | `lampe d'ambiance` | `ambient lamp` |
-| 3 | Lâmpada de chama decorativa | `lampe à flamme décorative` | `decorative flame lamp` |
-| 4 | Decoração de mesa com chama | `déco de table flamme` | `flame table decor` |
-| 5 | Chama colorida | `flamme colorée` | `colored flame` |
-| 6 | Chama verde | `flamme verte` | `green flame` |
-| 7 | Lâmpada de chama verde | `lampe flamme verte` | `green flame lamp` |
-| 8 | Lâmpada de chama colorida | `lampe flamme colorée` | `colored flame lamp` |
-| 9 | Presente decoração da casa | `cadeau déco maison` | `home decor gift` |
-| 10 | Presente de decoração original | `cadeau original déco` | `unique decor gift` |
-| 11 | Presente lâmpada a óleo | `cadeau lampe à huile` | `oil lamp gift` |
+| # | Conceito | FR (campanha A) | EN (campanha B) | |
+|---|---|---|---|---|
+| 1 | Lâmpada a óleo decorativa | `lampe à huile décorative` | `decorative oil lamp` |  |
+| 2 | Lâmpada de ambiente | `lampe d'ambiance` | `ambient lamp` |  |
+| 3 | Lâmpada de chama decorativa | `lampe à flamme décorative` | `decorative flame lamp` |  |
+| 4 | Decoração de mesa com chama | `déco de table flamme` | `flame table decor` |  |
+| 5 | Chama colorida | `flamme colorée` | `colored flame` |  |
+| 6 | Chama verde | `flamme verte` | `green flame` |  |
+| 7 | Lâmpada de chama verde | `lampe flamme verte` | `green flame lamp` |  |
+| 8 | Lâmpada de chama colorida | `lampe flamme colorée` | `colored flame lamp` |  |
+| 9 | Presente decoração da casa | `cadeau déco maison` | `home decor gift` |  |
+| 10 | Presente decoração original | `cadeau original déco` | `unique decor gift` |  |
+| 11 | Presente lâmpada a óleo | `cadeau lampe à huile` | `oil lamp gift` |  |
+| 12 | Lâmpada a óleo design | `lampe à huile design` | `design oil lamp` | ➕ |
+| 13 | Lâmpada a óleo moderna | `lampe à huile moderne` | `modern oil lamp` | ➕ |
+| 14 | Lâmpada a óleo de vidro | `lampe à huile en verre` | `glass oil lamp` | ➕ |
+| 15 | Chama verde decorativa | `flamme verte décorative` | `decorative green flame` | ➕ |
+| 16 | Decoração com chama verde | `décoration flamme verte` | `green flame decor` | ➕ |
+| 17 | Presente de Natal decoração | `cadeau noël déco` | `christmas decor gift` | ➕ |
+| 18 | Presente de casa nova | `cadeau pendaison de crémaillère` | `housewarming gift` | ➕ |
+| 19 | Marca | `madeincolors` | `madeincolors` |  |
+| 20 | Marca (separado) | `made in colors` | `made in colors` |  |
+| 21 | Marca (sem o s) | `made in color` | `made in color` | ➕ |
+| 22 | Marca + produto | `madeincolors serenity` | `madeincolors serenity` |  |
+| 23 | Marca + chama verde | `made in colors flamme verte` | `made in colors green flame` | ➕ |
+| 24 | Marca + avaliações | `madeincolors avis` | `madeincolors reviews` | ➕ |
+| 25 | Marca + código promocional | `madeincolors code promo` | `madeincolors promo code` | ➕ |
+| 26 | Líquido Green Flame | `green flame liquide` | `green flame liquid` |  |
+| 27 | Refil de lâmpada a óleo | `recharge lampe à huile` | `oil lamp refill` |  |
+| 28 | Líquido para lâmpada a óleo | `liquide pour lampe à huile` | `lamp oil` |  |
+| 29 | Óleo de lâmpada sem cheiro | `huile pour lampe sans odeur` | `odorless lamp oil` |  |
+| 30 | Óleo de lâmpada sem fumaça | `huile pour lampe sans fumée` | `smokeless lamp oil` |  |
+| 31 | Pavio de lâmpada a óleo | `mèche pour lampe à huile` | `oil lamp wick` |  |
+| 32 | Refil de chama verde | `liquide flamme verte` | `green flame refill` |  |
+| 33 | Combustível de lâmpada a óleo | `combustible lampe à huile` | `oil lamp fuel` | ➕ |
 
-### Grupo 2 — Marca + Refil
-| # | Conceito | FR (campanha A) | EN (campanha B) |
-|---|---|---|---|
-| 1 | Marca | `madeincolors` | `madeincolors` |
-| 2 | Marca (separado) | `made in colors` | `made in colors` |
-| 3 | Marca + produto | `madeincolors serenity` | `madeincolors serenity` |
-| 4 | Líquido Green Flame (nome do produto) | `green flame liquide` | `green flame liquid` |
-| 5 | Refil de lâmpada a óleo | `recharge lampe à huile` | `oil lamp refill` |
-| 6 | Líquido para lâmpada a óleo | `liquide pour lampe à huile` | `lamp oil` |
-| 7 | Óleo de lâmpada sem cheiro | `huile pour lampe sans odeur` | `odorless lamp oil` |
-| 8 | Óleo de lâmpada sem fumaça | `huile pour lampe sans fumée` | `smokeless lamp oil` |
-| 9 | Pavio de lâmpada a óleo | `mèche pour lampe à huile` | `oil lamp wick` |
-| 10 | Refil de chama verde | `liquide flamme verte` | `green flame refill` |
+**Total: 33 palavras por campanha** (cada uma em frase e exata).
 
-**Observações sobre as palavras (a validar):**
-- `serenity lampe` foi **removida**: "Lampe Serenity" também é um produto da Maison Berger, e a palavra traria tráfego de outro produto. Fica `madeincolors serenity`.
-- Em inglês, `green flame` e `colored flame` (linhas 5–6) tendem a trazer ruído (jogos, química). Em francês, `flamme verte` também traz química. Ficam em frase/exata com negativas.
-- `lamp oil` (inglês) é um termo amplo que também atrai compradores de querosene e parafina. Fica com as negativas abaixo.
-- Grafia `colored` (EUA) e `coloured` (Reino Unido): checar no Planejador qual aparece mais em NL e DE.
+**Observações (a validar):**
+- `serenity lampe` foi **removida**: "Lampe Serenity" também é produto da Maison Berger e traria tráfego de outro produto.
+- Em inglês, `green flame` e `colored flame` tendem a trazer ruído (jogos, química). Em francês, `flamme verte` também traz química. Ficam em frase/exata, com negativas.
+- `lamp oil` (inglês) é amplo e atrai quem busca querosene/parafina; depende das negativas.
+- `madeincolors code promo` / `promo code` atrai caçadores de cupom: só manter se houver cupom real.
+- `cadeau pendaison de crémaillère` / `housewarming gift` é genérico: vigiar no relatório de termos.
+- Grafia `colored` (EUA) × `coloured` (Reino Unido): checar no Planejador qual predomina em NL e DE.
 
 ## 5. Negativas (mesmos termos em FR e EN)
 
@@ -174,7 +180,7 @@ Limites verificados: títulos ≤ 30 caracteres, descrições ≤ 90.
 ### Regras de copy
 - **Não usar:** "pode beber", "não queima", "100% seguro", "não tóxico", "não inflamável". "Testé par le LNE" só com o relatório em mãos.
 - **Verificar antes de publicar:** preço (€39,95 / €18,95), "expédié sous 12 h" e "30 jours" (confirmados no site em 11/11); prazo de entrega por país (a promessa "24–48h" pode não valer para NL/DE/LU).
-- **Kit** usa títulos 1–7, 11–15 (lâmpada, flamme verte, cadeau); **Marca + Refil** usa 2, 7, 8, 9, 10, 14. Fixar o mínimo possível.
+- Com grupo único, o RSA cobre lâmpada, presente, marca e refil: usar títulos de todos os temas e **não fixar** posições, para o Google combinar.
 - Torre de Londres: **não** usar em anúncio sem comprovação da marca; manter só no sitelink/página.
 
 ## 7. Ativos
