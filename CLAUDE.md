@@ -54,6 +54,11 @@ Regra de leitura:
 - Listar campanha por campanha, com o valor, antes de somar, para conferência.
 - No fim, mostrar o detalhamento por funil e o total geral.
 
+## Plano de leads orgânicos (site eduardomezzavilla.com.br)
+- O plano vive em `docs/plano-leads-organicos.md`.
+- A cada ajuste, **reescrever o plano inteiro do zero** já com a mudança incorporada (nada de remendo ou adendo), subir a versão (v2, v3…), atualizar a data e registrar uma linha no histórico de versões.
+- Ao apresentar ao Eduardo, mostrar **apenas a última versão**.
+
 ## Contas conhecidas
 Ver `docs/contas.md` e os guias por cliente em `docs/`.
 
