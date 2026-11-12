@@ -3,7 +3,7 @@ import sys, markdown
 src, out = sys.argv[1], sys.argv[2]
 import re
 md = open(src, encoding="utf-8").read()
-md = re.sub(r"(?m)^   (?=[-*] |\S)", "    ", md)
+md = re.sub(r"(?m)^( +)(?=\S)", lambda m: " " * (-(-len(m.group(1)) // 4) * 4), md)
 body = markdown.markdown(md, extensions=["tables", "sane_lists"])
 title = "Plano: 1 lead por dia, 100% orgânico"
 
