@@ -42,12 +42,10 @@ O blog já atrai os dois públicos. Falta mandar cada um para a oferta certa.
 ## 4. Fase 1 — Criar a porta de entrada fácil (semanas 1 a 3, ~8h)
 *É a etapa que mais muda o resultado.*
 
-7. **Uma isca digital** trocada por nome, e-mail e WhatsApp. Opções com material já pronto:
+7. **Uma isca digital** (só **uma**, bem feita) trocada por nome, e-mail e WhatsApp. Opções com material já pronto:
    - Template Looker Studio de VSL com dados reais (**recomendada**: é a ponte natural para o Método ODR e o diagnóstico).
    - Planilha Gerador de UTMs (hoje aberta, passa a pedir contato).
    - Checklist de rastreamento em 15 itens.
-
-   Fazer **uma**, bem feita.
 8. **CTA contextual em cada post:** um bloco no meio e outro no fim, com a isca do tema e o link para a oferta do público certo (seção 2).
 9. **Sequência curta para quem baixou a isca** (3 mensagens em 7 dias): entrega, um insight com caso real e o convite para o diagnóstico ou para a LP do ODR.
 10. **Página de diagnóstico mais confiável:**

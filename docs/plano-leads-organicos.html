@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plano: 1 lead por dia, 100% orgânico</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#ffffff; --fg:#1f2328; --muted:#5b636e; --line:#e3e6ea; --accent:#e07a2e; --soft:#f6f7f9; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3ad; --line:#2a2f37; --accent:#f0a05a; --soft:#171a20; }
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 Inter,system-ui,sans-serif; }
+main { max-width:860px; margin:0 auto; padding:40px 22px 80px; }
+h1 { font-size:1.9rem; line-height:1.25; margin:0 0 12px; }
+h2 { font-size:1.3rem; margin:40px 0 12px; padding-top:8px; border-top:1px solid var(--line); }
+h1 + p { color:var(--muted); }
+strong { font-weight:600; }
+hr { display:none; }
+ul, ol { padding-left:1.4em; }
+li { margin:4px 0; }
+li > ul { margin-top:4px; }
+code { background:var(--soft); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:.88em; }
+em { color:var(--muted); }
+table { width:100%; border-collapse:collapse; margin:14px 0; font-size:.94rem; }
+th, td { text-align:left; vertical-align:top; padding:9px 11px; border-bottom:1px solid var(--line); }
+th { background:var(--soft); font-weight:600; }
+blockquote { margin:16px 0; padding:10px 16px; border-left:3px solid var(--accent); background:var(--soft); }
+@media (max-width:600px) { table { display:block; overflow-x:auto; } }
+</style></head>
+<body><main>
+<h1>Plano: 1 lead por dia, 100% orgânico — eduardomezzavilla.com.br</h1>
+<p><strong>Versão:</strong> v2 · <strong>Atualizado em:</strong> 12/11/2026
+<strong>Operação:</strong> 1 pessoa · ~6 a 8h por semana</p>
+<hr />
+<h2>1. A meta em números</h2>
+<ul>
+<li>1 lead/dia ≈ <strong>30 leads/mês</strong>.</li>
+<li>Blog com CTA bem colocado e isca digital converte de <strong>1,5% a 3%</strong> dos visitantes em lead. Para 30 leads/mês são necessárias <strong>1.000 a 2.000 visitas orgânicas/mês</strong>.</li>
+<li>Hoje as portas de entrada são pedidos grandes: o <strong>diagnóstico gratuito de 1h</strong>, para infoprodutores, e a <strong>LP do Método ODR</strong>, para gestores de tráfego. Quem acabou de ler um post raramente dá esse passo. A maior alavanca <strong>não é tráfego, é uma porta de entrada mais fácil</strong>.</li>
+<li><strong>Contar dois números:</strong> leads de isca (deixou contato) e leads de oferta (pediu diagnóstico ou entrou pela LP do ODR).</li>
+</ul>
+<p><strong>Regra do plano:</strong> parar de perder dados e leads → converter melhor quem já chega → trazer mais gente.</p>
+<hr />
+<h2>2. Os dois públicos e para onde cada um vai</h2>
+<p>O blog já atrai os dois públicos. Falta mandar cada um para a oferta certa.</p>
+<table>
+<thead>
+<tr>
+<th>Público</th>
+<th>Posts que atraem</th>
+<th>Oferta de destino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gestores de tráfego</strong></td>
+<td>UTM, server side, Looker Studio, Adveronix, MCP Meta Ads/Claude, pixel</td>
+<td>LP Método ODR</td>
+</tr>
+<tr>
+<td><strong>Infoprodutores</strong></td>
+<td>Funil de VSL, lançamento, high ticket, quando contratar gestor, benchmark</td>
+<td>Diagnóstico gratuito</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. Fase 0 — Consertar medição e vazamentos (semana 1, ~4h)</h2>
+<ol>
+<li><strong>Medição entre domínios no GA4.</strong> O site (<code>eduardomezzavilla.com.br</code>) e a LP (<code>metrics-odr.github.io</code>) usam a mesma propriedade GA4 em domínios diferentes. Por isso cada passagem entre eles vira sessão nova com origem "referral" e a origem real (Google, ChatGPT) se perde.<ul>
+<li>GA4 → Admin → Fluxos de dados → Configurações da tag → <strong>Configurar seus domínios</strong>: adicionar os dois.</li>
+<li>Em <strong>Listar referências indesejadas</strong>: adicionar os dois.</li>
+<li>Teste: clicar de um domínio para o outro e confirmar o parâmetro <code>_gl=</code> na URL.</li>
+</ul>
+</li>
+<li><strong>Links quebrados na home.</strong> "Gratuito &gt;&gt;" e "Saiba mais &gt;&gt;" apontam para <code>#</code>. Apontar para <code>/diagnostico/</code> e para as páginas de serviço.</li>
+<li><strong>Contadores da home</strong> ("+ R$ 0 MM", "0 anos"). Testar em conexão lenta e no celular. Se aparecer 0, a prova social vira antiprova: trocar por texto fixo.</li>
+<li><strong>Evento-chave.</strong> Marcar o envio de formulário (site e LP) como evento-chave no GA4.</li>
+<li><strong>Campo "Como me conheceu?"</strong> nos formulários: Google, ChatGPT/IA, Instagram, LinkedIn, indicação. Pega o que o GA4 não mede.</li>
+<li><strong>Google Search Console</strong> conectado ao domínio principal. É ele que alimenta a Fase 2.</li>
+</ol>
+<hr />
+<h2>4. Fase 1 — Criar a porta de entrada fácil (semanas 1 a 3, ~8h)</h2>
+<p><em>É a etapa que mais muda o resultado.</em></p>
+<ol start="7">
+<li><strong>Uma isca digital</strong> (só <strong>uma</strong>, bem feita) trocada por nome, e-mail e WhatsApp. Opções com material já pronto:<ul>
+<li>Template Looker Studio de VSL com dados reais (<strong>recomendada</strong>: é a ponte natural para o Método ODR e o diagnóstico).</li>
+<li>Planilha Gerador de UTMs (hoje aberta, passa a pedir contato).</li>
+<li>Checklist de rastreamento em 15 itens.</li>
+</ul>
+</li>
+<li><strong>CTA contextual em cada post:</strong> um bloco no meio e outro no fim, com a isca do tema e o link para a oferta do público certo (seção 2).</li>
+<li><strong>Sequência curta para quem baixou a isca</strong> (3 mensagens em 7 dias): entrega, um insight com caso real e o convite para o diagnóstico ou para a LP do ODR.</li>
+<li><strong>Página de diagnóstico mais confiável:</strong><ul>
+<li>2 ou 3 depoimentos ou mini-cases com número (CPA antes e depois).</li>
+<li>Explicar o que acontece depois do formulário.</li>
+<li>Tirar o "95%" e as "vagas limitadas", que não têm explicação.</li>
+</ul>
+</li>
+<li><strong>LP do Método ODR no domínio próprio.</strong> Servir em <code>eduardomezzavilla.com.br/metodo-odr/</code> ou <code>odr.eduardomezzavilla.com.br</code> (GitHub Pages aceita domínio próprio via CNAME). Isso soma autoridade ao domínio principal e elimina o problema de medição entre domínios. Depois, fazer 301 ou atualizar os links antigos.</li>
+</ol>
+<hr />
+<h2>5. Fase 2 — Turbinar os posts que já existem (semanas 3 a 6, ~2h por post)</h2>
+<p><em>O ganho mais rápido em SEO, porque esses posts já estão indexados.</em></p>
+<ol start="12">
+<li>No Search Console, achar as páginas em <strong>posição 5 a 20</strong> com mais impressões. Essas são os <strong>5 posts prioritários</strong>.</li>
+<li>Aplicar em cada um o padrão "citável por IA":<ul>
+<li>Resposta direta de 40 a 60 palavras no topo.</li>
+<li>1 tabela comparativa.</li>
+<li>FAQ de 4 a 6 perguntas com schema FAQ.</li>
+<li>Box do autor com credenciais (desde 2020, +R$ 5MM gerenciados, +R$ 10MM em projetos).</li>
+<li>Data "Atualizado em".</li>
+<li>Revisão de português e troca de superlativos por dados.</li>
+<li>Termo padrão <strong>"rastreamento"</strong> (sair de "trackeamento"/"traqueamento", inclusive na categoria).</li>
+<li>Alt text em todas as imagens.</li>
+</ul>
+</li>
+<li><strong>Começar pelo post de server side:</strong> completar os três "Em Breve", escrever em texto o que hoje só aparece em print e corrigir os typos.</li>
+</ol>
+<hr />
+<h2>6. Fase 3 — Motor de conteúdo (mês 2 a 6, 1 post por semana, ~4h cada)</h2>
+<p><em>Só conteúdo que atrai quem pode virar cliente. Nada de topo de funil genérico.</em></p>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>Público</th>
+<th>Pautas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rastreamento / dados reais</strong></td>
+<td>Gestores</td>
+<td>Quanto custa rastreamento server side · Stape vale a pena? · Por que o gerenciador mostra mais vendas que a Hotmart/Kiwify · Janela de atribuição para infoproduto</td>
+</tr>
+<tr>
+<td><strong>IA + Meta Ads</strong> (pouca concorrência em PT)</td>
+<td>Gestores</td>
+<td>Claude para gestor de tráfego · Relatório automático de Meta Ads com IA · Checklist de segurança para editar campanhas por IA</td>
+</tr>
+<tr>
+<td><strong>Funil de VSL / perpétuo</strong></td>
+<td>Infoprodutores</td>
+<td>Métricas e benchmark de funil de VSL · CPA ideal para infoproduto de R$ 97 a 497 · Quando escalar um funil de VSL</td>
+</tr>
+<tr>
+<td><strong>Contratação</strong></td>
+<td>Infoprodutores</td>
+<td>Quanto custa um gestor de tráfego para infoproduto · Gestor ou agência · O que um diagnóstico de tráfego deve analisar</td>
+</tr>
+</tbody>
+</table>
+<p>Todo post novo nasce no padrão da Fase 2, com isca e oferta do público certo e links para 2 ou 3 posts do mesmo cluster.</p>
+<hr />
+<h2>7. Fase 4 — Distribuição mínima (contínua, ~1h por semana)</h2>
+<ol start="15">
+<li><strong>Um</strong> canal social, onde o cliente está (LinkedIn ou Instagram). Cada post vira 1 publicação com resumo e link. Não abrir um segundo canal.</li>
+<li><strong>1 menção externa por mês</strong> para autoridade e citação por IA: comunidades de tráfego, guest post, podcast, parceiros (Stape, Kiwify).</li>
+</ol>
+<hr />
+<h2>8. Rotina semanal (~6 a 8h)</h2>
+<table>
+<thead>
+<tr>
+<th>Dia</th>
+<th>Tarefa</th>
+<th>Tempo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seg</td>
+<td>Escrever 1 post novo (ou otimizar 1 antigo durante a Fase 2)</td>
+<td>3–4h</td>
+</tr>
+<tr>
+<td>Qua</td>
+<td>Revisar, publicar, CTA e FAQ</td>
+<td>1h</td>
+</tr>
+<tr>
+<td>Qui</td>
+<td>Adaptar o post para o canal social</td>
+<td>1h</td>
+</tr>
+<tr>
+<td>Sex</td>
+<td>Números: leads por origem, top páginas, posições no Search Console</td>
+<td>30min</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>9. O que NÃO fazer agora</h2>
+<ul>
+<li>Post de topo genérico ("o que é marketing digital").</li>
+<li>Abrir YouTube, TikTok e LinkedIn ao mesmo tempo.</li>
+<li>Redesenhar o site.</li>
+<li>Comprar ferramenta de SEO antes do Search Console ter dados.</li>
+</ul>
+<hr />
+<h2>10. Checkpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Quando</th>
+<th>Entregas</th>
+<th>Meta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fim do mês 1</td>
+<td>Fases 0 e 1 prontas, isca no ar</td>
+<td>~8 a 10 leads/mês</td>
+</tr>
+<tr>
+<td>Mês 3</td>
+<td>5 posts otimizados e ~8 novos</td>
+<td>~15 a 20 leads/mês</td>
+</tr>
+<tr>
+<td>Mês 6</td>
+<td>~20 posts novos, 1.000 a 2.000 visitas orgânicas/mês</td>
+<td>~30 leads/mês</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pendente para recalibrar as metas:</strong> sessões orgânicas dos últimos 30 dias e quantos leads vieram de cada origem.</p>
+<hr />
+<h2>Histórico de versões</h2>
+<ul>
+<li><strong>v2 (12/11/2026):</strong> LP do Método ODR confirmada em <code>metrics-odr.github.io</code> (não está quebrada). Entram: medição entre domínios no GA4, separação dos dois públicos (gestores → ODR, infoprodutores → diagnóstico) e migração da LP para o domínio próprio.</li>
+<li><strong>v1 (12/11/2026):</strong> primeira versão do plano.</li>
+</ul>
+</main></body></html>

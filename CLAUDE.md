@@ -58,6 +58,7 @@ Regra de leitura:
 - O plano vive em `docs/plano-leads-organicos.md`.
 - A cada ajuste, **reescrever o plano inteiro do zero** já com a mudança incorporada (nada de remendo ou adendo), subir a versão (v2, v3…), atualizar a data e registrar uma linha no histórico de versões.
 - Ao apresentar ao Eduardo, mostrar **apenas a última versão**.
+- O Eduardo lê a versão **formatada**, não o Markdown cru. Depois de cada versão: gerar o HTML com `python3 scripts/build_plano.py docs/plano-leads-organicos.md docs/plano-leads-organicos.html` (requer `pip install markdown`) e republicar o artifact `953786f2-f7fe-46bd-bdf1-95ad768fe947` ("Plano: 1 lead por dia, 100% orgânico") com o novo `index.html`, label = versão.
 
 ## Contas conhecidas
 Ver `docs/contas.md` e os guias por cliente em `docs/`.
