@@ -62,6 +62,9 @@ Regra de leitura:
 ## Contas conhecidas
 Ver `docs/contas.md` e os guias por cliente em `docs/`.
 
+## Git
+- Alterações de configuração e documentação deste repositório (CLAUDE.md, `.claude/`, `docs/`) vão **direto para a `main`**, sem abrir PR. Autorização permanente do Eduardo.
+
 ## Segurança
 - Não guardar tokens, senhas ou credenciais neste repositório.
 - Preferir manter o repositório privado: ele contém IDs de contas e estratégia de verba.
