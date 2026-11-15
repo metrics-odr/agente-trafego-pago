@@ -220,9 +220,11 @@ Exemplo: `drthiago-apd-br-kommo-sheets-conversas`
 | `Agencia` | Operação do Eduardo | `Geral` |
 
 ## 11. Inventário de ativos no n8n
-| Tipo | Nome atual | Nome padronizado | ID | Observação |
-|---|---|---|---|---|
-| Flow | Dr Thiago \| Conversas Iniciadas (Kommo → Sheets) | `Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram` | `qPWy230Z8Cw5N8Uj` | Renomear após autorização |
-| Table | dr_thiago_conversas_registradas | `Table \| DrThiago \| WhatsApp \| Conversas registradas (anti-duplicata)` | `rl3pVO73UzAPoMmP` | Referenciada por ID |
-| Cred | Google Service Account account | `Cred \| Agencia \| Google SA - automations` | `6deuhYvp4Sfr43Qc` | Conta de serviço `automations@gen-lang-client-0448992217` |
-| Webhook | `kommo-dr-thiago-conversas` | `drthiago-whatsapp-kommo-sheets-conversas` | — | Nada aponta para ele ainda |
+Atualizado em 15/11/2026.
+
+| Tipo | Nome | ID | Observação |
+|---|---|---|---|
+| Pasta | `DrThiago` | `YRtSf5VPUy0aOp7Q` | — |
+| Flow | `Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram` | `qPWy230Z8Cw5N8Uj` | Na pasta DrThiago. Inativo. Webhook `drthiago-whatsapp-kommo-sheets-conversas` |
+| Table | `Table \| DrThiago \| WhatsApp \| Conversas registradas (anti-duplicata)` | `rl3pVO73UzAPoMmP` | Colunas: chave, telefone, lead_id, registrado_em |
+| Cred | `Google Service Account account` → renomear para `Cred \| Agencia \| Google SA - automations` | `6deuhYvp4Sfr43Qc` | Renomear manualmente no n8n (sem ferramenta para isso). Conta `automations@gen-lang-client-0448992217` |
