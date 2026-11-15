@@ -216,13 +216,13 @@ Exemplo: `drthiago-apd-br-kommo-sheets-conversas`
 ## 10. Clientes e funis registrados
 | Cliente (campo) | Nome comercial | Funis conhecidos |
 |---|---|---|
-| `DrThiago` | Dr Thiago Virgili (Kommo `contourculptclinique`) | a definir |
+| `DrThiago` | Dr Thiago Virgili (Kommo `contourculptclinique`) | `WhatsApp` (conversas vindas do Instagram/anúncio para o WhatsApp) |
 | `Agencia` | Operação do Eduardo | `Geral` |
 
 ## 11. Inventário de ativos no n8n
 | Tipo | Nome atual | Nome padronizado | ID | Observação |
 |---|---|---|---|---|
-| Flow | Dr Thiago \| Conversas Iniciadas (Kommo → Sheets) | `Flow \| DrThiago \| <Funil> \| Kommo > Sheets - Registra conversas iniciadas do Instagram` | `qPWy230Z8Cw5N8Uj` | Renomear após autorização e definição do funil |
-| Table | dr_thiago_conversas_registradas | `Table \| DrThiago \| <Funil> \| Conversas registradas (anti-duplicata)` | `rl3pVO73UzAPoMmP` | Referenciada por ID |
+| Flow | Dr Thiago \| Conversas Iniciadas (Kommo → Sheets) | `Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram` | `qPWy230Z8Cw5N8Uj` | Renomear após autorização |
+| Table | dr_thiago_conversas_registradas | `Table \| DrThiago \| WhatsApp \| Conversas registradas (anti-duplicata)` | `rl3pVO73UzAPoMmP` | Referenciada por ID |
 | Cred | Google Service Account account | `Cred \| Agencia \| Google SA - automations` | `6deuhYvp4Sfr43Qc` | Conta de serviço `automations@gen-lang-client-0448992217` |
-| Webhook | `kommo-dr-thiago-conversas` | `drthiago-<funil>-kommo-sheets-conversas` | — | Nada aponta para ele ainda |
+| Webhook | `kommo-dr-thiago-conversas` | `drthiago-whatsapp-kommo-sheets-conversas` | — | Nada aponta para ele ainda |
