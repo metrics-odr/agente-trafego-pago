@@ -2,6 +2,7 @@
 
 > Modelo. Copiar para `docs/clientes/<cliente>.md` (nome do arquivo = campo `Cliente` em minúsculas, ex.: `drthiago.md`), apagar as instruções entre `<>` e incluir o cliente no [índice](README.md).
 > **Nunca** gravar valores de tokens ou senhas: só o nome e o local da credencial.
+> **Sempre que couber, colocar link clicável**: planilha (com `#gid=` da aba), fluxo do n8n (`/workflow/<id>`), pasta, Kommo/CRM, Meta (BM, conta, pixel), Make, documentação de payload.
 
 Atualizado em <DD/MM/AAAA>.
 

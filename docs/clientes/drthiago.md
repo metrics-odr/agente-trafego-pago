@@ -8,7 +8,7 @@ Atualizado em 16/11/2026.
 | Campo `Cliente` no padrão | `DrThiago` |
 | Status | Ativo |
 | Funis | `WhatsApp` · `Geral` |
-| Pasta no n8n | `DrThiago` (`YRtSf5VPUy0aOp7Q`) |
+| Pasta no n8n | [`DrThiago`](https://n8n.srv2164786.hstgr.cloud/projects/srRTMbP5mWVNIiQr/folders/YRtSf5VPUy0aOp7Q/workflows) (`YRtSf5VPUy0aOp7Q`) |
 | Briefing | A preencher |
 | Conta Google dona da planilha | `drthiagovirgili.coprod@gmail.com` |
 
@@ -20,11 +20,11 @@ Atualizado em 16/11/2026.
 | Origem do lead | Anúncio no Instagram → mensagem pronta no WhatsApp → Kommo (lead não triado) |
 | Métrica principal | Conversa iniciada (1 por telefone) |
 | Campanhas Meta | A preencher |
-| Fluxos n8n | `Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram` |
-| Abas da planilha | `Conversas Iniciadas 💬` |
+| Fluxos n8n | [`Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram`](https://n8n.srv2164786.hstgr.cloud/workflow/qPWy230Z8Cw5N8Uj) |
+| Abas da planilha | [`Conversas Iniciadas 💬`](https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk/edit#gid=718101807) |
 | Regras | A mensagem entra se CONTÉM qualquer frase da tabela `Frases da Primeira Mensagem` (sem diferenciar maiúsculas e acentos). 1 linha por telefone. Só lê `unsorted.add` |
 
-Frase atual: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thiago`. **Para trocar a mensagem do anúncio, editar a tabela de frases** (não precisa republicar o fluxo).
+Frase atual: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thiago`. **Para trocar a mensagem do anúncio, editar a tabela de frases** ([Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables)) (não precisa republicar o fluxo).
 
 ### 2.2 Geral (etapas do Kommo, todos os leads)
 | Item | Valor |
@@ -32,8 +32,8 @@ Frase atual: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thiag
 | Origem do lead | Lead movido para a etapa **AGENDADO** no Kommo (qualquer origem) |
 | Métrica principal | Agendamento (1 por lead) |
 | Campanhas Meta | Todas (não filtra origem) |
-| Fluxos n8n | `Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados` |
-| Abas da planilha | `Agendamentos 📅` |
+| Fluxos n8n | [`Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados`](https://n8n.srv2164786.hstgr.cloud/workflow/iK9iVYgAMyxVUUyU) |
+| Abas da planilha | [`Agendamentos 📅`](https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk/edit#gid=439827908) |
 | Regras | Payload bruto guardado no histórico antes de tudo. 1 linha por lead. Nome e telefone vêm da aba Conversas pelo `entity_id`; lead que não está lá entra só com Data e entity_id |
 
 ## 3. Contas e sistemas
@@ -48,8 +48,8 @@ Frase atual: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thiag
 ### 3.2 CRM (Kommo)
 | Item | Valor |
 |---|---|
-| Conta | Subdomínio `contourculptclinique` (`https://contourculptclinique.amocrm.com` / `.kommo.com`), account ID `36177499` |
-| Pipeline das conversas | `13296523` |
+| Conta | [https://contourculptclinique.kommo.com](https://contourculptclinique.kommo.com) (subdomínio `contourculptclinique`, também `.amocrm.com`), account ID `36177499` · [Integrações e Web hooks](https://contourculptclinique.kommo.com/settings/widgets/) |
+| Pipeline das conversas | [`13296523`](https://contourculptclinique.kommo.com/leads/pipeline/13296523) |
 | Etapas relevantes | `AGENDADO` (ID a confirmar: o webhook não envia `status_id`) |
 | Canal WhatsApp | `5511942946718`, "Dr Thiago V" (WhatsApp Lite do Kommo), source_id `23084963` |
 | API | Sem token (o Eduardo optou por não gerar) |
@@ -57,12 +57,12 @@ Frase atual: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thiag
 ## 4. Planilhas
 | Planilha | Link / ID | Compartilhada com a conta de serviço? |
 |---|---|---|
-| `Dr Thiago \| Planilha Central` | https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk (`1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk`) | Sim, Editor |
+| [`Dr Thiago \| Planilha Central`](https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk/edit) (`1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk`) | Sim, Editor ([e-mail da conta de serviço](../setup-geral.md#2-google-conta-de-serviço)) |
 
 | Aba | Colunas (ordem) | Quem preenche |
 |---|---|---|
-| `Conversas Iniciadas 💬` | Data, entity_id, chat_id, contact_id, autor_id, Nome, Mensagem, Telefone, Status | n8n preenche A–H. **Status (I) é da equipe: o n8n não mexe** |
-| `Agendamentos 📅` (gid `439827908`) | Data, Nome, Telefone, entity_id | n8n |
+| [`Conversas Iniciadas 💬`](https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk/edit#gid=718101807) | Data, entity_id, chat_id, contact_id, autor_id, Nome, Mensagem, Telefone, Status | n8n preenche A–H. **Status (I) é da equipe: o n8n não mexe** |
+| [`Agendamentos 📅`](https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk/edit#gid=439827908) | Data, Nome, Telefone, entity_id | n8n |
 
 Chave para cruzar abas: **`entity_id` = lead_id do Kommo**. Na aba Conversas, `entity_id` e `contact_id` têm o mesmo valor (herança do Make).
 
@@ -70,11 +70,13 @@ Chave para cruzar abas: **`entity_id` = lead_id do Kommo**. Na aba Conversas, `e
 ### Fluxos
 | Nome | ID | Webhook de produção | Onde está configurado na origem | Status |
 |---|---|---|---|---|
-| `Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram` | `qPWy230Z8Cw5N8Uj` | `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-whatsapp-kommo-sheets-conversas` | Kommo → Configurações → Integrações → Web hooks (lead não triado). **Conferir se já aponta para cá e não mais para o Make** | Publicado |
-| `Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados` | `iK9iVYgAMyxVUUyU` | `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-geral-kommo-sheets-agendamentos` | Kommo → funil digital → etapa AGENDADO → gatilho Webhook "Quando movido para esta etapa", sem condição | Publicado e recebendo |
-| `Flow \| DrThiago \| Geral \| Manual > Sheets - Regrava agendados sobrescritos (uso único)` | `PCyRC8FsN6p1q9Qw` | — | — | Já executado. Pode ser apagado |
+| [`Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram`](https://n8n.srv2164786.hstgr.cloud/workflow/qPWy230Z8Cw5N8Uj) | `qPWy230Z8Cw5N8Uj` | `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-whatsapp-kommo-sheets-conversas` | [Kommo → Configurações → Integrações → Web hooks](https://contourculptclinique.kommo.com/settings/widgets/) (lead não triado). **Conferir se já aponta para cá e não mais para o Make** | Publicado |
+| [`Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados`](https://n8n.srv2164786.hstgr.cloud/workflow/iK9iVYgAMyxVUUyU) | `iK9iVYgAMyxVUUyU` | `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-geral-kommo-sheets-agendamentos` | [Kommo → funil digital](https://contourculptclinique.kommo.com/leads/pipeline/13296523) → etapa AGENDADO → gatilho Webhook "Quando movido para esta etapa", sem condição | Publicado e recebendo |
+| [`Flow \| DrThiago \| Geral \| Manual > Sheets - Regrava agendados sobrescritos (uso único)`](https://n8n.srv2164786.hstgr.cloud/workflow/PCyRC8FsN6p1q9Qw) | `PCyRC8FsN6p1q9Qw` | — | — | Já executado. Pode ser apagado |
 
 ### Data tables
+Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
+
 | Nome | ID | Colunas | Para quê |
 |---|---|---|---|
 | `Table \| DrThiago \| WhatsApp \| Frases da Primeira Mensagem` | `R6S6DOuurjZMzzho` | frase | Frases aceitas na primeira mensagem |
@@ -85,13 +87,13 @@ Chave para cruzar abas: **`entity_id` = lead_id do Kommo**. Na aba Conversas, `e
 ### Credenciais
 | Nome | Onde fica | Status |
 |---|---|---|
-| Google (conta de serviço, compartilhada) | n8n, ver [`setup-geral.md`](../setup-geral.md) §2 | Ativa |
-| `Cred \| DrThiago \| Kommo API - contourculptclinique` | n8n, Header Auth | Não criada (sem token). Os nós "Buscar lead/contato no Kommo" falham sem parar o fluxo |
+| Google (conta de serviço, compartilhada) | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), ver [`setup-geral.md`](../setup-geral.md) §2 | Ativa |
+| `Cred \| DrThiago \| Kommo API - contourculptclinique` | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), Header Auth | Não criada (sem token). Os nós "Buscar lead/contato no Kommo" falham sem parar o fluxo |
 
 ## 6. Payloads conhecidos (confirmados com dados reais)
-- **Lead novo não triado** (Web hooks da conta), JSON aninhado:
+- **Lead novo não triado** ([Web hooks da conta](https://developers.kommo.com/docs/webhooks-general)), JSON aninhado:
   `account{id, subdomain, _links.self}` e `unsorted.add[]{lead_id, created_at, pipeline_id, source_data{name, client.id, data[].text, origin.chat_id}, data.contacts[]{name, custom_fields[PHONE].values[].value}}`.
-- **Funil digital, lead movido para AGENDADO**: `application/x-www-form-urlencoded`, user-agent `amoCRM-Webhooks/3.0`. Corpo: `leads[status][0][id]`, `account[id]`, `account[subdomain]`. **Só IDs: sem nome, telefone nem etapa.** Ao marcar "aplicar a todos os leads já nesta etapa", o Kommo manda todos ao mesmo tempo (23 em 1 segundo em 15/11).
+- **Funil digital, lead movido para AGENDADO** ([doc](https://developers.kommo.com/docs/webhooks-dp)): `application/x-www-form-urlencoded`, user-agent `amoCRM-Webhooks/3.0`. Corpo: `leads[status][0][id]`, `account[id]`, `account[subdomain]`. **Só IDs: sem nome, telefone nem etapa.** Ao marcar "aplicar a todos os leads já nesta etapa", o Kommo manda todos ao mesmo tempo (23 em 1 segundo em 15/11).
 
 ## 7. Como testar sem sujar dados reais
 - Usar IDs fictícios (`TESTE-...`) ou mensagens sem a frase (são descartadas sem gravar).
@@ -100,20 +102,20 @@ Chave para cruzar abas: **`entity_id` = lead_id do Kommo**. Na aba Conversas, `e
 ## 8. Acessos
 | Data | O quê | Com quem / qual conta |
 |---|---|---|
-| 15/11/2026 | Planilha Central compartilhada como Editor | Conta de serviço `automations@gen-lang-client-0448992217.iam.gserviceaccount.com` |
+| 15/11/2026 | [Planilha Central](https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk/edit) compartilhada como Editor | Conta de serviço `automations@gen-lang-client-0448992217.iam.gserviceaccount.com` |
 | 15/11/2026 | Token de API do Make (us2, `hooks:read`) | Ambiente da sessão do Claude. **Exposto no chat: apagar** |
 
 ## 9. Legado (Make)
-- Cenário `Dr Thiago Conversas` na conta do Thiago (us2): https://us2.make.com/public/shared-scenario/2aZm6SDRXax/dr-thiago-conversas
+- Cenário [`Dr Thiago Conversas`](https://us2.make.com/public/shared-scenario/2aZm6SDRXax/dr-thiago-conversas) na conta do Thiago ([us2.make.com](https://us2.make.com)).
 - Webhook "Conversa Nova" (hook `3036546`), data store `kommo_primeira_msg` (`198180`).
 - A fila de 36 itens foi migrada para o n8n em 15/11 (11 conversas novas gravadas). **Não religar o cenário**: a fila do Make ainda tem os 36 itens e gravaria tudo em dobro.
 
 ## 10. Pendências
-- [ ] Preencher dados de Meta Ads (BM, conta, pixel, página, campanhas por funil) e incluir o cliente em `contas.md`.
+- [ ] Preencher dados de Meta Ads (BM, conta, pixel, página, campanhas por funil) e incluir o cliente em [`contas.md`](../contas.md).
 - [ ] Confirmar se o webhook de lead novo do Kommo aponta para o n8n e não para o Make.
-- [ ] Apagar o token do Make exposto no chat.
+- [ ] Apagar o token do Make exposto no chat ([us2.make.com](https://us2.make.com) → Profile → API access).
 - [ ] Decidir se remove os nós "Buscar lead/contato no Kommo" (sem token não fazem nada).
-- [ ] Apagar o fluxo de uso único `PCyRC8FsN6p1q9Qw`.
+- [ ] Apagar o [fluxo de uso único](https://n8n.srv2164786.hstgr.cloud/workflow/PCyRC8FsN6p1q9Qw).
 - [ ] Limpar testes: linhas `TESTE-APAGAR` e `56433815` (gih) na aba Agendamentos e na tabela de agendamentos registrados.
 - [ ] Validar o append atômico com envios simultâneos reais.
 

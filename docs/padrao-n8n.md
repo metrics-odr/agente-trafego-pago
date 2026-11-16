@@ -2,7 +2,7 @@
 
 > **Leitura obrigatória.** Consultar este documento **sempre** antes de criar, renomear ou reorganizar qualquer coisa no n8n (workflow, agent, data table, credencial, webhook, pasta, nó). Se algo não estiver coberto aqui, perguntar ao Eduardo e registrar a decisão neste arquivo antes de seguir.
 
-Instância: `https://n8n.srv2164786.hstgr.cloud` (self-hosted na Hostinger, projeto pessoal do Eduardo, sem projetos de equipe).
+Instância: [https://n8n.srv2164786.hstgr.cloud](https://n8n.srv2164786.hstgr.cloud) (self-hosted na Hostinger, projeto pessoal do Eduardo, sem projetos de equipe).
 
 ---
 

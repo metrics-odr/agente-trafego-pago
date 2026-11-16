@@ -64,6 +64,7 @@ Regra de leitura:
 - Um arquivo por cliente em `docs/clientes/<cliente>.md`, com funis, contas, planilhas, webhooks, ativos do n8n, payloads, acessos, pendências e histórico. Índice: `docs/clientes/README.md`.
 - Cliente novo: copiar `docs/clientes/_modelo.md` e incluir no índice antes de criar qualquer coisa.
 - Consultar antes de configurar qualquer coisa e atualizar depois. Nunca gravar valores de tokens ou senhas, só o nome e onde estão.
+- Sempre que couber, usar **link clicável** (planilha com `#gid=` da aba, fluxo do n8n, pasta, CRM, Google Cloud, Meta, Make, documentação).
 
 ## Contas conhecidas
 Ver `docs/contas.md` e os guias por cliente em `docs/`.
