@@ -109,6 +109,21 @@ Todo workflow tem uma sticky note no topo do canvas com:
 ### 2.6 Versões
 - Toda alteração salva com `versionName` curto no imperativo/presente: `Remove coluna Link da Conversa`, `Troca auth do Sheets para conta de serviço`.
 
+### 2.7 Regras técnicas obrigatórias
+Lições aprendidas em produção. Valem para todo workflow novo e toda alteração.
+
+**Google Sheets: sempre usar append atômico**
+- Todo nó Google Sheets com operação **Append** deve ter `Options → Use Append` **ligado** (`useAppend: true`).
+- Motivo: sem essa opção o n8n primeiro lê qual é a próxima linha vazia e depois escreve nela. Quando vários webhooks chegam ao mesmo tempo (ex.: o Kommo enviando todos os leads de uma etapa de uma vez), todas as execuções leem a mesma linha e **uma sobrescreve a outra**. Em 15/11/2026 isso apagou 22 de 23 agendamentos do DrThiago.
+- Com `useAppend: true` o Google acrescenta cada linha no fim de forma atômica, sem perda.
+- Ao revisar um workflow existente, conferir essa opção em todos os nós de append.
+
+**Webhooks: guardar o payload bruto antes de processar**
+- Quando o formato do payload não é conhecido ou o sistema de origem pode mandar envios em massa, o primeiro passo após o gatilho é gravar o payload bruto numa data table `(histórico)`. Assim nada se perde e dá para reprocessar.
+
+**Anti-duplicata: gravar o controle só depois do destino**
+- A tabela `(anti-duplicata)` é gravada **depois** que o destino (planilha, CRM) confirmou a gravação. Se o destino falhar, o registro não fica marcado e pode ser reprocessado.
+
 ---
 
 ## 3. Agents (`Agent`)
@@ -210,8 +225,9 @@ Exemplo: `drthiago-apd-br-kommo-sheets-conversas`
 4. Conferir se já existe credencial/data table reutilizável (não duplicar).
 5. Criar dentro da pasta do cliente.
 6. Preencher descrição e sticky note no modelo.
-7. Testar.
-8. Atualizar o inventário (seção 11) neste arquivo.
+7. Conferir as regras técnicas da seção 2.7 (ex.: `useAppend` ligado em todo append do Sheets).
+8. Testar.
+9. Atualizar o inventário (seção 11) neste arquivo.
 
 ## 10. Clientes e funis registrados
 | Cliente (campo) | Nome comercial | Funis conhecidos |
@@ -220,7 +236,7 @@ Exemplo: `drthiago-apd-br-kommo-sheets-conversas`
 | `Agencia` | Operação do Eduardo | `Geral` |
 
 ## 11. Inventário de ativos no n8n
-Atualizado em 15/11/2026.
+Atualizado em 16/11/2026.
 
 | Tipo | Nome | ID | Observação |
 |---|---|---|---|
@@ -232,4 +248,5 @@ Atualizado em 15/11/2026.
 | Table | `Table \| DrThiago \| Geral \| Payloads do Agendado (histórico)` | `8M8KvwbZrkxyxN8B` | Colunas: recebido_em, payload (JSON bruto). Todo payload entra aqui antes de qualquer processamento |
 | Table | `Table \| DrThiago \| Geral \| Agendamentos registrados (anti-duplicata)` | `6EpypQN05XhKHaAw` | Colunas: lead_id, telefone, registrado_em. 1 linha por lead |
 | Cred | `Cred \| DrThiago \| Kommo API - contourculptclinique` | — | **A criar** no n8n (token de longa duração do Kommo) e ligar nos nós "Buscar lead/contato no Kommo" |
+| Flow | `Flow \| DrThiago \| Geral \| Manual > Sheets - Regrava agendados sobrescritos (uso único)` | `PCyRC8FsN6p1q9Qw` | Já executado em 16/11/2026 (regravou 22 linhas). Pode ser apagado |
 | Cred | `Google Service Account account` → renomear para `Cred \| Agencia \| Google SA - automations` | `6deuhYvp4Sfr43Qc` | Renomear manualmente no n8n (sem ferramenta para isso). Conta `automations@gen-lang-client-0448992217` |
