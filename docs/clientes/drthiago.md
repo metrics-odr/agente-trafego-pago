@@ -24,7 +24,7 @@ Atualizado em 16/11/2026.
 | Abas da planilha | [`Conversas Iniciadas 💬`](https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk/edit#gid=718101807) |
 | Regras | A mensagem entra se CONTÉM qualquer frase da tabela `Frases da Primeira Mensagem` (sem diferenciar maiúsculas e acentos). 1 linha por telefone. Só lê `unsorted.add` |
 
-Frase atual: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thiago`. **Para trocar a mensagem do anúncio, editar a tabela de frases** ([Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables)) (não precisa republicar o fluxo).
+Frases atuais: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thiago`, `Olá! Posso ter mais informações sobre isso?`, `Olá! Posso ter mais informações sobre a consulta?` (as duas últimas adicionadas em 16/11 depois que o anúncio mudou de mensagem). **Para trocar a mensagem do anúncio, editar a tabela de frases** ([Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables)) (não precisa republicar o fluxo).
 
 ### 2.2 Geral (etapas do Kommo, todos os leads)
 | Item | Valor |
@@ -117,6 +117,7 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 - [ ] Corrigir a URL do webhook "Lead de entrada adicionado" no Kommo: estava `/webhook/kommo-dr-thiago-conversas` (404). Certo: `/webhook/drthiago-whatsapp-kommo-sheets-conversas`.
 - [ ] Remover o gatilho de "lead mudou de etapa" (102536263 → 102536315, duplicado) que aponta para a URL de Conversas (provavelmente no funil digital).
 - [ ] Apagar o fluxo criado por engano [`Flow | DrThiago | WhatsApp | Manual > Sheets - Grava conversas perdidas no webhook (uso único)`](https://n8n.srv2164786.hstgr.cloud/workflow/sq78ihYQqMs9BiE1) (nunca executado).
+- [ ] Regravar na aba Conversas os leads reais descartados em 16/11 por mensagem fora das frases (conferir execuções com `unsorted[add]` e resultado vazio em "Normalizar conversa").
 - [ ] Completar Nome e Telefone das 17 linhas recuperadas em 16/11 (entity_id 56436997 a 56444101).
 - [ ] Apagar o token do Make exposto no chat ([us2.make.com](https://us2.make.com) → Profile → API access).
 - [ ] Decidir se remove os nós "Buscar lead/contato no Kommo" (sem token não fazem nada).
@@ -135,4 +136,5 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 | 16/11/2026 | Envio simultâneo sobrescreveu 22 linhas; corrigido com `Use Append` nos dois fluxos e linhas regravadas |
 | 16/11/2026 | Nome e telefone dos agendados passam a vir da aba Conversas pelo entity_id |
 | 16/11/2026 | Diagnóstico: Conversas parou em 15/11 18:27. Webhook de lead de entrada estava com URL inexistente (404) e a URL certa recebia só avisos de mudança de etapa (descartados) |
+| 16/11/2026 | Diagnóstico "nenhum lead na planilha": webhook já chegava com `unsorted.add`, mas o anúncio passou a usar outra mensagem ("Olá! Posso ter mais informações sobre isso?" / "...sobre a consulta?") e o filtro descartava. Frases adicionadas na tabela. Descartados antes disso (ex.: lead 56445977 Mariana Lopes, 14:15; 56455433 Gil, 16:18) não foram regravados |
 | 16/11/2026 | 17 leads perdidos reenviados pelo próprio fluxo de Conversas (só data, ID e mensagem padrão; sem nome/telefone). No controle anti-duplicata entram com chave `lead_<id>` |
