@@ -216,7 +216,7 @@ Exemplo: `drthiago-apd-br-kommo-sheets-conversas`
 ## 10. Clientes e funis registrados
 | Cliente (campo) | Nome comercial | Funis conhecidos |
 |---|---|---|
-| `DrThiago` | Dr Thiago Virgili (Kommo `contourculptclinique`) | `WhatsApp` (conversas vindas do Instagram/anúncio para o WhatsApp) |
+| `DrThiago` | Dr Thiago Virgili (Kommo `contourculptclinique`) | `WhatsApp` (conversas vindas do Instagram/anúncio para o WhatsApp); `Geral` (etapas do pipeline do Kommo que valem para todos os leads, ex.: Agendado) |
 | `Agencia` | Operação do Eduardo | `Geral` |
 
 ## 11. Inventário de ativos no n8n
@@ -228,4 +228,8 @@ Atualizado em 15/11/2026.
 | Flow | `Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram` | `qPWy230Z8Cw5N8Uj` | Na pasta DrThiago. **Publicado** em 15/11/2026. Webhook `drthiago-whatsapp-kommo-sheets-conversas` |
 | Table | `Table \| DrThiago \| WhatsApp \| Conversas registradas (anti-duplicata)` | `rl3pVO73UzAPoMmP` | Colunas: chave, telefone, lead_id, registrado_em |
 | Table | `Table \| DrThiago \| WhatsApp \| Frases da Primeira Mensagem` | `R6S6DOuurjZMzzho` | Coluna: frase. A mensagem entra se CONTÉM qualquer frase (sem diferenciar maiúsculas/acentos). Vazia = nada entra. Editar direto na tabela, sem republicar |
+| Flow | `Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados` | `iK9iVYgAMyxVUUyU` | Na pasta DrThiago. **Publicado** em 16/11/2026. Webhook `drthiago-geral-kommo-sheets-agendamentos` (gatilho do funil digital, etapa AGENDADO). Depende da credencial da API do Kommo |
+| Table | `Table \| DrThiago \| Geral \| Payloads do Agendado (histórico)` | `8M8KvwbZrkxyxN8B` | Colunas: recebido_em, payload (JSON bruto). Todo payload entra aqui antes de qualquer processamento |
+| Table | `Table \| DrThiago \| Geral \| Agendamentos registrados (anti-duplicata)` | `6EpypQN05XhKHaAw` | Colunas: lead_id, telefone, registrado_em. 1 linha por lead |
+| Cred | `Cred \| DrThiago \| Kommo API - contourculptclinique` | — | **A criar** no n8n (token de longa duração do Kommo) e ligar nos nós "Buscar lead/contato no Kommo" |
 | Cred | `Google Service Account account` → renomear para `Cred \| Agencia \| Google SA - automations` | `6deuhYvp4Sfr43Qc` | Renomear manualmente no n8n (sem ferramenta para isso). Conta `automations@gen-lang-client-0448992217` |
