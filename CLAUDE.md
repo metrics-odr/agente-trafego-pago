@@ -57,8 +57,13 @@ Regra de leitura:
 ## n8n
 - **Antes de criar, renomear ou reorganizar qualquer coisa no n8n** (workflow, agent, data table, credencial, webhook, pasta, nó), ler `docs/padrao-n8n.md` e seguir o padrão `Tipo | Cliente | Funil | Detalhamento`.
 - Se o funil ou o cliente não estiver claro, perguntar antes de criar.
-- Depois de criar ou alterar ativos, atualizar o inventário em `docs/padrao-n8n.md`.
-- Dados de setup e de cada cliente (webhooks, planilhas, e-mail da conta de serviço, IDs, onde fica cada credencial): `docs/setup-e-clientes.md`. Consultar antes de configurar algo e atualizar depois. Nunca gravar valores de tokens ou senhas, só onde estão.
+- Depois de criar ou alterar ativos, atualizar o arquivo do cliente em `docs/clientes/` (inventário, pendências, histórico) e o índice `docs/clientes/README.md`.
+
+## Documentação de setup e clientes
+- Infraestrutura comum (n8n, e-mail da conta de serviço Google, Make, credenciais): `docs/setup-geral.md`.
+- Um arquivo por cliente em `docs/clientes/<cliente>.md`, com funis, contas, planilhas, webhooks, ativos do n8n, payloads, acessos, pendências e histórico. Índice: `docs/clientes/README.md`.
+- Cliente novo: copiar `docs/clientes/_modelo.md` e incluir no índice antes de criar qualquer coisa.
+- Consultar antes de configurar qualquer coisa e atualizar depois. Nunca gravar valores de tokens ou senhas, só o nome e onde estão.
 
 ## Contas conhecidas
 Ver `docs/contas.md` e os guias por cliente em `docs/`.

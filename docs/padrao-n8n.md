@@ -32,13 +32,13 @@ Pastas e caminhos de webhook têm regra própria (seções 6 e 7).
 - PascalCase, **sem espaço, sem acento, sem "Dr." separado**: `DrThiago`, `MedNexus`, `LarissaTopper`, `ThaisJunqueira`, `DaviBraga`, `MayaMassafera`.
 - O mesmo cliente tem **exatamente o mesmo nome em todos os ativos** (workflow, table, pasta, webhook). Nunca `Dr Thiago` em um e `DrThiago` em outro.
 - Ativo que serve a vários clientes (da operação do Eduardo): `Agencia`.
-- Cliente novo: adicionar na lista da seção 10 antes de criar o primeiro ativo.
+- Cliente novo: criar `clientes/<cliente>.md` a partir de `clientes/_modelo.md` e incluir no índice antes de criar o primeiro ativo.
 
 ### 1.3 Campo `Funil`
 - Usar o nome de funil que o cliente **já usa nas campanhas** ou que o Eduardo indicar (ex.: `APD-BR`, `APD-INTER`, `DIAG-INTER`). Mesma regra do CLAUDE.md para orçamento por funil.
 - Escrever exatamente como aparece nas campanhas (maiúsculas, hífens).
 - Ativo que atende a todos os funis do cliente: `Geral`.
-- **Se não estiver claro a qual funil o ativo pertence, perguntar antes de criar.** Registrar o mapeamento na seção 10.
+- **Se não estiver claro a qual funil o ativo pertence, perguntar antes de criar.** Registrar o funil no arquivo do cliente em `clientes/`.
 
 ### 1.4 Campo `Detalhamento`
 - Português, com acentos permitidos, primeira letra maiúscula.
@@ -220,33 +220,16 @@ Exemplo: `drthiago-apd-br-kommo-sheets-conversas`
 
 ## 9. Checklist antes de criar qualquer coisa no n8n
 1. Ler este documento.
-2. Confirmar `Cliente` (lista da seção 10) e `Funil`. Se o funil não estiver claro, perguntar.
+2. Confirmar `Cliente` e `Funil` em `clientes/README.md`. Se o funil não estiver claro, perguntar.
 3. Montar os nomes: workflow, descrição, data tables, credenciais, caminho do webhook, nós.
 4. Conferir se já existe credencial/data table reutilizável (não duplicar).
 5. Criar dentro da pasta do cliente.
 6. Preencher descrição e sticky note no modelo.
 7. Conferir as regras técnicas da seção 2.7 (ex.: `useAppend` ligado em todo append do Sheets).
 8. Testar.
-9. Atualizar o inventário (seção 11) neste arquivo.
+9. Atualizar o arquivo do cliente em `clientes/` (inventário, pendências e histórico) e o índice `clientes/README.md`.
 
-## 10. Clientes e funis registrados
-| Cliente (campo) | Nome comercial | Funis conhecidos |
-|---|---|---|
-| `DrThiago` | Dr Thiago Virgili (Kommo `contourculptclinique`) | `WhatsApp` (conversas vindas do Instagram/anúncio para o WhatsApp); `Geral` (etapas do pipeline do Kommo que valem para todos os leads, ex.: Agendado) |
-| `Agencia` | Operação do Eduardo | `Geral` |
-
-## 11. Inventário de ativos no n8n
-Atualizado em 16/11/2026.
-
-| Tipo | Nome | ID | Observação |
-|---|---|---|---|
-| Pasta | `DrThiago` | `YRtSf5VPUy0aOp7Q` | — |
-| Flow | `Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram` | `qPWy230Z8Cw5N8Uj` | Na pasta DrThiago. **Publicado** em 15/11/2026. Webhook `drthiago-whatsapp-kommo-sheets-conversas` |
-| Table | `Table \| DrThiago \| WhatsApp \| Conversas registradas (anti-duplicata)` | `rl3pVO73UzAPoMmP` | Colunas: chave, telefone, lead_id, registrado_em |
-| Table | `Table \| DrThiago \| WhatsApp \| Frases da Primeira Mensagem` | `R6S6DOuurjZMzzho` | Coluna: frase. A mensagem entra se CONTÉM qualquer frase (sem diferenciar maiúsculas/acentos). Vazia = nada entra. Editar direto na tabela, sem republicar |
-| Flow | `Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados` | `iK9iVYgAMyxVUUyU` | Na pasta DrThiago. **Publicado** em 16/11/2026. Webhook `drthiago-geral-kommo-sheets-agendamentos` (gatilho do funil digital, etapa AGENDADO). Depende da credencial da API do Kommo |
-| Table | `Table \| DrThiago \| Geral \| Payloads do Agendado (histórico)` | `8M8KvwbZrkxyxN8B` | Colunas: recebido_em, payload (JSON bruto). Todo payload entra aqui antes de qualquer processamento |
-| Table | `Table \| DrThiago \| Geral \| Agendamentos registrados (anti-duplicata)` | `6EpypQN05XhKHaAw` | Colunas: lead_id, telefone, registrado_em. 1 linha por lead |
-| Cred | `Cred \| DrThiago \| Kommo API - contourculptclinique` | — | **A criar** no n8n (token de longa duração do Kommo) e ligar nos nós "Buscar lead/contato no Kommo" |
-| Flow | `Flow \| DrThiago \| Geral \| Manual > Sheets - Regrava agendados sobrescritos (uso único)` | `PCyRC8FsN6p1q9Qw` | Já executado em 16/11/2026 (regravou 22 linhas). Pode ser apagado |
-| Cred | `Google Service Account account` → renomear para `Cred \| Agencia \| Google SA - automations` | `6deuhYvp4Sfr43Qc` | Renomear manualmente no n8n (sem ferramenta para isso). Conta `automations@gen-lang-client-0448992217` |
+## 10. Clientes, funis e inventário
+- Lista oficial de clientes (campo `Cliente`) e funis: [`clientes/README.md`](clientes/README.md).
+- Inventário de ativos do n8n: **no arquivo de cada cliente** (`clientes/<cliente>.md`, seção 5). Ativos compartilhados (`Agencia`): [`setup-geral.md`](setup-geral.md).
+- Não manter inventário neste arquivo: ele guarda só regras.
