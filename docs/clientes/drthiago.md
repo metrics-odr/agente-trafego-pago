@@ -112,7 +112,9 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 
 ## 10. Pendências
 - [ ] Preencher dados de Meta Ads (BM, conta, pixel, página, campanhas por funil) e incluir o cliente em [`contas.md`](../contas.md).
-- [ ] Confirmar se o webhook de lead novo do Kommo aponta para o n8n e não para o Make.
+- [ ] Corrigir a URL do webhook "Lead de entrada adicionado" no Kommo: estava `/webhook/kommo-dr-thiago-conversas` (404). Certo: `/webhook/drthiago-whatsapp-kommo-sheets-conversas`.
+- [ ] Remover o gatilho de "lead mudou de etapa" (102536263 → 102536315, duplicado) que aponta para a URL de Conversas (provavelmente no funil digital).
+- [ ] Recuperar as conversas perdidas entre 15/11 22:02 e a correção (17+ leads; precisa de token do Kommo ou conferência manual).
 - [ ] Apagar o token do Make exposto no chat ([us2.make.com](https://us2.make.com) → Profile → API access).
 - [ ] Decidir se remove os nós "Buscar lead/contato no Kommo" (sem token não fazem nada).
 - [ ] Apagar o [fluxo de uso único](https://n8n.srv2164786.hstgr.cloud/workflow/PCyRC8FsN6p1q9Qw).
@@ -129,3 +131,4 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 | 16/11/2026 | Fluxo de Agendados criado; 23 leads da etapa recebidos |
 | 16/11/2026 | Envio simultâneo sobrescreveu 22 linhas; corrigido com `Use Append` nos dois fluxos e linhas regravadas |
 | 16/11/2026 | Nome e telefone dos agendados passam a vir da aba Conversas pelo entity_id |
+| 16/11/2026 | Diagnóstico: Conversas parou em 15/11 18:27. Webhook de lead de entrada estava com URL inexistente (404) e a URL certa recebia só avisos de mudança de etapa (descartados) |
