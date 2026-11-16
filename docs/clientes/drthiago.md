@@ -108,13 +108,15 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 ## 9. Legado (Make)
 - Cenário [`Dr Thiago Conversas`](https://us2.make.com/public/shared-scenario/2aZm6SDRXax/dr-thiago-conversas) na conta do Thiago ([us2.make.com](https://us2.make.com)).
 - Webhook "Conversa Nova" (hook `3036546`), data store `kommo_primeira_msg` (`198180`).
+- Acesso: o conector Make do Claude está logado na conta do Eduardo e **não enxerga** a conta do Thiago (`Access denied`). Usar a API direta `https://us2.make.com/api/v2/...`, que funciona com a credencial da sessão.
+- Cenário está ativo mas **pausado** (`isPaused`), por isso a fila não anda. Último lead real na fila: 15/11 18:33 (frase diferente, descartado). Item vazio em 15/11 20:38 = troca da URL no Kommo.
 - A fila de 36 itens foi migrada para o n8n em 15/11 (11 conversas novas gravadas). **Não religar o cenário**: a fila do Make ainda tem os 36 itens e gravaria tudo em dobro.
 
 ## 10. Pendências
 - [ ] Preencher dados de Meta Ads (BM, conta, pixel, página, campanhas por funil) e incluir o cliente em [`contas.md`](../contas.md).
 - [ ] Corrigir a URL do webhook "Lead de entrada adicionado" no Kommo: estava `/webhook/kommo-dr-thiago-conversas` (404). Certo: `/webhook/drthiago-whatsapp-kommo-sheets-conversas`.
 - [ ] Remover o gatilho de "lead mudou de etapa" (102536263 → 102536315, duplicado) que aponta para a URL de Conversas (provavelmente no funil digital).
-- [ ] Recuperar as conversas perdidas entre 15/11 22:02 e a correção (17+ leads; precisa de token do Kommo ou conferência manual).
+- [ ] Recuperar as conversas perdidas entre 15/11 22:02 e a correção (17 leads, IDs 56436997 a 56444101 nas execuções 72–105 do fluxo; nada perdido antes de 20:38 de 15/11; precisa de token do Kommo ou conferência manual).
 - [ ] Apagar o token do Make exposto no chat ([us2.make.com](https://us2.make.com) → Profile → API access).
 - [ ] Decidir se remove os nós "Buscar lead/contato no Kommo" (sem token não fazem nada).
 - [ ] Apagar o [fluxo de uso único](https://n8n.srv2164786.hstgr.cloud/workflow/PCyRC8FsN6p1q9Qw).
