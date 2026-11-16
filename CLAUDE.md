@@ -58,6 +58,7 @@ Regra de leitura:
 - **Antes de criar, renomear ou reorganizar qualquer coisa no n8n** (workflow, agent, data table, credencial, webhook, pasta, nó), ler `docs/padrao-n8n.md` e seguir o padrão `Tipo | Cliente | Funil | Detalhamento`.
 - Se o funil ou o cliente não estiver claro, perguntar antes de criar.
 - Depois de criar ou alterar ativos, atualizar o inventário em `docs/padrao-n8n.md`.
+- Dados de setup e de cada cliente (webhooks, planilhas, e-mail da conta de serviço, IDs, onde fica cada credencial): `docs/setup-e-clientes.md`. Consultar antes de configurar algo e atualizar depois. Nunca gravar valores de tokens ou senhas, só onde estão.
 
 ## Contas conhecidas
 Ver `docs/contas.md` e os guias por cliente em `docs/`.
