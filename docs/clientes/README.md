@@ -18,4 +18,4 @@ Regras:
 | `MayaMassafera` | Maya Massafera | A mapear | — | só em `contas.md` | Ativo |
 | `Agencia` | Operação do Eduardo | `Geral` | Credencial Google compartilhada | [../setup-geral.md](../setup-geral.md) | Ativo |
 
-Clientes de `contas.md` ainda sem campo definido (Bitribut, Secrê, Império Médico, Eduardo ESM): definir o nome em PascalCase quando forem ganhar automação ou arquivo próprio.
+Clientes de `contas.md` ainda sem campo definido (Bitribut, Secrê, Império Médico — contas CA4 e CA6 já confirmadas em `contas.md` —, Eduardo ESM): definir o nome em PascalCase quando forem ganhar automação ou arquivo próprio.

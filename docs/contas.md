@@ -55,12 +55,14 @@ Atenção: "MedNexus" tem duas contas operáveis. Se o pedido não disser qual, 
 |---|---|---|---|
 | CA01 - Secre | 4436118729978936 | BRL | ✅ |
 
-## Império Médico (Conta 4 e Conta 6) — a confirmar
-Pelo nome, são contas do BM1 (737734293279491). **O nome "Império Médico" não aparece em nenhuma conta**; a ligação abaixo é inferida e deve ser confirmada pelo Eduardo antes do primeiro ajuste.
-| Conta | ID | Moeda | Status |
+## Império Médico (CA4 e CA6) — confirmado pelo Eduardo
+Contas do BM1 (737734293279491), usadas **por enquanto** para o Império Médico. Confirmado pelo Eduardo em 17/11/2026 (a campanha "SE | CAPTACAO | CBO | ALL | ALL | BR - VSL | OneShot" em rascunho está na CA4).
+| Conta | ID | Moeda | Uso |
 |---|---|---|---|
-| Conta 4 - Juliano Pimentel | 560508422214397 | BRL | ✅ (inferida) |
-| Conta 6 | 209236638855515 | BRL | ✅ (inferida) |
+| Conta 4 - Juliano Pimentel (CA4) | 560508422214397 | BRL | Campanhas de **conversão** |
+| Conta 6 (CA6) | 209236638855515 | BRL | Campanhas de **distribuição**. Com algumas exceções roda conversão também, mas não é o padrão |
+
+Pedido sem conta definida: CA4 para conversão, CA6 para distribuição; se for ambíguo, perguntar. O nome "Império Médico" não aparece no Meta (as contas se chamam "Conta 4" e "Conta 6").
 
 As outras contas do BM1 (Conta 1 - Claudio Tourinho 257602532260696, Conta 2 429030359165728, Conta 3 228768024734841, Conta 5 - Claudio 3372469476346745) não estão na lista do Eduardo para este cliente: não mexer sem pedido.
 
