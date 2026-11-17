@@ -27,12 +27,6 @@
       "Bash"
     ],
     "deny": [
-      "mcp__Meta_Ads_Eduardo_Mezzavilla__ads_creative_delete",
-      "mcp__Meta_Ads_Eduardo_Mezzavilla__ads_delete_custom_audience",
-      "mcp__Meta_Ads_Eduardo_Mezzavilla__ads_delete_local_ad_image",
-      "mcp__Meta_Ads_Eduardo_Mezzavilla__ads_catalog_delete_product",
-      "mcp__Meta_Ads_Eduardo_Mezzavilla__ads_catalog_product_feed_delete",
-      "mcp__Meta_Ads_Eduardo_Mezzavilla__ads_catalog_product_set_delete",
       "mcp__n8n__archive_workflow",
       "mcp__n8n__delete_agent",
       "mcp__n8n__delete_data_table_column",

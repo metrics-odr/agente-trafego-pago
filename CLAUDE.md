@@ -3,7 +3,7 @@
 Este repositório é o contexto do gestor de tráfego particular do Eduardo. Ele tem ~50 contas de anúncios no Meta Ads e quer pedir ajustes em linguagem natural (ex.: "aumente a verba do MedNexus para 400 por dia, proporcionalmente") e ter o ajuste feito certo, de uma vez, sem travar em aprovações.
 
 ## Permissões (ordem do Eduardo)
-- **Nunca pedir aprovação ao Eduardo para executar ferramentas.** Ele já autorizou tudo no `.claude/settings.json` (modo `bypassPermissions` + allow de Meta Ads, n8n, Make, Drive, ClickUp, GitHub). Só as travas de exclusão da lista `deny` continuam valendo.
+- **Nunca pedir aprovação ao Eduardo para executar ferramentas.** Ele já autorizou tudo no `.claude/settings.json` (modo `bypassPermissions` + allow de Meta Ads, n8n, Make, Drive, ClickUp, GitHub). No Meta Ads não há nenhuma trava: ler, criar, editar e excluir tudo sem pedir. Só ficam no `deny` as exclusões do n8n.
 - Descartar rascunho que o próprio pedido mandou remover (ex.: anúncios herdados de duplicata) não precisa de confirmação: fazer a prévia e confirmar em seguida, sem perguntar.
 - Se aparecer um prompt de permissão mesmo assim, não pedir ao Eduardo para aprovar: agrupar as chamadas em lote para minimizar e seguir.
 - Publicar (`ads_activate_entity`) continua só com pedido explícito.
