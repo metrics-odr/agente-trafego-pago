@@ -88,7 +88,8 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 | Nome | Onde fica | Status |
 |---|---|---|
 | Google (conta de serviço, compartilhada) | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), ver [`setup-geral.md`](../setup-geral.md) §2 | Ativa |
-| `Cred \| DrThiago \| Kommo API - contourculptclinique` | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), Header Auth | Criada em 17/11/2026 (ID `Cgo9FqhIAFVTFu5O`), token de longa duração da integração privada "n8n" na Kommo. **Teste em 17/11 falhou com 401** (`GET /api/v4/account`, "Invalid user name or password"): conferir Name=`Authorization`, Value=`Bearer <token>` e se o token é da conta `contourculptclinique`. Depois, ligar aos nós "Buscar lead/contato no Kommo" |
+| `Cred \| DrThiago \| Kommo API - contourculptclinique (Bearer)` | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), Bearer Auth, ID `PmUQ0wuZMqEO5hMV` | **Ativa e testada em 17/11/2026** (`GET /api/v4/account` = OK). Token de longa duração da integração privada "n8n" da Kommo (válido até 2031). Falta ligar aos nós "Buscar lead/contato no Kommo" dos fluxos |
+| `Cred \| DrThiago \| Kommo API - contourculptclinique` (Header Auth, ID `Cgo9FqhIAFVTFu5O`) | Credenciais do n8n | **Obsoleta**: deu 401 mesmo com o token certo (valor salvo errado). Sem uso em fluxos. Apagar/renomear à mão. Usar a versão Bearer |
 
 ## 6. Payloads conhecidos (confirmados com dados reais)
 - **Lead novo não triado** ([Web hooks da conta](https://developers.kommo.com/docs/webhooks-general)), JSON aninhado:
