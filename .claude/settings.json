@@ -1,20 +1,30 @@
 {
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "mcp__Meta_Ads_Eduardo_Mezzavilla",
+      "mcp__Meta_Ads_Eduardo_Mezzavilla__*",
       "mcp__n8n",
+      "mcp__n8n__*",
+      "mcp__Make",
+      "mcp__Make__*",
+      "mcp__Google_Drive",
+      "mcp__Google_Drive__*",
+      "mcp__ClickUp",
+      "mcp__ClickUp__*",
+      "mcp__github",
+      "mcp__github__*",
+      "mcp__claude-code-remote",
+      "mcp__claude-code-remote__*",
       "mcp__claude_ai__current_time",
       "Read",
       "Edit",
       "Write",
-      "Bash(git status:*)",
-      "Bash(git diff:*)",
-      "Bash(git log:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(git fetch:*)",
-      "Bash(ls:*)"
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Bash"
     ],
     "deny": [
       "mcp__Meta_Ads_Eduardo_Mezzavilla__ads_creative_delete",
