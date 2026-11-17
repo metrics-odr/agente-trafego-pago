@@ -39,6 +39,7 @@ Quando o Eduardo pedir para otimizar a verba com base em resultados de prints:
 ## Ajustes de verba (subir ou reduzir)
 - Considerar só estruturas **realmente ativas**, que estão gastando e entregando. Não pegar campanha ativa com conjuntos desativados.
 - Ajuste proporcional direto ("aumente para X proporcionalmente") segue a skill `gestor-trafego-meta-ads` e não precisa de aprovação prévia.
+- **Todo ajuste de verba usa múltiplos de 5, sem valor quebrado** (nada de R$ 7,97 ou R$ 91,60), em campanha ou conjunto. Calcular o proporcional e arredondar para o múltiplo de 5 mais próximo, fechando o total no valor pedido (ou o mais próximo possível, avisando o desvio). Se o múltiplo de 5 cair abaixo do mínimo da conta (BRL ~R$ 5,70), usar R$ 10 e nunca R$ 5. Orçamento que o ajuste não toca continua como está.
 
 ## Orçamento por funil
 Os funis e seus nomes mudam de cliente para cliente (ex.: APD-INTER, APD-BR, DIAG-INTER, ou outros). Usar sempre os nomes de funil que o cliente já usa nas campanhas ou que o Eduardo indicar. Se não estiver claro qual campanha pertence a qual funil, perguntar antes de somar, e registrar o mapeamento no guia do cliente em `docs/`.
