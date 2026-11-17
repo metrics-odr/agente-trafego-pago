@@ -88,7 +88,7 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 | Nome | Onde fica | Status |
 |---|---|---|
 | Google (conta de serviço, compartilhada) | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), ver [`setup-geral.md`](../setup-geral.md) §2 | Ativa |
-| `Cred \| DrThiago \| Kommo API - contourculptclinique` | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), Header Auth | Não criada (sem token). Os nós "Buscar lead/contato no Kommo" falham sem parar o fluxo |
+| `Cred \| DrThiago \| Kommo API - contourculptclinique` | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), Header Auth | Criada em 17/11/2026 (ID `Cgo9FqhIAFVTFu5O`), token de longa duração da integração privada "n8n" na Kommo. **Teste em 17/11 falhou com 401** (`GET /api/v4/account`, "Invalid user name or password"): conferir Name=`Authorization`, Value=`Bearer <token>` e se o token é da conta `contourculptclinique`. Depois, ligar aos nós "Buscar lead/contato no Kommo" |
 
 ## 6. Payloads conhecidos (confirmados com dados reais)
 - **Lead novo não triado** ([Web hooks da conta](https://developers.kommo.com/docs/webhooks-general)), JSON aninhado:
