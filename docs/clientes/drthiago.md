@@ -34,7 +34,7 @@ Frases atuais: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thi
 | Campanhas Meta | Todas (não filtra origem) |
 | Fluxos n8n | [`Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados`](https://n8n.srv2164786.hstgr.cloud/workflow/iK9iVYgAMyxVUUyU) |
 | Abas da planilha | [`Agendamentos 📅`](https://docs.google.com/spreadsheets/d/1EcPFdCtd75HNN8xz4B7UU2KjSSkEYW4MkQRYgQArnRk/edit#gid=439827908) |
-| Regras | Payload bruto guardado no histórico antes de tudo. 1 linha por lead. Nome e telefone vêm da aba Conversas pelo `entity_id`; lead que não está lá entra só com Data e entity_id |
+| Regras | Payload bruto guardado no histórico antes de tudo. 1 linha por lead. Nome e telefone vêm da API do Kommo (lead com contatos, depois contato: `name` e campo `PHONE`); se a API falhar, da aba Conversas pelo `entity_id`; sem nenhum dos dois entra só com Data e entity_id. Ligado à credencial Bearer e publicado em 17/11/2026 |
 
 ## 3. Contas e sistemas
 ### 3.1 Meta Ads
@@ -52,7 +52,7 @@ Frases atuais: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thi
 | Pipeline das conversas | [`13296523`](https://contourculptclinique.kommo.com/leads/pipeline/13296523) |
 | Etapas relevantes | `AGENDADO` (ID a confirmar: o webhook não envia `status_id`) |
 | Canal WhatsApp | `5511942946718`, "Dr Thiago V" (WhatsApp Lite do Kommo), source_id `23084963` |
-| API | Sem token (o Eduardo optou por não gerar) |
+| API | Token de longa duração (integração privada "n8n"), credencial `Cred \| DrThiago \| Kommo API - contourculptclinique (Bearer)`. A API responde `application/hal+json`: nos nós HTTP usar Response Format = JSON, senão o n8n entrega o corpo como texto em `$json.data` |
 
 ## 4. Planilhas
 | Planilha | Link / ID | Compartilhada com a conta de serviço? |
@@ -88,7 +88,7 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 | Nome | Onde fica | Status |
 |---|---|---|
 | Google (conta de serviço, compartilhada) | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), ver [`setup-geral.md`](../setup-geral.md) §2 | Ativa |
-| `Cred \| DrThiago \| Kommo API - contourculptclinique (Bearer)` | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), Bearer Auth, ID `PmUQ0wuZMqEO5hMV` | **Ativa e testada em 17/11/2026** (`GET /api/v4/account` = OK). Token de longa duração da integração privada "n8n" da Kommo (válido até 2031). Falta ligar aos nós "Buscar lead/contato no Kommo" dos fluxos |
+| `Cred \| DrThiago \| Kommo API - contourculptclinique (Bearer)` | [Credenciais do n8n](https://n8n.srv2164786.hstgr.cloud/home/credentials), Bearer Auth, ID `PmUQ0wuZMqEO5hMV` | **Ativa e testada em 17/11/2026** (`GET /api/v4/account` = OK). Token de longa duração da integração privada "n8n" da Kommo (válido até 2031). Ligada aos nós "Buscar lead/contato no Kommo" do fluxo de agendamentos em 17/11/2026 |
 | `Cred \| DrThiago \| Kommo API - contourculptclinique` (Header Auth, ID `Cgo9FqhIAFVTFu5O`) | Credenciais do n8n | **Obsoleta**: deu 401 mesmo com o token certo (valor salvo errado). Sem uso em fluxos. Apagar/renomear à mão. Usar a versão Bearer |
 
 ## 6. Payloads conhecidos (confirmados com dados reais)
