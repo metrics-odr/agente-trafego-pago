@@ -20,6 +20,30 @@ Este repositório é o contexto do gestor de tráfego particular do Eduardo. Ele
 - Pixel padrão: **Pixel1**. Página padrão: **Página1**. Usar em toda campanha nova, salvo pedido diferente.
 - Consultar sempre o briefing do cliente antes de criar ou modificar campanhas novas. (Se o briefing não estiver no repositório nem no projeto, pedir ao Eduardo onde está antes de seguir.)
 
+## Mídia dos anúncios (imagem e vídeo)
+Vale para todo anúncio criado ou duplicado, em Customize media / criativo.
+
+**1. Mídia original, sem recortes**
+- Usar só a **mídia original** (Original media), na proporção do arquivo enviado.
+- Deixar **desmarcado** "Aspect ratios". Não ativar recortes automáticos de proporção nem melhorias automáticas de criativo (Advantage+ creative), salvo pedido explícito.
+
+**2. Nenhuma mídia relacionada (Related media)**
+- **NÃO ter nenhuma mídia relacionada em nenhum anúncio, seja criativo de imagem ou de vídeo.** O campo "Related media" deve ficar sempre em **0 selected**.
+- Nunca ativar, selecionar nem aceitar sugestão de mídia relacionada.
+- Depois de criar, conferir no rascunho (ou pedir ao Eduardo conferir, se a ferramenta não permitir ler) que está em 0. Se não der para confirmar, avisar, sem dizer que está certo.
+
+**3. Posicionamentos por mídia (anúncio com 2 ou mais mídias)**
+Definir os posicionamentos de **cada mídia** pela proporção (largura x altura) do arquivo:
+- **Vertical 9:16** (ex.: 1080x1920): marcar **APENAS** "Stories, Status, Reels". Desmarcar tudo o resto.
+- **Quadrada 1:1 ou 4:5** (ex.: 1080x1080, 1080x1350): marcar **APENAS** "Feeds", "In-stream" e "Search results". Desmarcar "Stories, Status, Reels", "Apps and sites" e quaisquer outros.
+- **Qualquer outra proporção** (inclusive 3:4): não adivinhar. Perguntar ao Eduardo.
+
+Como fazer pela ferramenta (resultado do teste de 18/11/2026, conta Eduardo - Funis):
+- `ads_create_creative` com `placement_customizations` aceita uma regra por mídia, mas **exige uma mídia padrão (fallback) sem restrição de posicionamento**. A mídia padrão pode aparecer em posicionamentos que a outra não cobre.
+- Para isso não vazar: restringir os posicionamentos **no conjunto de anúncios** (só Feeds, In-stream, Search results e Stories/Reels), pôr a vertical com Stories e Reels e deixar a 4:5 como mídia padrão. Esse caminho **não foi testado**.
+- A leitura do criativo (`ads_get_creatives`) não devolve as regras por mídia, então **não dá para confirmar pela API**. Depois de criar, avisar o Eduardo para conferir em "Customize media" no Gerenciador (link de edição do rascunho), e só declarar concluído com a conferência feita.
+- Criativo publicado é imutável: para corrigir, criar outro criativo e trocar no rascunho do anúncio.
+
 ## Criação de campanhas
 1. Quando o Eduardo pedir uma campanha, montar a **estrutura primeiro** (campanha, conjuntos, anúncios) e mostrar.
 2. Em seguida perguntar se os **criativos já foram subidos na biblioteca**.
