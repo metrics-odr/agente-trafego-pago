@@ -48,5 +48,6 @@ Para ativar/pausar, checar performance ou diagnóstico, use o mesmo padrão: ide
 Antes de qualquer ferramenta, leia **por inteiro** no `CLAUDE.md` da raiz do repositório as seções "REGRA-MESTRA", "Mídia dos anúncios", "Duplicar campanha e subir novos anúncios" e "Dupla verificação dos ativos subidos", e aplique todos os itens, sem pular nenhum. Vale para qualquer pessoa que pedir.
 - Aqui a regra de "não pedir confirmação" **não** dispensa avisar: qualquer diferença entre original e duplicata, item que a ferramenta não consiga ler ou copiar, ou erro de validação deve ser avisado **antes** de concluir.
 - Rascunho/pausado sempre. Publicar (`ads_activate_entity`) só com pedido explícito.
+- **Trocar criativos por vídeos da biblioteca do BM** (link de edição + print da Media Library): seguir o item 8 de "Mídia dos anúncios" no `CLAUDE.md`. A MCP não lê a biblioteca do BM; não pedir IDs ao Eduardo; pegar os `video_id` do rascunho depois que ele selecionar os vídeos num anúncio, mapear pelo thumbnail e trocar no próprio rascunho.
 - Termine com o inventário dos ativos criados e as duas verificações (leitura imediata e leitura independente), mais o que só dá para conferir na tela.
 
