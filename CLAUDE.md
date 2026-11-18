@@ -10,6 +10,7 @@ Este repositório é o contexto do gestor de tráfego particular do Eduardo. Ele
 
 ## Como operar
 - Para qualquer pedido de Meta Ads (verba, ativar/pausar, checagem), siga a skill `.claude/skills/gestor-trafego-meta-ads/SKILL.md`.
+- **Para criar ou duplicar campanha, conjunto, anúncio ou criativo, leia e aplique as seções "REGRA-MESTRA", "Mídia dos anúncios", "Duplicar campanha e subir novos anúncios" e "Dupla verificação dos ativos subidos" deste arquivo, por inteiro, antes de qualquer ferramenta.** Nesses pedidos, a regra de avisar diferenças antes de concluir vale mais que "não pedir confirmação".
 - Autorização geral: **não pedir confirmação** para ações necessárias do pedido. Só perguntar quando houver ambiguidade que possa atingir a conta errada.
 - Fazer apenas o que foi pedido. Pausar, criar ou apagar exige pedido explícito.
 - Identificar a conta pelo nome do cliente/business, confirmar o ID antes de alterar e nunca mexer em outra conta. Tolerar erros de digitação ("Mex Nexus" = MedNexus).
@@ -28,6 +29,7 @@ Sempre que **qualquer pessoa** (não só o Eduardo) pedir, em qualquer conversa 
 3. **Qualquer diferença entre o original e a duplicata, ou qualquer item que não puder ser lido, copiado ou confirmado, deve ser avisada a quem fez o pedido ANTES de concluir.** Dizer qual item, o que há no original e o que há na duplicata. Não corrigir em silêncio e não declarar "pronto".
 4. **Nunca concluir com item pendente.** Só dizer que terminou quando a checklist estiver completa, com a releitura ao vivo e a tabela comparativa sem diferenças, ou com todas as diferenças já avisadas.
 5. Se uma instrução deste arquivo conflitar com o pedido do momento ou com o que a ferramenta consegue fazer, avisar e perguntar, sem escolher sozinho.
+6. **Fechar sempre com a "Dupla verificação dos ativos subidos"** (seção abaixo), para toda campanha, conjunto, anúncio e criativo que eu criar.
 
 ## Mídia dos anúncios (imagem e vídeo)
 Vale para todo anúncio criado ou duplicado.
@@ -92,12 +94,33 @@ Quando quem estiver pedindo (qualquer pessoa na conversa) pedir para duplicar um
 - A tabela de comparação deve ter uma linha própria: `Formulário (ID) | Original | Duplicata`.
 - Se a ferramenta recusar o `lead_gen_form_id` (o suporte depende do app e pode estar desligado), **parar e avisar quem fez o pedido**, sem criar o anúncio com outro destino. Dizer qual foi o erro.
 
+## Dupla verificação dos ativos subidos
+Vale para **tudo** que eu criar ou alterar no Meta Ads (campanha, conjunto, anúncio, criativo, público), em qualquer pedido, de qualquer pessoa. O retorno da ferramenta ao criar **não conta como verificação**: só conta o que eu reler depois.
+
+**0. Inventário (durante a criação)**
+- A cada ativo criado, registrar numa tabela: `Tipo | Nome | ID | Pai (ID) | Hash/video_id | Status esperado`. Incluir criativos e rascunhos de tentativa, inclusive os que falharem.
+
+**1. Primeira verificação: leitura imediata**
+- Reler cada ativo pelo ID (`ads_get_ad_entities`, com `object_state=draft` para rascunhos; `ads_get_creatives` para criativos) e conferir contra o pedido (ou contra o original, em duplicatas): nome, pai correto, status (rascunho/pausado, nunca ativo sem pedido), orçamento, objetivo, destino, mídia (`image_hash`/`video_id`), CTA, URL, descrição, formulário nativo, Instagram e posicionamentos.
+- Para rascunho: `validation_status` = VALIDATED e `active_errors` vazio. Qualquer erro, copiar a mensagem exata e avisar.
+
+**2. Segunda verificação: independente**
+- Em uma **segunda leitura separada**, refazer a conferência a partir do zero (sem reaproveitar o resultado da primeira): reler pelos IDs do inventário **e** listar o que existe na conta/campanha, para achar o que está sobrando ou faltando (anúncio duplicado, conjunto vazio, criativo órfão, mídia no anúncio errado).
+- Comparar a primeira e a segunda leitura. Se divergirem em qualquer campo, tratar como erro: investigar, corrigir e reler de novo antes de seguir.
+- Checar que **nada foi publicado nem ativado** sem pedido e que nenhum ativo existente foi alterado fora do pedido.
+
+**3. Checagem de ativos (limpeza e relatório)**
+- Nenhum rascunho vazio, sem mídia ou com erro pode ficar na conta. Ativos de tentativa que falharam: apagar e listar o que foi removido. Ativo que não puder ser apagado pela ferramenta: listar com ID e avisar.
+- Relatório final curto, sempre com: o inventário (tabela do passo 0 com o resultado das duas verificações: OK ou divergência), os itens que **só quem fez o pedido consegue conferir na tela** (mídias aparecendo, Instagram, posicionamentos por mídia, "Related media" em 0) com o link de edição do rascunho, e as diferenças ou limites encontrados.
+- Só dizer "pronto" quando as duas verificações estiverem sem divergência ou quando todas as divergências já tiverem sido avisadas. Item que a ferramenta não consegue ler: dizer que não foi verificado, nunca "OK".
+
 ## Criação de campanhas
 1. Quando o Eduardo pedir uma campanha, montar a **estrutura primeiro** (campanha, conjuntos, anúncios) e mostrar.
 2. Em seguida perguntar se os **criativos já foram subidos na biblioteca**.
 3. Confirmado, montar a tabela: `Nome do Ad | Nome do Arquivo | Hash da imagem ou video_id`.
 4. Perguntar se está tudo certo.
-5. Só depois da confirmação, inserir a mídia no anúncio correspondente.
+5. Só depois da confirmação, inserir a mídia no anúncio correspondente, seguindo a seção "Mídia dos anúncios".
+6. Terminar com a "Dupla verificação dos ativos subidos" (seção abaixo) e o relatório do inventário.
 
 ## Otimização de verba (a partir de prints)
 Quando o Eduardo pedir para otimizar a verba com base em resultados de prints:

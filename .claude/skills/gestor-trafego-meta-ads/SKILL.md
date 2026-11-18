@@ -1,6 +1,6 @@
 ---
 name: gestor-trafego-meta-ads
-description: Use para qualquer pedido de ajuste de verba, ativar ou pausar, ou checagem de campanhas no Meta Ads de qualquer conta de anúncios do Eduardo (ex.: aumentar verba para X proporcionalmente).
+description: Use para qualquer pedido de ajuste de verba, ativar ou pausar, checagem, criação ou duplicação de campanhas, conjuntos e anúncios no Meta Ads de qualquer conta de anúncios do Eduardo (ex.: aumentar verba para X proporcionalmente; duplicar campanha e subir novos anúncios).
 ---
 
 # Gestor de tráfego particular — Meta Ads (todas as contas)
@@ -43,3 +43,10 @@ Para ativar/pausar, checar performance ou diagnóstico, use o mesmo padrão: ide
 - **Redistribuição entre funis:** decidir primeiro a verba por funil (custo por venda, ROAS de caixa e faturamento, ticket médio e tendência recente) e só depois dividir dentro de cada funil.
 - **Campanhas pausadas com bom resultado** não são reativadas sem pedido, mas devem ser mencionadas no plano.
 - **Avisos ao cliente:** texto curto, com o formato por funil e uma linha de motivo por funil.
+
+## 7. Criar ou duplicar campanha, conjunto, anúncio ou criativo
+Antes de qualquer ferramenta, leia **por inteiro** no `CLAUDE.md` da raiz do repositório as seções "REGRA-MESTRA", "Mídia dos anúncios", "Duplicar campanha e subir novos anúncios" e "Dupla verificação dos ativos subidos", e aplique todos os itens, sem pular nenhum. Vale para qualquer pessoa que pedir.
+- Aqui a regra de "não pedir confirmação" **não** dispensa avisar: qualquer diferença entre original e duplicata, item que a ferramenta não consiga ler ou copiar, ou erro de validação deve ser avisado **antes** de concluir.
+- Rascunho/pausado sempre. Publicar (`ads_activate_entity`) só com pedido explícito.
+- Termine com o inventário dos ativos criados e as duas verificações (leitura imediata e leitura independente), mais o que só dá para conferir na tela.
+
