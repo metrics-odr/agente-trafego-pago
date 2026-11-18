@@ -21,11 +21,11 @@ Este repositório é o contexto do gestor de tráfego particular do Eduardo. Ele
 - Consultar sempre o briefing do cliente antes de criar ou modificar campanhas novas. (Se o briefing não estiver no repositório nem no projeto, pedir ao Eduardo onde está antes de seguir.)
 
 ## REGRA-MESTRA: subir anúncios duplicando campanha
-Sempre que o Eduardo pedir para duplicar qualquer campanha e subir anúncios, em qualquer conta, dia ou sessão:
+Sempre que **qualquer pessoa** (não só o Eduardo) pedir, em qualquer conversa aberta neste repositório, para duplicar qualquer campanha e subir anúncios, em qualquer conta, dia ou sessão, estas regras valem **para todos, sem exceção**:
 
 1. **Ler por inteiro, antes de agir,** as seções "Mídia dos anúncios" e "Duplicar campanha e subir novos anúncios" deste arquivo. Não resumir de memória e não pular nenhum item.
 2. **Aplicar todos os itens.** Montar uma checklist com cada item (descrição, URL de destino, parâmetros de URL, CTA, formulário nativo, página, Instagram, pixel, objetivo, orçamento, público, posicionamentos, mídia, Related media, rascunho/pausado) e marcar um a um com o valor do original e o valor da duplicata.
-3. **Qualquer diferença entre o original e a duplicata, ou qualquer item que não puder ser lido, copiado ou confirmado, deve ser avisada ao Eduardo ANTES de concluir.** Dizer qual item, o que há no original e o que há na duplicata. Não corrigir em silêncio e não declarar "pronto".
+3. **Qualquer diferença entre o original e a duplicata, ou qualquer item que não puder ser lido, copiado ou confirmado, deve ser avisada a quem fez o pedido ANTES de concluir.** Dizer qual item, o que há no original e o que há na duplicata. Não corrigir em silêncio e não declarar "pronto".
 4. **Nunca concluir com item pendente.** Só dizer que terminou quando a checklist estiver completa, com a releitura ao vivo e a tabela comparativa sem diferenças, ou com todas as diferenças já avisadas.
 5. Se uma instrução deste arquivo conflitar com o pedido do momento ou com o que a ferramenta consegue fazer, avisar e perguntar, sem escolher sozinho.
 
@@ -33,16 +33,16 @@ Sempre que o Eduardo pedir para duplicar qualquer campanha e subir anúncios, em
 Vale para todo anúncio criado ou duplicado.
 
 **1. Mídia original, sem recortes**
-- Usar só a mídia original, na proporção do arquivo. "Aspect ratios" desmarcado. Sem recortes automáticos nem melhorias automáticas de criativo (Advantage+ creative), salvo pedido do Eduardo.
+- Usar só a mídia original, na proporção do arquivo. "Aspect ratios" desmarcado. Sem recortes automáticos nem melhorias automáticas de criativo (Advantage+ creative), salvo pedido de quem está pedindo.
 
 **2. Mídia relacionada (Related media)**
 - Nenhum anúncio pode ter mídia relacionada, seja imagem ou vídeo. O campo deve ficar em 0 selecionadas.
-- **Não há ferramenta que leia ou controle esse campo.** Nunca dizer que está em 0 sem o Eduardo ter conferido na tela. Sempre pedir a conferência.
+- **Não há ferramenta que leia ou controle esse campo.** Nunca dizer que está em 0 sem quem fez o pedido ter conferido na tela. Sempre pedir a conferência.
 
 **3. Posicionamentos por proporção**
 - Vertical 9:16 (ex.: 1080x1920): só Stories e Reels (Facebook e Instagram).
-- 4:5 ou 1:1 (ex.: 1080x1350): só Feed e In-stream. **Não incluir "Search results" do Instagram**: na tela ele aparece como posicionamento vertical do grupo de Stories e a imagem de feed fica errada ali. O Search do Facebook ainda não foi confirmado: só incluir se o Eduardo confirmar.
-- Qualquer outra proporção (inclusive 3:4): não adivinhar, perguntar ao Eduardo.
+- 4:5 ou 1:1 (ex.: 1080x1350): só Feed e In-stream. **Não incluir "Search results" do Instagram**: na tela ele aparece como posicionamento vertical do grupo de Stories e a imagem de feed fica errada ali. O Search do Facebook ainda não foi confirmado: só incluir se quem fez o pedido confirmar.
+- Qualquer outra proporção (inclusive 3:4): não adivinhar, perguntar a quem fez o pedido.
 
 **4. Anúncio com 2 ou mais mídias: como criar (testado em 18/11/2026)**
 - **Usar** `ads_create_ad` com o criativo inline (`asset_feed_spec`), com `optimization_type: "PLACEMENT"`, cada imagem com um `adlabels` e uma regra em `asset_customization_rules` para cada mídia (`image_label` + `customization_spec` com plataformas e posições). **Todas as mídias com regra explícita, sem mídia padrão sem restrição.** Incluir `instagram_user_id` no `object_story_spec`.
@@ -58,17 +58,17 @@ Ler de volta com `ads_get_ad_entities` (`object_state=draft`) e confirmar, anún
 3. `instagram_user_id` presente.
 4. Cada mídia só em seus posicionamentos (as regras do rascunho batem com a tabela do item 3) e nenhuma posição repetida entre mídias.
 5. `adapt_to_placement` e melhorias automáticas em OPT_OUT.
-A leitura da API **não prova** o que a tela mostra. Depois de criar, mandar ao Eduardo o link de edição do rascunho e pedir: as mídias aparecem, o Instagram está selecionado, cada mídia está no grupo certo e "Related media" está em 0. Só declarar concluído depois disso.
+A leitura da API **não prova** o que a tela mostra. Depois de criar, mandar a quem fez o pedido o link de edição do rascunho e pedir: as mídias aparecem, o Instagram está selecionado, cada mídia está no grupo certo e "Related media" está em 0. Só declarar concluído depois disso.
 
 **6. Rascunhos**
 - Não deixar rascunho vazio, sem mídia ou com erro. Se um teste ou tentativa der errado, apagar os rascunhos e os criativos criados por ele ao final e avisar o que foi removido.
 
 **7. Bloqueios conhecidos**
-- "Advertiser is missing" (anunciante verificado) bloqueia a publicação em rascunhos criados pela ferramenta na conta de teste. Avisar o Eduardo.
+- "Advertiser is missing" (anunciante verificado) bloqueia a publicação em rascunhos criados pela ferramenta na conta de teste. Avisar quem fez o pedido.
 - Publicar (`ads_activate_entity`) só com pedido explícito. Rascunho criado pela ferramenta entra como ACTIVE ao publicar.
 
 ## Duplicar campanha e subir novos anúncios
-Quando o Eduardo pedir para duplicar uma campanha e subir anúncios novos, a duplicata e os anúncios novos mantêm **EXATAMENTE** o que o original tem. A **única coisa que muda é a mídia** do anúncio (imagem ou vídeo), além do nome, se o Eduardo pedir.
+Quando quem estiver pedindo (qualquer pessoa na conversa) pedir para duplicar uma campanha e subir anúncios novos, a duplicata e os anúncios novos mantêm **EXATAMENTE** o que o original tem. A **única coisa que muda é a mídia** do anúncio (imagem ou vídeo), além do nome, se quem fez o pedido pedir.
 
 **Deve ser idêntico ao original**
 - Texto principal (primary text), título (headline) e **descrição**.
@@ -90,7 +90,7 @@ Quando o Eduardo pedir para duplicar uma campanha e subir anúncios novos, a dup
 - A duplicata e **todos os anúncios novos** devem usar **exatamente o mesmo formulário** (mesmo ID), com o mesmo CTA, e o conjunto deve manter o mesmo destino "no anúncio".
 - Ao criar o criativo novo, passar `lead_gen_form_id` com o ID copiado do original e o mesmo `call_to_action_type`. **Nunca** escolher outro formulário nem trocar por link de site para "dar certo".
 - A tabela de comparação deve ter uma linha própria: `Formulário (ID) | Original | Duplicata`.
-- Se a ferramenta recusar o `lead_gen_form_id` (o suporte depende do app e pode estar desligado), **parar e avisar o Eduardo**, sem criar o anúncio com outro destino. Dizer qual foi o erro.
+- Se a ferramenta recusar o `lead_gen_form_id` (o suporte depende do app e pode estar desligado), **parar e avisar quem fez o pedido**, sem criar o anúncio com outro destino. Dizer qual foi o erro.
 
 ## Criação de campanhas
 1. Quando o Eduardo pedir uma campanha, montar a **estrutura primeiro** (campanha, conjuntos, anúncios) e mostrar.
