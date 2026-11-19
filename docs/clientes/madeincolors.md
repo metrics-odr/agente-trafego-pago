@@ -111,6 +111,19 @@ Produto de **atenção, não de intenção**: quase ninguém busca "lâmpada de 
 
 **Antes de mexer:** confirmar rastreamento da conversão de compra (0 compras atribuídas em € 188 gastos) e pegar o relatório de termos de pesquisa. Sem conversão medida, a otimização por CPA fica cega.
 
+### 5.1 Relatório de termos de pesquisa (CSV enviado em 19/11/2026)
+Só o grupo `AUTO_FR` (o EN não veio no arquivo). 901 termos, 62 cliques, 1.429 impressões, € 57,10, **0 conversões**. Correspondência ampla: 613 termos, 45 cliques, € 41,90 (73% do gasto). Frase/aproximada: € 8,11. Exata (variante): € 5,35.
+| Grupo de termos | Termos | Cliques | Custo |
+|---|---|---|---|
+| Presente / Natal / crémaillère | 203 | 18 | € 16,23 |
+| Marcas e concorrentes (Kartell, Baccarat, Zara Home, Maison du Monde, Sklum, Partylite etc.) | 72 | 19 | € 22,15 |
+| Decoração geral | 160 | 14 | € 10,95 |
+| Lampe à huile / oil | 44 | 2 | € 2,25 |
+| Flamme, vert, bougie, fumée | 23 | 0 | € 0 |
+
+**Leitura:** o Google (ampla) está entregando impressão em tudo que é "lampe" e decoração, e 39% do gasto vai para clique em marca de concorrente (compra de móvel/luminária, sem relação com o produto). Cada termo tem ~1 impressão, então não há termo vencedor para escalar. As buscas realmente próximas do produto (`lampe à huile`, `bougie flamme`, `lampe effet flamme`) têm 1–16 impressões: demanda real é pequena. Os termos de presente mais úteis: `cadeau crémaillère original`, `idée cadeau noël maison`, `cadeau maison`, `lampe a huile en verre`.
+**Ação:** pausar ampla; negativar marcas e itens de lampe (champignon, sel, lave, boule, pipistrello, Baccarat, Kartell, led); mover para frase/exata os termos de presente e de lampe à huile/bougie; separar anúncios por tema. Pendente: CSV do grupo `AUTO_EN` (gasto maior, € 109).
+
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
 - [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
@@ -122,5 +135,6 @@ Produto de **atenção, não de intenção**: quase ninguém busca "lâmpada de 
 ## 7. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 19/11/2026 | Análise do relatório de termos de pesquisa (AUTO_FR). |
 | 19/11/2026 | Adicionada estratégia Google Search (atenção vs intenção). |
 | 19/11/2026 | Arquivo criado com leitura do site e da dashboard. Nada alterado no Meta Ads. |
