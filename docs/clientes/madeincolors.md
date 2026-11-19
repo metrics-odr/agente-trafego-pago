@@ -176,6 +176,11 @@ Página lida: https://madeincolors.com/products/serenity ("Serenity Gift Set": l
 - Sitelink 1 (URL /products/serenity): título "Coffret Serenity" · desc 1 "Flamme verte sans fumée ni odeur" · desc 2 "Prêt à offrir, livraison 24-48 h".
 - Parâmetros de rastreamento (URL final suffix): `utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_content=sitelink_serenity`. Conferir se o rastreamento automático (gclid) está ativo.
 - Sitelinks adicionais sugeridos devem apontar para páginas diferentes (não repetir a URL da Serenity).
+- Sitelinks do Eduardo (texto PT dele, tradução FR; URLs pendentes):
+  - Para Empresas: título "Pour les Entreprises" · "Transformez votre espace" · "Ajoutez-y une vraie flamme verte". Alternativa de título: "Pour les Professionnels".
+  - Gift Sets: título "Coffrets Cadeaux" · "Voir nos coffrets prêts à offrir" · "Un cadeau fantastique".
+  - Líquido de reposição: título "Liquide de Recharge" · "Ne restez pas sans flamme verte" · "Achetez votre recharge". Conferir estoque (aparece "Sold out" no site).
+  - Cada sitelink com URL diferente; sufixo `utm_content=sitelink_<nome>` (empresas, giftsets, refil).
 
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
