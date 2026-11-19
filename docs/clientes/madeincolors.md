@@ -170,6 +170,13 @@ Direção: criar clima de paz e serenidade para momentos com amigos, meditação
 - Descrições: ver conversa de 19/11/2026 (FR + PT).
 - Descrições aprovadas para uso (direção do Eduardo): "Paix et sérénité entre amis, pour méditer ou vous reposer. Découvrez la lampe." · "La lampe à flamme verte crée une ambiance impressionnante et chaleureuse. Commandez." · "Impressionnez amis ou clients avec cet élément de décoration fantastique. Commandez."
 
+### 5.7 Sitelinks (19/11/2026)
+Página lida: https://madeincolors.com/products/serenity ("Serenity Gift Set": lâmpada Serenity, 0,5 L de líquido, 2 mechas, 1 funil, caixa de presente; ~40 h de chama; "no smoke or odor"; "non-toxic liquid"; não inflamável se derramar; testado pelo LNE; recarregável; entrega 24–48 h, "ships within 24 h"; devolução em 30 dias; nota 5.0 com 87 avaliações; usos citados: relaxar, jantares, ioga, meditação).
+- **Atenção:** a página diz que envia em até 24 h (não 12 h). Antes de usar "expédié sous 12h" em anúncio, confirmar com o cliente. A página também mostra "Sold out" perto do botão: verificar estoque antes de mandar tráfego.
+- Sitelink 1 (URL /products/serenity): título "Coffret Serenity" · desc 1 "Flamme verte sans fumée ni odeur" · desc 2 "Prêt à offrir, livraison 24-48 h".
+- Parâmetros de rastreamento (URL final suffix): `utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_content=sitelink_serenity`. Conferir se o rastreamento automático (gclid) está ativo.
+- Sitelinks adicionais sugeridos devem apontar para páginas diferentes (não repetir a URL da Serenity).
+
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
 - [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
@@ -181,6 +188,7 @@ Direção: criar clima de paz e serenidade para momentos com amigos, meditação
 ## 7. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 19/11/2026 | Sitelink da Serenity e parâmetros de rastreamento (5.7). |
 | 19/11/2026 | Anúncio Sérénité (paz, amigos, meditação, descanso) salvo (5.6). |
 | 19/11/2026 | Público, urgência e motivação por tema (5.5). |
 | 19/11/2026 | Anúncios RSA FR por tema salvos (5.4). |
