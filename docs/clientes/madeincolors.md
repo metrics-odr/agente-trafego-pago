@@ -140,6 +140,13 @@ Base: CSV de termos do `AUTO_FR`. A parte EN é equivalente ao FR e **ainda não
 - **Toda sugestão de título, descrição ou keyword em FR/EN deve vir com a tradução para português ao lado** (tabela `Idioma original | Português`).
 - Um anúncio por tema (produto/benefício, presente, substituto de vela), cada um no seu grupo.
 
+### 5.4 Anúncios RSA em francês (19/11/2026), sem preço nos títulos, com tradução PT
+Três anúncios, um por tema. Título fixado na posição 1 e 15 títulos + 4 descrições por anúncio. Conferir o contador do Google ao colar.
+- **Produto e benefício** (fixar `Lampe à Huile Flamme Verte`): Flamme Verte Sans Fumée · Sans Fumée, Sans Odeur · Flamme Verte Non Toxique · Une Flamme Verte Unique · Lampe à Huile Sans Odeur · Lampe à Huile Sans Fumée · Huile Flamme Verte · Recharge Flamme Verte · Déco Flamme Colorée · La Première Flamme Colorée · Découvrez le Coffret Serenity · Offre Spéciale Black Friday · Livraison en 24-48 h · Made in Colors.
+- **Presente** (fixar `Cadeau Original Pour la Maison`): Idée Cadeau Noël Insolite · Cadeau de Crémaillère Original · Cadeau Déco Maison Original · Cadeau Noël Original · Un Cadeau Qui Surprend · Cadeau Pour Qui a Tout · Idée Cadeau Déco Insolite · Flamme Verte à Offrir · Coffret Cadeau Serenity · Offrez une Flamme Verte · Sans Fumée, Sans Odeur · Offre Spéciale Black Friday · Livraison en 24-48 h · Made in Colors.
+- **Substituto de vela** (fixar `Alternative à la Bougie`): Bougie Sans Fumée ni Odeur · Remplacez Vos Bougies · Flamme Pure, Sans Odeur · Flamme Verte Non Toxique · Lampe à Huile Sans Fumée · Ambiance Bougie, Sans Fumée · Une Flamme Qui Surprend · Lampe à Huile Flamme Verte · La Flamme Verte Chez Vous · Déco Flamme Colorée · Découvrez le Coffret Serenity · Offre Spéciale Black Friday · Livraison en 24-48 h · Made in Colors.
+- Descrições e traduções PT completas foram entregues na conversa de 19/11/2026. Versão EN pendente.
+
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
 - [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
@@ -151,6 +158,7 @@ Base: CSV de termos do `AUTO_FR`. A parte EN é equivalente ao FR e **ainda não
 ## 7. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 19/11/2026 | Anúncios RSA FR por tema salvos (5.4). |
 | 19/11/2026 | Regras de anúncio (sem preço nos títulos) salvas (5.3). |
 | 19/11/2026 | Lista de negativas FR/EN salva (5.2). |
 | 19/11/2026 | Análise do relatório de termos de pesquisa (AUTO_FR). |
