@@ -13,6 +13,7 @@ Regras:
 | `DrThiago` | Dr Thiago Virgili | `WhatsApp`, `Geral` | 2 fluxos publicados | [drthiago.md](drthiago.md) | Ativo |
 | `MedNexus` | MedNexus (Clã da Medicina, Clínica Mantelli) | A mapear | — | [../mednexus.md](../mednexus.md) (guia Meta Ads) | Ativo |
 | `LarissaTopper` | Larissa Topper | `APD-BR`, `APD-INTER`, `DIAG-INTER` | — | [larissatopper.md](larissatopper.md) | Ativo |
+| `MadeInColors` | Made in Colors (Noovamik) | A mapear | — | [madeincolors.md](madeincolors.md) | Ativo |
 | `ThaisJunqueira` | Thais Junqueira | A mapear | — | só em `contas.md` | Ativo |
 | `DaviBraga` | Davi Braga | A mapear | — | só em `contas.md` | Ativo |
 | `MayaMassafera` | Maya Massafera | A mapear | — | só em `contas.md` | Ativo |

@@ -1,0 +1,101 @@
+# Made in Colors (Noovamik)
+
+> **Nunca** gravar valores de tokens ou senhas: só o nome e o local da credencial.
+
+Atualizado em 19/11/2026.
+
+## 1. Resumo
+| Item | Valor |
+|---|---|
+| Campo `Cliente` no padrão | `MadeInColors` |
+| Nome na dashboard | Noovamik - Made in Colors (Ecommerce) |
+| Status | Ativo |
+| Moeda | € (euro). Mercado europeu: FR, DE, UK, NL, CH |
+| Idiomas | Francês e inglês |
+| Site | https://madeincolors.com/ |
+| Dashboard | https://metrics-odr.github.io/dash-madeincolors-store/ |
+| Instagram | @made.in.colors |
+| Contato da loja | Info@madeincolors.com |
+| Briefing | **Não encontrado.** Pedir ao Eduardo onde está antes de criar/alterar campanhas |
+| Conta Meta Ads / BM / Pixel / Página | **A confirmar** (não consta em `docs/contas.md`; conferir com `ads_get_ad_accounts`) |
+
+## 2. Produto e oferta (lido do site em 19/11/2026)
+Lâmpadas e líquidos para chama decorativa colorida ("a primeira chama decorativa colorida do mundo"). Chama pura, sem fumaça e sem cheiro, posicionada como alternativa segura às velas, para ambiente e presente.
+
+| Produto | Preço | Observação |
+|---|---|---|
+| Coffret Serenity (Serenity Gift Set) | € 39,95 (de € 49,95) | Promoção Black Friday |
+| Coffret Serenity + 1 L Green Flame | € 59,95 (de € 74,90) | |
+| 2 Coffrets Serenity | € 69,95 (de € 99,90) | |
+| Green 500 ml + 1 refil grátis | € 18,95 | |
+| Green 1 L + 1 refil grátis | € 24,95 | |
+| Green 3 L + 5 refis grátis | € 59,85 | |
+
+- Oferta: banner de tempo limitado e Black Friday. Algumas listagens aparecem "Sold out": checar estoque antes de escalar.
+- Frete: anunciado em 24–48 h; valor calculado no checkout.
+- Proteção de encomenda opcional: € 3,90 (quebra, perda ou roubo).
+- Klarna citado no rodapé (sem detalhes). Cupons: não vistos. Política de devolução: só o link, conteúdo não lido.
+- Prova social: 10.000 chamas no fosso da Torre de Londres (nov/2018, 8 noites). Há seção para profissionais.
+- Público: não declarado no site. Ângulos que a conta de busca já usa: presente, decoração, pendaison de crémaillère (housewarming), Natal.
+
+## 3. Dashboard (leitura em 19/11/2026, 10:00 BRT)
+- Os dados estão embutidos na página (JSON `payload`), período 01/11 a 19/11/2026. A leitura por fetch comum mostra tudo vazio; é preciso extrair o JSON do HTML.
+- Páginas: Overview, Dashboards, Otimização (CAC por campanha/conjunto/anúncio/palavra-chave), Compradores, Relatório, Saúde do funil, Visão de campanha. Metas (CAC, ROAS, verba mensal) **não preenchidas**.
+- Canais com dados: **só Google**. Meta, TikTok e Google Shopping aparecem como "sem dados" (páginas Meta e TikTok ocultas). Fonte de vendas: planilha.
+
+### 3.1 Mídia (Google Ads), 12/11 a 19/11
+Gasto zerado de 01 a 11/11; começou em 12/11.
+
+| Campanha | Conjunto | Gasto | Impressões | Cliques |
+|---|---|---|---|---|
+| MIC_E6-VEN_P2-FRIO_CONV_CBO_2026-11-11_EN | AUTO_EN | € 109,44 | 3.548 | 173 |
+| MIC_E6-VEN_P2-FRIO_CONV_CBO_2026-11-11_FR | AUTO_FR | € 78,80 | 1.927 | 88 |
+| MIC_E6-VEN_P2-FRIO_CONV_CBO_2026-11-11_SHOP_EN | Shopping/PMax | € 0 | 26 | 0 |
+| Performance Max-2 | Shopping/PMax | € 0 | 0 | 0 |
+| **Total** | | **€ 188,24** | **5.501** | **261** |
+
+Gasto por dia: 12/11 € 11,50 · 13/11 € 4,04 · 14/11 € 32,03 · 15/11 € 57,40 · 16/11 € 34,93 · 17/11 € 23,06 · 18/11 € 19,78 · 19/11 € 5,50 (parcial).
+Gasto por país: Alemanha € 73,12 · Reino Unido € 47,92 · França € 29,25 · Holanda € 20,76 · Suíça € 0.
+CPC médio ≈ € 0,72; CTR ≈ 4,7%.
+Palavras-chave com mais gasto: housewarming gift (€ 51,32 / 79 cliques), lampe d'ambiance (€ 37,19 / 41), cadeau déco maison (€ 16,93 / 21), green flame lamp (€ 15,68 / 26), cadeau noël déco (€ 15,08 / 16).
+**Compras atribuídas ao Google: 0** (coluna de compras e valor zerada em todas as linhas).
+
+### 3.2 Vendas (planilha), 12/11 a 18/11
+| Item | Valor |
+|---|---|
+| Pedidos | 9 linhas / 9 unidades |
+| Receita total | € 1.165,00, **mas** inclui uma linha de € 844,80 (12/11, Coffret Serenity) fora do padrão de preço |
+| Receita sem essa linha | ≈ € 320,20 |
+| Origem de todas | `outros / direto`, sem campanha, conjunto ou anúncio |
+
+Há também linhas de € 3,90, € 0,00 (16/11) e € 11,89, sugerindo frete, brinde ou valores parciais. A planilha não atribui nenhuma venda a Meta nem a Google.
+
+### 3.3 Tráfego do site (GA), 09/11 a 19/11
+| Origem | Page views | Visitantes | Add to cart | Checkout |
+|---|---|---|---|---|
+| Meta | 829 | 787 | 15 | 5 |
+| Direto | 124 | 46 | 14 | 16 |
+| Google (pago) | 100 | 27 | 2 | 0 |
+| Google orgânico | 49 | 22 | 3 | 2 |
+| Instagram orgânico | 35 | 17 | 2 | 1 |
+| Outros / GPT | 50 | 32 | 2 | 3 |
+
+## 4. Leitura e alertas (para a próxima análise)
+1. **Meta Ads gera a maior parte do tráfego (787 visitantes) e 5 checkouts, mas a dashboard não tem gasto nem campanhas do Meta.** Falta ligar a conta Meta à dashboard, ou o dado não está sendo carregado. Sem isso não dá para calcular CAC/ROAS do Meta.
+2. Google gastou € 188,24 e 261 cliques, mas só 27 visitantes pagos no GA e zero compra atribuída. Possível quebra de rastreamento (UTM/GCLID/conversão) ou campanha de baixa intenção. Conferir tag de conversão antes de julgar a campanha.
+3. Todas as vendas caem em "direto", sem atribuição. A venda de € 844,80 distorce o total e precisa ser confirmada.
+4. Metas de CAC, ROAS e verba mensal não definidas. Pedir ao Eduardo.
+5. Janela curta (8 dias de gasto): sem base para otimizar verba. Seguir a regra do CLAUDE.md: só usar métricas dos prints/dashboard e perguntar a métrica principal do funil (compra).
+
+## 5. Pendências
+- [ ] Localizar o briefing do cliente.
+- [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
+- [ ] Definir metas (CAC, ROAS, verba mensal) e funis/nomenclatura das campanhas.
+- [ ] Entender por que o Meta não aparece na dashboard.
+- [ ] Confirmar a venda de € 844,80 e o rastreamento de conversão do Google.
+- [ ] Ler a política de devolução e confirmar frete grátis/valor mínimo.
+
+## 6. Histórico de mudanças
+| Data | Mudança |
+|---|---|
+| 19/11/2026 | Arquivo criado com leitura do site e da dashboard. Nada alterado no Meta Ads. |
