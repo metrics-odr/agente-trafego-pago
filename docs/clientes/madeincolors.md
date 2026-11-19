@@ -168,6 +168,7 @@ Direção: criar clima de paz e serenidade para momentos com amigos, meditação
 - Palavras-chave (frase/exata, FR): lampe à huile flamme verte, lampe flamme verte, lampe ambiance zen, lampe zen déco, déco zen salon, lampe méditation, ambiance méditation maison, lampe détente, ambiance relaxante maison, lampe à huile décorative, lampe à huile en verre, déco méditation, lampe ambiance apaisante, idée déco zen, lampe à flamme décorative.
 - Títulos: Lampe Zen à Flamme Verte (fixar pos. 1) · Lampe à Huile Flamme Verte · Ambiance Zen et Sereine · Lampe Méditation Flamme Verte · Une Flamme Verte Apaisante · Sérénité en Un Instant · Déco Zen Qui Impressionne · Moments Calmes entre Amis · Méditation, Repos, Détente · Une Lumière Douce et Verte · Sans Fumée, Sans Odeur · Chaleur et Calme chez Vous · Créez Votre Coin Zen · Découvrez la Serenity · Commandez Votre Lampe.
 - Descrições: ver conversa de 19/11/2026 (FR + PT).
+- Descrições aprovadas para uso (direção do Eduardo): "Paix et sérénité entre amis, pour méditer ou vous reposer. Découvrez la lampe." · "La lampe à flamme verte crée une ambiance impressionnante et chaleureuse. Commandez." · "Impressionnez amis et clients avec cet élément de décoration fantastique. Commandez."
 
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
