@@ -140,7 +140,10 @@ Base: CSV de termos do `AUTO_FR`. A parte EN é equivalente ao FR e **ainda não
 - **Toda sugestão de título, descrição ou keyword em FR/EN deve vir com a tradução para português ao lado** (tabela `Idioma original | Português`).
 - Um anúncio por tema (produto/benefício, presente, substituto de vela), cada um no seu grupo.
 
-### 5.4 Anúncios RSA em francês (19/11/2026), sem preço nos títulos, com tradução PT
+### 5.4 Anúncios RSA em francês (19/11/2026) — **SUPERADO, NÃO USAR**
+> Esta versão tinha oferta pontual (Black Friday), sem CTA e sem benefício, e foi feita sem ler os documentos de boas práticas. Versão válida: anúncio 1 (produto) refeito em 19/11/2026 seguindo o G002; presente e substituto de vela pendentes de refazer no mesmo molde.
+
+(texto antigo, só histórico):
 Três anúncios, um por tema. Título fixado na posição 1 e 15 títulos + 4 descrições por anúncio. Conferir o contador do Google ao colar.
 - **Produto e benefício** (fixar `Lampe à Huile Flamme Verte`): Flamme Verte Sans Fumée · Sans Fumée, Sans Odeur · Flamme Verte Non Toxique · Une Flamme Verte Unique · Lampe à Huile Sans Odeur · Lampe à Huile Sans Fumée · Huile Flamme Verte · Recharge Flamme Verte · Déco Flamme Colorée · La Première Flamme Colorée · Découvrez le Coffret Serenity · Offre Spéciale Black Friday · Livraison en 24-48 h · Made in Colors.
 - **Presente** (fixar `Cadeau Original Pour la Maison`): Idée Cadeau Noël Insolite · Cadeau de Crémaillère Original · Cadeau Déco Maison Original · Cadeau Noël Original · Un Cadeau Qui Surprend · Cadeau Pour Qui a Tout · Idée Cadeau Déco Insolite · Flamme Verte à Offrir · Coffret Cadeau Serenity · Offrez une Flamme Verte · Sans Fumée, Sans Odeur · Offre Spéciale Black Friday · Livraison en 24-48 h · Made in Colors.

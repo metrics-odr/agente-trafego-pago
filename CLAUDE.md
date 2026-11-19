@@ -125,6 +125,16 @@ Vale para **tudo** que eu criar ou alterar no Meta Ads (campanha, conjunto, anú
 - Relatório final curto, sempre com: o inventário (tabela do passo 0 com o resultado das duas verificações: OK ou divergência), os itens que **só quem fez o pedido consegue conferir na tela** (mídias aparecendo, Instagram, posicionamentos por mídia, "Related media" em 0) com o link de edição do rascunho, e as diferenças ou limites encontrados.
 - Só dizer "pronto" quando as duas verificações estiverem sem divergência ou quando todas as divergências já tiverem sido avisadas. Item que a ferramenta não consegue ler: dizer que não foi verificado, nunca "OK".
 
+## Google Ads (Rede de Pesquisa)
+**Antes de sugerir palavra-chave, negativa, título ou descrição, ler os documentos de referência. Nunca sugerir copy "de memória" ou só com o que está no site.**
+1. Ler no Drive do Eduardo (`search_files` + `read_file_content`): **"Boas Práticas para Campanhas de Google Search"** (id `1TjQSqyvZ3nbidj-GvODF7LFQIaafWRC7`) e **"[G002] Google Ads - Criando Lista de Palavras-chave e Anúncios na Rede de Pesquisa"** (id `1tYgSCPA7pHpqWPEdrpQzWp8BKRb9G7I-`). Se o Eduardo citar outra regra ou documento (ex.: "lógica do bolo de cenoura fofinho"), procurar; se não achar, perguntar antes de seguir.
+2. Ler o arquivo do cliente em `docs/clientes/` e o briefing.
+3. Regras de anúncio (RSA): 15 títulos e 4 descrições; palavra-chave do grupo nos títulos; benefício claro (não só descrever o produto); gatilho de dor/solução na descrição; **CTA direto** nos títulos e descrições; um anúncio por tema/grupo; 10 a 20 palavras-chave por grupo; negativas desde o início; no máximo 1 título fixado.
+4. **Sem preço e sem oferta pontual (Black Friday, desconto, % off) nos títulos**, salvo pedido do Eduardo.
+5. **Toda sugestão em outro idioma vem com a tradução em português ao lado.**
+6. Pesquisa de concorrência (anúncios que aparecem na busca) é etapa do G002: se a ferramenta não alcança, avisar o Eduardo em vez de pular.
+7. Antes de entregar, conferir cada título contra as regras acima e dizer qual regra cada um cumpre (palavra-chave, benefício ou CTA).
+
 ## Criação de campanhas
 1. Quando o Eduardo pedir uma campanha, montar a **estrutura primeiro** (campanha, conjuntos, anúncios) e mostrar.
 2. Em seguida perguntar se os **criativos já foram subidos na biblioteca**.
