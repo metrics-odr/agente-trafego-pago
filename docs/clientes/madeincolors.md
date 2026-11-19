@@ -124,6 +124,16 @@ Só o grupo `AUTO_FR` (o EN não veio no arquivo). 901 termos, 62 cliques, 1.429
 **Leitura:** o Google (ampla) está entregando impressão em tudo que é "lampe" e decoração, e 39% do gasto vai para clique em marca de concorrente (compra de móvel/luminária, sem relação com o produto). Cada termo tem ~1 impressão, então não há termo vencedor para escalar. As buscas realmente próximas do produto (`lampe à huile`, `bougie flamme`, `lampe effet flamme`) têm 1–16 impressões: demanda real é pequena. Os termos de presente mais úteis: `cadeau crémaillère original`, `idée cadeau noël maison`, `cadeau maison`, `lampe a huile en verre`.
 **Ação:** pausar ampla; negativar marcas e itens de lampe (champignon, sel, lave, boule, pipistrello, Baccarat, Kartell, led); mover para frase/exata os termos de presente e de lampe à huile/bougie; separar anúncios por tema. Pendente: CSV do grupo `AUTO_EN` (gasto maior, € 109).
 
+### 5.2 Lista de negativas (19/11/2026)
+Base: CSV de termos do `AUTO_FR`. A parte EN é equivalente ao FR e **ainda não foi validada com o CSV do `AUTO_EN`**. Cadastrar como **frase** (exceto onde indicado). Nunca negativar `lampe`, `lamp`, `huile`, `oil`, `flamme`, `flame`, `cadeau`, `gift`, `bougie`, `candle`, `décoration`.
+**Marcas e lojas (FR):** ikea, leroy merlin, maison du monde, zara home, h&m home, sklum, kartell, baccarat, adnet, mathmos, atmosphera, centrakor, la redoute, westwing, fleux, action, bazar, ampm, lexon, legami, fatboy, philips, artemide, tiffany, ralph lauren, partylite, leitmotiv, nature et decouverte, birdzen, meisenthal, pipistrello, poldina, formano, garrault delord, homing home, roomed, skitso, casagd, lumineo, lumio, sompex, cabanas, bic.
+**Tipos de lâmpada fora do produto (FR):** champignon, lave, lampe à lave, lampe de sel, pierre de sel, himalaya, boule, tactile, touch, murale, lampadaire, chevet, abat-jour, tulipe, led, solaire, tiffany, murano, cristal, coquillage, ellipse, bambou, fleur, soja, veilleuse enfant, lampe de chevet, lampe de bureau, lampe à poser design, luminaire, applique, suspension, lustre.
+**Intenção errada (FR):** comment, faire soi-même, diy, tuto, tutoriel, recette, gratuit, pdf, pas cher, occasion, ancienne, vintage, imitation, dupe, réparer, mode d'emploi, magasin près de moi, emploi, recrutement, grossiste, revendeur, brocante, leboncoin.
+**Combustível/vela (FR) — negativar em frase para não bloquear o produto:** paraffine, pétrole, lampe à pétrole, lampe tempête, mèche seule, bougie parfumée, bougie led, bougie électronique, bougie chauffe-plat, chauffe-plat, cire, soja, bougeoir.
+**Decoração fora do foco (FR):** vase, tableau, miroir, rideau, tapis, coussin, mur blanc, décorer un mur, cadre, horloge, guirlande, sapin, crèche, weihnachtsdeko, deko, wohnzimmer.
+**EN:** ikea, kartell, mathmos, zara home, lava lamp, salt lamp, himalayan, mushroom lamp, touch lamp, led, solar, floor lamp, table lamp, desk lamp, bedside, chandelier, pendant, wall light, tiffany, murano, crystal, diy, how to, tutorial, recipe, free, pdf, cheap, used, second hand, vintage, antique, repair, manual, jobs, wholesale, supplier, near me, paraffin, kerosene, hurricane lamp, wick only, tea light, scented candle, led candle, electric candle, soy wax, candle holder, candle making, wax, vase, mirror, curtain, rug, cushion, wall art, clock, fairy lights, christmas tree, nativity.
+**Não negativar:** `pendaison de crémaillère`, `housewarming`, `idée cadeau`, `cadeau maison`, `déco maison`, `lampe à huile en verre`, `flamme`, `flame`, `green`, `vert`.
+
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
 - [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
@@ -135,6 +145,7 @@ Só o grupo `AUTO_FR` (o EN não veio no arquivo). 901 termos, 62 cliques, 1.429
 ## 7. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 19/11/2026 | Lista de negativas FR/EN salva (5.2). |
 | 19/11/2026 | Análise do relatório de termos de pesquisa (AUTO_FR). |
 | 19/11/2026 | Adicionada estratégia Google Search (atenção vs intenção). |
 | 19/11/2026 | Arquivo criado com leitura do site e da dashboard. Nada alterado no Meta Ads. |
