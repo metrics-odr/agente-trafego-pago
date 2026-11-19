@@ -150,6 +150,19 @@ Três anúncios, um por tema. Título fixado na posição 1 e 15 títulos + 4 de
 - **Substituto de vela** (fixar `Alternative à la Bougie`): Bougie Sans Fumée ni Odeur · Remplacez Vos Bougies · Flamme Pure, Sans Odeur · Flamme Verte Non Toxique · Lampe à Huile Sans Fumée · Ambiance Bougie, Sans Fumée · Une Flamme Qui Surprend · Lampe à Huile Flamme Verte · La Flamme Verte Chez Vous · Déco Flamme Colorée · Découvrez le Coffret Serenity · Offre Spéciale Black Friday · Livraison en 24-48 h · Made in Colors.
 - Descrições e traduções PT completas foram entregues na conversa de 19/11/2026. Versão EN pendente.
 
+### 5.5 Público e motivação (hipótese de 19/11/2026, validar com avaliações e compradores)
+O comprador compra a solução de um momento, não uma lâmpada. Cada anúncio fala com uma pessoa:
+| Pessoa | Termos reais | Urgência oculta | Motivação |
+|---|---|---|---|
+| Presenteador com prazo | cadeau crémaillère original, idée cadeau noël, cadeau maison | Data marcada (Natal, casa nova) e medo de presente banal | Ser lembrado, surpreender |
+| Anfitrião | décorer, lampe d'ambiance salon | Visita chegando, sala sem ponto focal | Impressionar, gerar conversa |
+| Quem quer desacelerar | lampe d'ambiance, ambiance zen | Esgotado, quer ritual de calma | Mudar o clima rápido |
+| Incomodado com vela | bougie sans odeur, lampe effet flamme | Fumaça e cheiro estragam o clima | Manter a chama sem o incômodo |
+| Curioso do Meta | flamme verte, flamme colorée | "O que é isso?" | Curiosidade |
+Momentos: ceia de Natal, jantar a dois, noite com amigos, casa nova, depois do trabalho. Não afirmar nada sobre alergia, asma, crianças ou animais (o site só diz "não tóxico").
+Copy por pessoa (FR + PT) entregue na conversa de 19/11/2026: anúncio Presente (medo de presente banal), Ambiente (receber e relaxar) e Substituto de vela (incômodo). Palavras-chave por momento: cadeau noël maison, cadeau couple original, idée déco salon, ambiance romantique maison, lampe détente, bougie sans fumée.
+Validar: avaliações e comentários do Instagram (@made.in.colors) e pergunta aos compradores da planilha.
+
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
 - [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
@@ -161,6 +174,7 @@ Três anúncios, um por tema. Título fixado na posição 1 e 15 títulos + 4 de
 ## 7. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 19/11/2026 | Público, urgência e motivação por tema (5.5). |
 | 19/11/2026 | Anúncios RSA FR por tema salvos (5.4). |
 | 19/11/2026 | Regras de anúncio (sem preço nos títulos) salvas (5.3). |
 | 19/11/2026 | Lista de negativas FR/EN salva (5.2). |
