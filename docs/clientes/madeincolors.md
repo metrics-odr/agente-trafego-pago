@@ -137,6 +137,7 @@ Base: CSV de termos do `AUTO_FR`. A parte EN é equivalente ao FR e **ainda não
 ### 5.3 Regras de anúncio definidas pelo Eduardo
 - **Não mencionar preços nem percentual de desconto nos títulos** dos anúncios (nem "dès 39,95€", nem "-20%"). Black Friday pode aparecer sem número.
 - Fixar no máximo 1 título (o do tema da busca). Marca "Made in Colors" não fixada em posição 1.
+- **Toda sugestão de título, descrição ou keyword em FR/EN deve vir com a tradução para português ao lado** (tabela `Idioma original | Português`).
 - Um anúncio por tema (produto/benefício, presente, substituto de vela), cada um no seu grupo.
 
 ## 6. Pendências
