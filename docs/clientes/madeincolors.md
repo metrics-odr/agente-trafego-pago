@@ -87,7 +87,31 @@ Há também linhas de € 3,90, € 0,00 (16/11) e € 11,89, sugerindo frete, b
 4. Metas de CAC, ROAS e verba mensal não definidas. Pedir ao Eduardo.
 5. Janela curta (8 dias de gasto): sem base para otimizar verba. Seguir a regra do CLAUDE.md: só usar métricas dos prints/dashboard e perguntar a métrica principal do funil (compra).
 
-## 5. Pendências
+## 5. Estratégia Google Search (definida em 19/11/2026)
+Produto de **atenção, não de intenção**: quase ninguém busca "lâmpada de chama verde". O público compra por presente e decoração, então a busca precisa pegar a intenção de **comprar presente/decor**, não o produto. Volume é o limite; o foco é qualidade da busca, não quantidade.
+
+**Dados da conta que sustentam isso (01–19/11):** as keywords que mais gastaram foram `housewarming gift` (€ 51, 79 cliques), `lampe d'ambiance` (€ 37) e `cadeau déco maison` (€ 17). Os conjuntos são `AUTO_EN` e `AUTO_FR`, ou seja, o Google escolhe os termos. Falta ver o relatório de **termos de pesquisa** (não está na dashboard) para saber o que realmente disparou.
+
+**Temas de keyword (testar em grupos separados, EN e FR):**
+1. Presente/ocasião (maior intenção de compra): `cadeau pendaison de crémaillère original`, `cadeau déco maison original`, `idée cadeau insolite`, `unique housewarming gift`, `gift for someone who has everything`, `christmas gift for home decor`.
+2. Substituto de vela (problema real): `smokeless candle alternative`, `non toxic candle alternative`, `candle without smoke`, `bougie sans fumée`, `alternative bougie sans odeur`, `flameless candle` só se o produto fizer sentido.
+3. Produto/marca (poucas buscas, mas convertem): `green flame lamp`, `green flame refill`, `lampe flamme verte`, `lampe à huile décorative`, nome da marca.
+4. Decoração: `lampe d'ambiance`, `veilleuse originale`, `mood lamp gift`. Volume maior, intenção menor: limitar a verba.
+
+**Estrutura:** 1 campanha Search por idioma/mercado, 1 grupo por tema, **correspondência de frase e exata**. Evitar ampla sem sinal forte de conversão. Parar de depender dos grupos `AUTO`. Mercados separados (FR, DE, UK, NL), com anúncio no idioma de cada um (hoje a Alemanha gasta mais do que a França e deve ter anúncio em alemão).
+
+**Negativas desde o início:** `diy`, `recette`, `how to make`, `gratuit/free`, `pdf`, `led`, `electric`, `candle` solto, `chauffe-plat`, `pétrole`, `paraffin`, `oil lamp` industrial/camping, `wick` sozinho, `vintage`, `antique`, `jobs`, `wholesale`, nomes de concorrentes, além do que o relatório de termos mostrar.
+
+**Anúncios (RSA):** vender o benefício e a oferta, não a especificação.
+- Ganchos: "Chama verde, sem fumaça e sem cheiro", "Não tóxica", "Presente que ninguém espera", "A decoração que todos comentam", "Entrega em 24–48 h", preço e oferta Black Friday (Coffret Serenity € 39,95, de € 49,95).
+- Fixar a headline 1 com o tema da busca (presente, vela, produto) para ficar relevante. Usar extensões de preço, sitelinks (Coffrets, Líquidos, Presentes) e promoção.
+- Página de destino por tema: presente → Coffret Serenity; substituto de vela → página de benefício; marca → home.
+
+**Alternativas para atenção (fora de busca pura):** como o produto é de descoberta, Search sozinho terá teto. Reforçar com PMax/Shopping e Demand Gen/YouTube e Meta, e remarketing por RLSA para quem já visitou (o Meta traz 787 visitantes). Search pega a demanda que o Meta cria.
+
+**Antes de mexer:** confirmar rastreamento da conversão de compra (0 compras atribuídas em € 188 gastos) e pegar o relatório de termos de pesquisa. Sem conversão medida, a otimização por CPA fica cega.
+
+## 6. Pendências
 - [ ] Localizar o briefing do cliente.
 - [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
 - [ ] Definir metas (CAC, ROAS, verba mensal) e funis/nomenclatura das campanhas.
@@ -95,7 +119,8 @@ Há também linhas de € 3,90, € 0,00 (16/11) e € 11,89, sugerindo frete, b
 - [ ] Confirmar a venda de € 844,80 e o rastreamento de conversão do Google.
 - [ ] Ler a política de devolução e confirmar frete grátis/valor mínimo.
 
-## 6. Histórico de mudanças
+## 7. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 19/11/2026 | Adicionada estratégia Google Search (atenção vs intenção). |
 | 19/11/2026 | Arquivo criado com leitura do site e da dashboard. Nada alterado no Meta Ads. |
