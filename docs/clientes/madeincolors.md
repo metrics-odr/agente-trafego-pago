@@ -163,6 +163,12 @@ Momentos: ceia de Natal, jantar a dois, noite com amigos, casa nova, depois do t
 Copy por pessoa (FR + PT) entregue na conversa de 19/11/2026: anúncio Presente (medo de presente banal), Ambiente (receber e relaxar) e Substituto de vela (incômodo). Palavras-chave por momento: cadeau noël maison, cadeau couple original, idée déco salon, ambiance romantique maison, lampe détente, bougie sans fumée.
 Validar: avaliações e comentários do Instagram (@made.in.colors) e pergunta aos compradores da planilha.
 
+### 5.6 Anúncio "Sérénité" (direção do Eduardo, 19/11/2026)
+Direção: criar clima de paz e serenidade para momentos com amigos, meditação ou descanso; a lâmpada de chama verde produz ambiente impressionante e aconchegante. Sem preço, sem oferta pontual, sem afirmação de saúde (meditação e descanso são momentos de uso, não promessa).
+- Palavras-chave (frase/exata, FR): lampe à huile flamme verte, lampe flamme verte, lampe ambiance zen, lampe zen déco, déco zen salon, lampe méditation, ambiance méditation maison, lampe détente, ambiance relaxante maison, lampe à huile décorative, lampe à huile en verre, déco méditation, lampe ambiance apaisante, idée déco zen, lampe à flamme décorative.
+- Títulos: Lampe Zen à Flamme Verte (fixar pos. 1) · Lampe à Huile Flamme Verte · Ambiance Zen et Sereine · Lampe Méditation Flamme Verte · Une Flamme Verte Apaisante · Sérénité en Un Instant · Déco Zen Qui Impressionne · Moments Calmes entre Amis · Méditation, Repos, Détente · Une Lumière Douce et Verte · Sans Fumée, Sans Odeur · Chaleur et Calme chez Vous · Créez Votre Coin Zen · Découvrez la Serenity · Commandez Votre Lampe.
+- Descrições: ver conversa de 19/11/2026 (FR + PT).
+
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
 - [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
@@ -174,6 +180,7 @@ Validar: avaliações e comentários do Instagram (@made.in.colors) e pergunta a
 ## 7. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 19/11/2026 | Anúncio Sérénité (paz, amigos, meditação, descanso) salvo (5.6). |
 | 19/11/2026 | Público, urgência e motivação por tema (5.5). |
 | 19/11/2026 | Anúncios RSA FR por tema salvos (5.4). |
 | 19/11/2026 | Regras de anúncio (sem preço nos títulos) salvas (5.3). |
