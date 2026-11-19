@@ -134,6 +134,11 @@ Base: CSV de termos do `AUTO_FR`. A parte EN é equivalente ao FR e **ainda não
 **EN:** ikea, kartell, mathmos, zara home, lava lamp, salt lamp, himalayan, mushroom lamp, touch lamp, led, solar, floor lamp, table lamp, desk lamp, bedside, chandelier, pendant, wall light, tiffany, murano, crystal, diy, how to, tutorial, recipe, free, pdf, cheap, used, second hand, vintage, antique, repair, manual, jobs, wholesale, supplier, near me, paraffin, kerosene, hurricane lamp, wick only, tea light, scented candle, led candle, electric candle, soy wax, candle holder, candle making, wax, vase, mirror, curtain, rug, cushion, wall art, clock, fairy lights, christmas tree, nativity.
 **Não negativar:** `pendaison de crémaillère`, `housewarming`, `idée cadeau`, `cadeau maison`, `déco maison`, `lampe à huile en verre`, `flamme`, `flame`, `green`, `vert`.
 
+### 5.3 Regras de anúncio definidas pelo Eduardo
+- **Não mencionar preços nem percentual de desconto nos títulos** dos anúncios (nem "dès 39,95€", nem "-20%"). Black Friday pode aparecer sem número.
+- Fixar no máximo 1 título (o do tema da busca). Marca "Made in Colors" não fixada em posição 1.
+- Um anúncio por tema (produto/benefício, presente, substituto de vela), cada um no seu grupo.
+
 ## 6. Pendências
 - [ ] Localizar o briefing do cliente.
 - [ ] Confirmar conta Meta Ads (ID), BM, pixel e página/Instagram e registrar aqui e em `docs/contas.md`.
@@ -145,6 +150,7 @@ Base: CSV de termos do `AUTO_FR`. A parte EN é equivalente ao FR e **ainda não
 ## 7. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 19/11/2026 | Regras de anúncio (sem preço nos títulos) salvas (5.3). |
 | 19/11/2026 | Lista de negativas FR/EN salva (5.2). |
 | 19/11/2026 | Análise do relatório de termos de pesquisa (AUTO_FR). |
 | 19/11/2026 | Adicionada estratégia Google Search (atenção vs intenção). |
