@@ -72,6 +72,7 @@ Chave para cruzar abas: **`entity_id` = lead_id do Kommo**. Na aba Conversas, `e
 |---|---|---|---|---|
 | [`Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram`](https://n8n.srv2164786.hstgr.cloud/workflow/qPWy230Z8Cw5N8Uj) | `qPWy230Z8Cw5N8Uj` | `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-whatsapp-kommo-sheets-conversas` | [Kommo → Configurações → Integrações → Web hooks](https://contourculptclinique.kommo.com/settings/widgets/) (lead não triado). **Conferir se já aponta para cá e não mais para o Make** | Publicado |
 | [`Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados`](https://n8n.srv2164786.hstgr.cloud/workflow/iK9iVYgAMyxVUUyU) | `iK9iVYgAMyxVUUyU` | `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-geral-kommo-sheets-agendamentos` | [Kommo → funil digital](https://contourculptclinique.kommo.com/leads/pipeline/13296523) → etapa AGENDADO → gatilho Webhook "Quando movido para esta etapa", sem condição | Publicado e recebendo |
+| [`Flow \| DrThiago \| Lead Ads \| Sheets > Kommo - Cria lead de entrada de quem não iniciou conversa`](https://n8n.srv2164786.hstgr.cloud/workflow/ZOpMsL7IrL8w1wKo) | `ZOpMsL7IrL8w1wKo` | — (agendado a cada 1 min, lê a aba `Lead Instant Form 👥`) | Aba da Planilha Central preenchida pelo Lead Ads em tempo real | **INATIVO (criado em 20/11/2026). Não publicar sem ordem do Eduardo.** Regras: espera 5 min; 1 por id do Meta; telefone já com lead no Kommo = só nota; senão cria em Leads de entrada do funil `13296523` com a tag `Lead Ads - Recuperar` |
 | [`Flow \| DrThiago \| Geral \| Manual > Sheets - Regrava agendados sobrescritos (uso único)`](https://n8n.srv2164786.hstgr.cloud/workflow/PCyRC8FsN6p1q9Qw) | `PCyRC8FsN6p1q9Qw` | — | — | Já executado. Pode ser apagado |
 
 ### Data tables
@@ -82,6 +83,7 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 | `Table \| DrThiago \| WhatsApp \| Frases da Primeira Mensagem` | `R6S6DOuurjZMzzho` | frase | Frases aceitas na primeira mensagem |
 | `Table \| DrThiago \| WhatsApp \| Conversas registradas (anti-duplicata)` | `rl3pVO73UzAPoMmP` | chave, telefone, lead_id, registrado_em | Telefones já registrados em Conversas |
 | `Table \| DrThiago \| Geral \| Agendamentos registrados (anti-duplicata)` | `6EpypQN05XhKHaAw` | lead_id, telefone, registrado_em | Leads já registrados em Agendamentos |
+| `Table \| DrThiago \| Lead Ads \| Leads do formulário registrados (anti-duplicata)` | `EbiBgy55PbLmHgmh` | lead_ads_id, telefone, resultado, kommo_lead_id, registrado_em | Leads do formulário já tratados (`criado_em_leads_de_entrada`, `ja_existia_no_kommo`, `sem_telefone_valido`) |
 | `Table \| DrThiago \| Geral \| Payloads do Agendado (histórico)` | `8M8KvwbZrkxyxN8B` | recebido_em, payload | Todo payload bruto da etapa Agendado |
 
 ### Credenciais
