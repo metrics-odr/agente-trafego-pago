@@ -28,7 +28,7 @@ Levantado em 20/11/2026. Só leitura (GET) no Kommo; nada foi criado, alterado o
 2. **Definição de "comprou".** Pelo Kommo é a etapa 142 (30 leads, todos até junho). Não há compra de julho a novembro: ou não houve, ou a equipe não está movendo para 142. **Não verificado**; perguntar ao Eduardo/equipe.
 3. **Valor.** Sem preço no Kommo. Faturamento/Receita ficam em branco ou vêm de outra fonte (Clínica Experts: campos `2622997`/`2622999`, **não lidos**).
 4. **O lead da Dra Fernanda** na etapa 142 do funil do Dr Thiago: excluir (regra do repositório) ou incluir? Proposta: excluir e avisar.
-5. **Uma vez ou contínuo.** Proposta: carga única agora + fluxo contínuo (etapa 142).
+5. ~~Uma vez ou contínuo~~ **Decidido pelo Eduardo em 20/11/2026: só fluxo contínuo por webhook, sem carga única.** Os 30 leads que já estão na etapa 142 **não entram** na planilha (só os movidos para a etapa daqui para frente).
 
 ## 3. Plano de implementação
 
@@ -47,7 +47,7 @@ Fluxos **inativos** na pasta `DrThiago`, nomes pelo [`padrao-n8n.md`](padrao-n8n
 | Campanha / Conjunto / Anúncio | campos Meta Ads `2617935`…`2617945` (preenchidos só em parte dos leads: **conferir**) |
 | Produto / Faturamento / Receita | **sem fonte no Kommo**: em branco até decidir (item 3) |
 
-**Fase 2. Carga única (backfill).** Fluxo manual `Flow | DrThiago | Geral | Manual > Sheets - Preenche leads que compraram (uso único)`:
+**Fase 2. Carga única (backfill). DESCARTADA pelo Eduardo; não construir.** Fluxo manual `Flow | DrThiago | Geral | Manual > Sheets - Preenche leads que compraram (uso único)`:
 1. `GET /api/v4/leads?filter[statuses][0][pipeline_id]=13296523&filter[statuses][0][status_id]=142&with=contacts&limit=250` (paginar).
 2. Filtrar `Profissional = Dr. Thiago`.
 3. Buscar telefone de cada contato; normalizar.
@@ -55,7 +55,7 @@ Fluxos **inativos** na pasta `DrThiago`, nomes pelo [`padrao-n8n.md`](padrao-n8n
 5. Gravar com **Use Append ligado**, só as colunas da Fase 1; colunas da equipe não são tocadas.
 6. Registrar no controle só depois de a planilha confirmar.
 
-**Fase 3. Contínuo (se aprovado).** Gatilho Webhook na etapa `Compareceu e fechou procedimento` do Kommo (como o de AGENDADO): fluxo `Flow | DrThiago | Geral | Kommo > Sheets - Registra leads que compraram`, com payload bruto em data table de histórico, anti-duplicata por `lead_id`, busca de lead/contato na API (o webhook só traz IDs) e `Use Append`. Cuidado: ao marcar "aplicar a todos os leads já nesta etapa" o Kommo dispara um webhook por lead de uma vez.
+**Fase 3. Contínuo (APROVADO, é o que será construído; falta a aba/colunas da Fase 0).** Gatilho Webhook na etapa `Compareceu e fechou procedimento` do Kommo (como o de AGENDADO): fluxo `Flow | DrThiago | Geral | Kommo > Sheets - Registra leads que compraram`, com payload bruto em data table de histórico, anti-duplicata por `lead_id`, busca de lead/contato na API (o webhook só traz IDs) e `Use Append`. Cuidado: ao marcar "aplicar a todos os leads já nesta etapa" o Kommo dispara um webhook por lead de uma vez.
 
 **Fase 4. Verificação dupla.** Releitura 1: contagem de linhas gravadas = leads elegíveis (esperado 29 se Fernanda for excluída) e conferência por `entity_id`. Releitura 2, separada: listar a aba e achar duplicatas, faltantes e linhas fora do pedido. Teste com lead fictício `TESTE-...` e limpeza depois.
 
