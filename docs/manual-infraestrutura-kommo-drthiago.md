@@ -121,9 +121,24 @@ O Eduardo observou **pelo celular** (WhatsApp, lado do lead) que o fluxo de foll
 
 **Falta registrar** (o Eduardo vai enviar os vídeos/prints do celular): por etapa de FUP, a sequência exata de mensagens, o texto, quais vídeos são enviados (nome do arquivo, duração, onde estão hospedados no Kommo), intervalos entre as mensagens e o que o bot faz quando o lead responde. Preencher a tabela abaixo quando chegar:
 
+**Sequência observada no celular do Eduardo em 20/11/2026** (prints do WhatsApp, conversa com o contato **"Clinica Medica Contour Comercial"**, visão do lead). Qual bot/etapa do Kommo gerou cada mensagem **não foi identificado**: o mapeamento abaixo é só pelo que chegou e pela data.
+
+| # | Data / hora | Quem | Tipo | Conteúdo | Observação |
+|---|---|---|---|---|---|
+| 0 | 21/10/2026 | Sistema | Aviso | "Esta empresa usa um serviço seguro da Meta para gerenciar esta conversa." | Aviso padrão do WhatsApp |
+| 1 | 05/11/2026 16:35 | Lead | Texto | "Olá" | Mensagem inicial do lead |
+| 2 | 05/11/2026 16:44 | Atendimento | Texto | "Olá, bom dia! Tudo bem? 😊 Sou a Kevelyn, assistente da Le Contour. Para eu te orientar melhor, me conta: qual é a sua principal queixa corporal ou facial hoje?" | Resposta ~9 min depois. Persona **"Kevelyn, assistente da Le Contour"**. Não sei se é bot, Agente de IA ou pessoa |
+| 3 | 13/11/2026 17:48 | Atendimento | **Vídeo 0:54** + texto | Vídeo do **Dr Thiago** sentado à mesa de mármore. Texto: "Se esse também é o seu sonho, nós podemos te ajudar! Às vezes, tudo começa com a decisão de dar o primeiro passo em direção ao que você deseja. O que acha de começarmos a transformar esse objetivo em um plano para você?" | **8 dias** depois da mensagem 2 (sem resposta do lead). Vídeo formato vertical |
+| 4 | "Quarta-feira" (provável 18/11/2026) 17:49 | Atendimento | **Vídeo 0:22 (HD)** + texto | Vídeo de resultado facial com legenda "Você é detalhista no que faz, né? Nasceu pra isso!". Texto: "Oiee! 💗 Você sabia que aqui na clínica também cuidamos da parte facial? 😍 Olha esses resultados lindos de pacientes que fizeram a harmonização Full Face com a **Dra. Fernanda**! Ela faz um planejamento personalizado para valorizar os traços de cada pessoa ✨ Me conta, você já pensou em fazer algo para realçar…" (texto cortado no print) | ~5 dias depois da mensagem 3. Dia da semana é inferido (13/11/2026 é sexta) |
+
+Observações:
+- Os horários das mensagens 3 e 4 (17:48 e 17:49) são quase iguais, o que sugere envio por automação com hora fixa de disparo, mas a janela configurada nos bots é seg–sáb 09:00–19:00 (ver acima): **conferir**.
+- O vídeo 4 apresenta a **Dra Fernanda** numa conversa do funil do Dr Thiago (ou de um lead sem segmento definido). **Confirmar com o Eduardo se isso é intencional** antes de replicar.
+- Faltam: o **resto do texto da mensagem 4**, as mensagens seguintes, o **nome do arquivo e o local de hospedagem de cada vídeo** no Kommo, e qual bot/etapa envia cada um. O Eduardo vai mandar mais material.
+
 | Etapa / Bot | Segmento | Msg / vídeo | Texto ou nome do vídeo | Espera | Observação |
 |---|---|---|---|---|---|
-| _a preencher_ | | | | | |
+| _a preencher a partir do Salesbot (prints dos bots)_ | | | | | |
 
 ### 2.8 Fontes de lead e canais (Visto em print)
 - WhatsApp **Dr Thiago V** (WhatsApp Lite, número `5511942946718`, source_id `23084963`).

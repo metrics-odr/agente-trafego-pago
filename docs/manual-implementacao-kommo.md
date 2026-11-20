@@ -93,6 +93,8 @@ Não é feito pelo n8n e **não dá para criar nem ler por API** com o que temos
 
 Para replicar: pedir ao Eduardo a lista de bots, os textos e os vídeos (arquivos originais); montar no Kommo do novo cliente pela tela; criar o campo de segmento antes dos bots; **testar com um lead fictício num número do próprio Eduardo** para ver o que chega ao celular; registrar no manual de infraestrutura do cliente (tabela de mensagens e vídeos).
 
+**Como documentar um follow-up já existente:** pedir ao Eduardo (a) prints do WhatsApp **pelo celular, visão do lead**, de uma conversa que já recebeu a sequência (mostra texto, vídeo, duração e hora de cada envio) e (b) prints dos **Salesbots no Kommo** (mostram qual bot e etapa gera cada mensagem). Cruzar os dois: o WhatsApp dá o **conteúdo e o tempo reais**, o Kommo dá a **origem**. Registrar também a persona usada nas mensagens (no Dr Thiago: "Kevelyn, assistente da Le Contour") e conferir se o conteúdo mistura profissionais (ver §2.7.1 do manual de infraestrutura).
+
 ## Checklist rápido de replicação
 - [ ] Arquivo do cliente criado a partir do modelo e incluído no índice
 - [ ] Token do Kommo criado, credencial **Bearer**, `GET /account` = 200
