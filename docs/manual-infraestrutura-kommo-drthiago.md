@@ -195,10 +195,23 @@ O **Salesbot e as automações não são legíveis pela API**: só pela tela (Au
 
 ## 5. Integração Lead Ads → Kommo (EM PROJETO, nada construído)
 
+**Fluxo construído em 20/11/2026 (INATIVO):** [`Flow | DrThiago | Lead Ads | Sheets > Kommo - Cria lead de entrada de quem não iniciou conversa`](https://n8n.srv2164786.hstgr.cloud/workflow/ZOpMsL7IrL8w1wKo) (`ZOpMsL7IrL8w1wKo`), tabela de controle `EbiBgy55PbLmHgmh`. Decisões do Eduardo: espera de **5 min**, destino **Leads de entrada**, fonte = aba `Lead Instant Form 👥` (o Lead Ads grava lá em tempo real). Formulário real: `DrThiago - Form 001` (`f:1887461179334504`), perguntas "Qual procedimento você tem interesse?" e "Quando você pretende realizar o procedimento?".
+
+**Resultado do teste real com lead fictício (20/11/2026, lead `56589051`, contato `53863081`, telefone inexistente `+5500900000000`):**
+- `POST /api/v4/leads/unsorted/forms` respondeu `202`; o lead foi criado em Leads de entrada com Origem = Trafego, Profissional = Dr. Thiago, texto no campo "Queixa / Área de Interesse" e a tag `Lead Ads - Recuperar` (tag nova, id `324739`).
+- **No mesmo segundo os robôs de entrada agiram:** o lead foi movido de **Leads de entrada para Atendimento IA** (2 eventos de mudança de etapa), recebeu a tag de atendente **`Heloisa`** (rodízio) e responsável `14920695`. Conclusão: **Distribuição = tag de atendente em rodízio; Entrada Thiago = move para Atendimento IA** (inferido dos eventos; os passos dos bots continuam não lidos). O lead chega ao time **já em Atendimento IA**, como os de WhatsApp e da landing page.
+- **Nenhuma nota, tarefa ou mensagem apareceu nos eventos do lead.** Não dá para saber se um número real receberia WhatsApp de algum bot (o número fictício não tem conversa). **Não verificado.**
+- O fluxo de Conversas **recebeu 5 avisos** do Kommo (o primeiro `unsorted.add`, com `category: forms`, sem mensagem) e **descartou todos** em ~20 ms, sem gravar na planilha. Isto também confirma que o **webhook de lead de entrada da conta aponta para a URL de Conversas**.
+- Busca de contato por telefone: `GET /api/v4/contacts?with=leads&query=<telefone>` acha o contato tanto pelo número completo (`5511...`) quanto pelos 9 últimos dígitos (o Kommo guarda `+55...`); número inexistente devolve **204 sem corpo**.
+- **Lead de teste e contato precisam ser apagados à mão no Kommo** (a API usada não apaga). A tag `Lead Ads - Recuperar` fica criada.
+
+**Antes de ligar (checklist):** (1) apagar o lead e o contato de teste; (2) conferir em Kommo → fontes se a fonte **Facebook** (Lead Ads nativo do Kommo) está conectada ao mesmo formulário: se estiver, o lead entraria duas vezes; (3) teste final com **o número do próprio Eduardo** para ver se algum bot manda WhatsApp ao lead; (4) trocar `DATA_CORTE` no nó `Selecionar linhas prontas`; (5) ordem expressa do Eduardo para **publicar**.
+
 **Estado em 20/11/2026 e próximos passos (para retomar em outra conversa):**
 - Estudo do Kommo **concluído** (§2, §2.7.1 e [vídeos](kommo-videos-contour-clinique.md)). Nada de Lead Ads foi criado, ligado ou publicado.
 - **Faltam antes de construir:** (1) conteúdo dos Salesbots Distribuição e Entrada Thiago (se mandam mensagem ou movem etapa); (2) as 2 perguntas do formulário (colunas M e N da aba `Lead Instant Form 👥`) e quem escreve nessa aba; (3) prazo de espera (proposto: 15 min); (4) onde o lead recuperado deve cair (proposto: Leads de entrada do funil `13296523`, tag `Lead Ads - Recuperar`).
 - **Ordem de construção acordada:** fluxo novo **inativo** na pasta `DrThiago` → teste com o lead de teste da Meta e **telefone fictício** → mostrar ao Eduardo o que o Kommo fez com o lead → só ligar com ordem dele → atualizar `clientes/drthiago.md`.
+- Faltam ainda (itens do checklist acima): teste com número real, verificação da fonte Facebook, `DATA_CORTE`, ordem de publicar.
 - Ferramentas já prontas: credencial Bearer do Kommo no n8n, fluxo de leitura `2cqdDHyFGAZOu0lz` (apagar no fim), padrão de anti-duplicata e `Use Append`.
 Regras decididas com o Eduardo em 20/11/2026:
 1. O formulário permite iniciar mensagem. **Quem iniciar a mensagem não pode virar lead duplicado.**

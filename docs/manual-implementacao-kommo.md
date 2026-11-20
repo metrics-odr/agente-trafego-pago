@@ -75,6 +75,13 @@ Passos:
 8. **Mapear respostas do formulário** para campos personalizados quando houver correspondência (procedimento, origem, profissional, IDs do Meta).
 9. Gravar o controle só depois de o Kommo confirmar.
 
+**Aprendizados da implantação do Dr Thiago (20/11/2026):**
+- Para criar lead de formulário em "Leads de entrada" use `POST /api/v4/leads/unsorted/forms` (não `POST /leads`). Corpo: lista com `request_id`, `source_uid`, `source_name`, `pipeline_id`, `created_at`, `_embedded{leads[], contacts[]}` e **`metadata{form_id, form_name, form_sent_at, form_page}` no nível principal do item** (dentro de `_embedded` dá erro 400 `FieldMissing metadata`). Resposta `202` com `_embedded.unsorted[0].uid` e `_embedded.unsorted[0]._embedded.leads[0].id`.
+- Campo de seleção: passar `enum_id` (ler os ids em `/leads/custom_fields`). Tag nova é criada automaticamente pelo nome.
+- **Os Salesbots de entrada rodam no lead criado por API** (no Dr Thiago: tag de atendente em rodízio e mudança para Atendimento IA no mesmo segundo). Sempre testar com lead fictício e ler os eventos do lead: `GET /api/v4/events?filter[entity][]=lead&filter[entity_id][]=<id>`.
+- **O webhook de lead de entrada dispara** (`unsorted.add`, `category: forms`). Conferir que os fluxos que ouvem esse webhook descartam o lead sem mensagem (o de Conversas descarta).
+- A API usada **não apaga lead nem contato**: o lead de teste é apagado à mão no Kommo.
+
 Testar com **o lead de teste da Meta e telefone fictício** (número sem conversa não recebe mensagem de bot). Conferir no Kommo: etapa onde caiu, tag, responsável, se algum robô moveu o lead. Pedir ao Eduardo que apague o lead de teste (o agente não apaga nada no Kommo sem pedido).
 
 ## Fase 7. Testes e entrega ✅
