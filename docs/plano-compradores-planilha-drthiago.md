@@ -65,3 +65,27 @@ Fluxos **inativos** na pasta `DrThiago`, nomes pelo [`padrao-n8n.md`](padrao-n8n
 - Gravar na aba errada (ver item 1 da seção 2) ou lead da Dra Fernanda na planilha do Dr Thiago.
 - Planilha com mais de uma pessoa editando: usar só append e não mexer em colunas da equipe.
 - Valor de venda inexistente no Kommo: não inventar; deixar em branco.
+
+## 5. Estado em 20/11/2026 (decisões e construção)
+
+**Decisões do Eduardo:** só fluxo contínuo por webhook; aba **`Compras 🛒`**; leads da Dra Fernanda **entram**, com uma coluna indicando de quem é (Dr. Thiago ou Dra. Fernanda). Isto substitui a proposta de excluí-los (seção 2, item 4).
+
+**Aba `Compras 🛒` (Verificado):** só tem o cabeçalho (linha 1, colunas A–Q: Data, Nome, Email, Telefone, Produto, Oferta, Faturamento, Receita, Método de Pagamento, utm_cap-source, Campanha, Conjunto, Anúncio, UF, Cidade, Zip Code, Endereço). Nenhuma venda lançada. **Falta criar a coluna R com o cabeçalho `Profissional`** (o fluxo grava nela).
+
+**Fluxo construído, INATIVO:** [`Flow | DrThiago | Geral | Kommo > Sheets - Registra leads que compraram`](https://n8n.srv2164786.hstgr.cloud/workflow/PQAMxyyAqoiHr35w) (`PQAMxyyAqoiHr35w`). Webhook `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-geral-kommo-sheets-compras`. Tabelas: `Compras registradas (anti-duplicata)` (`vH3XqXwJ7YpnVJsQ`) e `Payloads da etapa Compareceu e fechou (histórico)` (`XIPLen8kCAJU2XVQ`).
+
+| Coluna da aba | Origem |
+|---|---|
+| Data | `closed_at` do lead (senão, agora), fuso São Paulo |
+| Nome, Email, Telefone | contato principal do lead (telefone só dígitos) |
+| Produto | campo `Procedimento Fechado` (`2613441`), hoje vazio nos leads |
+| Faturamento | `price` do lead, só se maior que 0 |
+| utm_cap-source | campo `Origem` (`2329388`) |
+| Campanha, Conjunto, Anúncio | campos Meta Ads do lead (só se preenchidos) |
+| Cidade | campo `Cidade` (`2608521`) |
+| **Profissional (R)** | campo `Profissional` (`2329398`): Dr. Thiago, Dra. Fernanda, Outros ou Não informado |
+| Oferta, Receita, Método de Pagamento, UF, Zip Code, Endereço | em branco (sem fonte no Kommo) |
+
+**Teste a seco (20/11/2026, sem gravar):** lead real `38765725` (Lead Site - Cassia): saiu `Cassia | 5511945357820 | Trafego | Dr. Thiago | 18/04/2026 11:20:43`. Só funil `13296523` e etapa `142` passam; outros eventos são descartados.
+
+**Falta:** (1) cabeçalho `Profissional` em R1; (2) gatilho de webhook no Kommo (funil `13296523` → etapa Compareceu e fechou procedimento → "Quando movido para esta etapa" → URL acima), **sem** marcar "aplicar a todos os leads já nesta etapa", senão os 30 antigos entram; (3) um teste real e a verificação dupla; (4) ordem do Eduardo para publicar. A etapa tem automação que move o lead ao Pós Venda após 5 min: o webhook dispara antes. Leads da Dra Fernanda no funil dela (`14055675`) **não** estão cobertos (outro funil, exigiria outro gatilho).
