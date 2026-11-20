@@ -40,10 +40,10 @@ Frases atuais: `Olá! Vim do Instagram e queria agendar uma consulta com Dr. Thi
 ### 3.1 Meta Ads
 | Item | Valor |
 |---|---|
-| Business (BM) | A preencher |
-| Conta(s) de anúncios | A preencher (não está em `contas.md`) |
+| Business (BM) | DrThiago Virgili (`1268521450802238`) |
+| Conta(s) de anúncios | `CA 03 - Dr Thiago Virgili` (`1798165994636924`, BRL, campanhas da clínica) · `CA 01 - Maquina de Seguidores - Dr Thiago Virgilli` (`10204435335456228`, não usada para a clínica) |
 | Pixel | A preencher |
-| Página / Instagram | A preencher |
+| Página / Instagram | Página `Dr Thiago Virgili` (`556646554204800`, Lead Ads ToS aceito) · Instagram `17841408021639808` |
 
 ### 3.2 CRM (Kommo)
 | Item | Valor |
@@ -136,6 +136,7 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 ## 11. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 20/11/2026 | Meta Ads CA 03: rascunho `DRTV \| E2-CAP \| P1-QUENTE \| ABO \| LEAD ADS \| 2026-11-07 \| Endomela \| Teste de Ads` (campanha `52643109978782`, conjuntos `52643118478782` e `52643118515582`, anúncios `52643118636982` e `52643118639982`, criativos `2887200918333902` e `1629072342241564`, formulário `1887461179334504`), copiado da campanha quente `52640779432782` (MSG). **Não publicado**; erro de campanha "No Budget for Campaign" a resolver no Gerenciador |
 | 20/11/2026 | Fluxo de compras (etapa Compareceu e fechou → aba Compras, com coluna Profissional) construído inativo e testado a seco. Tabelas `vH3XqXwJ7YpnVJsQ` e `XIPLen8kCAJU2XVQ`. Fluxo de leitura temporário `jmrezUvcXOtCYjZf` (apagar à mão) |
 | 20/11/2026 | Fluxo Lead Ads → Kommo construído (inativo) e testado com lead fictício `56589051`: criado em Leads de entrada, movido pelos robôs para Atendimento IA com tag `Heloisa`; o fluxo de Conversas descartou o aviso |
 | 20/11/2026 | Estudo dos vídeos do Drive do Kommo (19 distintos nas 4 primeiras páginas, transcritos) e roteiros padronizados em [`roteiros-videos-medicos.md`](../roteiros-videos-medicos.md) |
