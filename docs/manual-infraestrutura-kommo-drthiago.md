@@ -116,7 +116,9 @@ Etapas dos demais funis do Dr Thiago (IDs completos): `Follow Up (Bot Triagem)` 
 
 **Não verificado:** o conteúdo dos Salesbots **Distribuição** e **Entrada Thiago** (se enviam mensagem, se movem de etapa ou só atribuem). Aberto como pendência (§7).
 
-### 2.7.1 Follow-up automatizado (FUP): mensagens e vídeos (A DOCUMENTAR)
+### 2.7.1 Follow-up automatizado (FUP): mensagens e vídeos (PARCIAL)
+> **Atualização 20/11/2026:** o **Drive de arquivos do Kommo** é legível pela API e os vídeos foram baixados e transcritos. Inventário, transcrições e limites em [`kommo-videos-contour-clinique.md`](kommo-videos-contour-clinique.md); roteiros padronizados para outros médicos em [`roteiros-videos-medicos.md`](roteiros-videos-medicos.md). **Ainda não localizados:** os vídeos de 0:54 (Dr Thiago) e 0:22 (Dra Fernanda) vistos no celular. **Segue sem leitura:** qual Salesbot envia qual vídeo.
+
 O Eduardo observou **pelo celular** (WhatsApp, lado do lead) que o fluxo de follow-up automatizado **envia vídeos** e mensagens. O que se sabe pelas telas do Kommo: os bots `Follow-up 15D / 45D / 60D / 90D – Dr Thiago – <segmento>` (Abdômen Fem, Abdômen Masc, Tórax, Braços, Glúteos, Facial) e `Follow-up 20D – Dr Thiago (Dra Fernanda)`, `Follow-up 30D` e `90D – Dr Thiago` disparam ao mover o lead para a etapa, em janela **seg–sáb 09:00–19:00**, e os follow-ups de 24h, 3 e 7 dias criam tarefas "Acompanhar" e movem o lead por tempo.
 
 **Falta registrar** (o Eduardo vai enviar os vídeos/prints do celular): por etapa de FUP, a sequência exata de mensagens, o texto, quais vídeos são enviados (nome do arquivo, duração, onde estão hospedados no Kommo), intervalos entre as mensagens e o que o bot faz quando o lead responde. Preencher a tabela abaixo quando chegar:
@@ -192,6 +194,12 @@ Reaproveitável em qualquer conta: [`2cqdDHyFGAZOu0lz`](https://n8n.srv2164786.h
 O **Salesbot e as automações não são legíveis pela API**: só pela tela (Automatize) ou por print.
 
 ## 5. Integração Lead Ads → Kommo (EM PROJETO, nada construído)
+
+**Estado em 20/11/2026 e próximos passos (para retomar em outra conversa):**
+- Estudo do Kommo **concluído** (§2, §2.7.1 e [vídeos](kommo-videos-contour-clinique.md)). Nada de Lead Ads foi criado, ligado ou publicado.
+- **Faltam antes de construir:** (1) conteúdo dos Salesbots Distribuição e Entrada Thiago (se mandam mensagem ou movem etapa); (2) as 2 perguntas do formulário (colunas M e N da aba `Lead Instant Form 👥`) e quem escreve nessa aba; (3) prazo de espera (proposto: 15 min); (4) onde o lead recuperado deve cair (proposto: Leads de entrada do funil `13296523`, tag `Lead Ads - Recuperar`).
+- **Ordem de construção acordada:** fluxo novo **inativo** na pasta `DrThiago` → teste com o lead de teste da Meta e **telefone fictício** → mostrar ao Eduardo o que o Kommo fez com o lead → só ligar com ordem dele → atualizar `clientes/drthiago.md`.
+- Ferramentas já prontas: credencial Bearer do Kommo no n8n, fluxo de leitura `2cqdDHyFGAZOu0lz` (apagar no fim), padrão de anti-duplicata e `Use Append`.
 Regras decididas com o Eduardo em 20/11/2026:
 1. O formulário permite iniciar mensagem. **Quem iniciar a mensagem não pode virar lead duplicado.**
 2. Quem **não** enviar mensagem precisa aparecer no Kommo para ser recuperado.

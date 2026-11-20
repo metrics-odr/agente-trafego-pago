@@ -127,6 +127,7 @@ Vale para **tudo** que eu criar ou alterar no Meta Ads (campanha, conjunto, anú
 
 ## Kommo (Contour Clinique / Dr Thiago e Dra Fernanda)
 - **Antes de qualquer pedido que envolva o Kommo dessa conta** (criar lead, webhook, fluxo n8n, planilha, Lead Ads, follow-up), ler `docs/manual-infraestrutura-kommo-drthiago.md` (estado real da conta: funis, etapas, campos, tags, automações, o que não foi verificado) e `docs/manual-implementacao-kommo.md` (como montar/replicar em outra conta). O que estiver marcado "Não verificado" ou "A documentar" não é fato: perguntar ou ler a tela.
+- Vídeos e roteiros de follow-up: `docs/kommo-videos-contour-clinique.md` (inventário e transcrições) e `docs/roteiros-videos-medicos.md` (modelos para outros médicos). Vídeo de paciente nunca vai para o repositório.
 - A conta tem funis de **dois profissionais**: nunca gravar lead no funil da Dra Fernanda para trabalho do Dr Thiago.
 - Lead Ads → Kommo do Dr Thiago está **em projeto**: não ligar nem publicar sem ordem do Eduardo.
 

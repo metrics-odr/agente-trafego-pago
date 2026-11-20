@@ -125,12 +125,14 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 - [ ] Apagar o [fluxo de uso único](https://n8n.srv2164786.hstgr.cloud/workflow/PCyRC8FsN6p1q9Qw).
 - [ ] Limpar testes: linhas `TESTE-APAGAR` e `56433815` (gih) na aba Agendamentos e na tabela de agendamentos registrados.
 - [ ] Validar o append atômico com envios simultâneos reais.
+- [ ] Localizar no Drive do Kommo (páginas 5+) os vídeos de 0:54 (Dr Thiago) e 0:22 (Dra Fernanda) e saber qual Salesbot envia cada vídeo. Ver [vídeos do Kommo](../kommo-videos-contour-clinique.md).
 - [ ] Lead Ads → Kommo: ver projeto em [Manual de Infraestrutura §5](../manual-infraestrutura-kommo-drthiago.md). Falta abrir os Salesbots Distribuição e Entrada Thiago e documentar o FUP com vídeos.
 - [ ] Apagar o [fluxo de leitura do Kommo](https://n8n.srv2164786.hstgr.cloud/workflow/2cqdDHyFGAZOu0lz) (uso único).
 
 ## 11. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 20/11/2026 | Estudo dos vídeos do Drive do Kommo (19 distintos nas 4 primeiras páginas, transcritos) e roteiros padronizados em [`roteiros-videos-medicos.md`](../roteiros-videos-medicos.md) |
 | 20/11/2026 | Levantamento do Kommo (9 funis, campos, tags, automações vistas em print) e criação dos Manuais de Infraestrutura e Implementação. Criado o fluxo temporário [`2cqdDHyFGAZOu0lz`](https://n8n.srv2164786.hstgr.cloud/workflow/2cqdDHyFGAZOu0lz) (só leitura, inativo, apagar). Projeto Lead Ads → Kommo definido, **nada ligado** |
 | 15/11/2026 | Cenário do Make analisado e recriado no n8n (Conversas), com anti-duplicata por telefone |
 | 15/11/2026 | 31 telefones já existentes cadastrados no controle de Conversas |
