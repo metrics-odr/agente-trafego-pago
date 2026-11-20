@@ -125,6 +125,11 @@ Vale para **tudo** que eu criar ou alterar no Meta Ads (campanha, conjunto, anú
 - Relatório final curto, sempre com: o inventário (tabela do passo 0 com o resultado das duas verificações: OK ou divergência), os itens que **só quem fez o pedido consegue conferir na tela** (mídias aparecendo, Instagram, posicionamentos por mídia, "Related media" em 0) com o link de edição do rascunho, e as diferenças ou limites encontrados.
 - Só dizer "pronto" quando as duas verificações estiverem sem divergência ou quando todas as divergências já tiverem sido avisadas. Item que a ferramenta não consegue ler: dizer que não foi verificado, nunca "OK".
 
+## Kommo (Contour Clinique / Dr Thiago e Dra Fernanda)
+- **Antes de qualquer pedido que envolva o Kommo dessa conta** (criar lead, webhook, fluxo n8n, planilha, Lead Ads, follow-up), ler `docs/manual-infraestrutura-kommo-drthiago.md` (estado real da conta: funis, etapas, campos, tags, automações, o que não foi verificado) e `docs/manual-implementacao-kommo.md` (como montar/replicar em outra conta). O que estiver marcado "Não verificado" ou "A documentar" não é fato: perguntar ou ler a tela.
+- A conta tem funis de **dois profissionais**: nunca gravar lead no funil da Dra Fernanda para trabalho do Dr Thiago.
+- Lead Ads → Kommo do Dr Thiago está **em projeto**: não ligar nem publicar sem ordem do Eduardo.
+
 ## Google Ads (Rede de Pesquisa)
 **Antes de sugerir palavra-chave, negativa, título ou descrição, ler os documentos de referência. Nunca sugerir copy "de memória" ou só com o que está no site.**
 1. Ler no Drive do Eduardo (`search_files` + `read_file_content`): **"Boas Práticas para Campanhas de Google Search"** (id `1TjQSqyvZ3nbidj-GvODF7LFQIaafWRC7`) e **"[G002] Google Ads - Criando Lista de Palavras-chave e Anúncios na Rede de Pesquisa"** (id `1tYgSCPA7pHpqWPEdrpQzWp8BKRb9G7I-`). Se o Eduardo citar outra regra ou documento (ex.: "lógica do bolo de cenoura fofinho"), procurar; se não achar, perguntar antes de seguir.

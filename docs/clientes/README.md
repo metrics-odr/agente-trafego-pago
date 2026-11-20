@@ -1,6 +1,6 @@
 # Clientes: índice
 
-Um arquivo por cliente, criado a partir de [`_modelo.md`](_modelo.md). Infraestrutura comum: [`../setup-geral.md`](../setup-geral.md). Padrão de nomes do n8n: [`../padrao-n8n.md`](../padrao-n8n.md). Contas Meta: [`../contas.md`](../contas.md).
+Um arquivo por cliente, criado a partir de [`_modelo.md`](_modelo.md). Infraestrutura comum: [`../setup-geral.md`](../setup-geral.md). Padrão de nomes do n8n: [`../padrao-n8n.md`](../padrao-n8n.md). Contas Meta: [`../contas.md`](../contas.md). Manuais do Kommo: [infraestrutura (Contour Clinique)](../manual-infraestrutura-kommo-drthiago.md) · [implementação (replicar em outra conta)](../manual-implementacao-kommo.md).
 
 Regras:
 - Nome do arquivo = campo `Cliente` em minúsculas (`DrThiago` → `drthiago.md`).
