@@ -18,7 +18,7 @@ const funis = {
       { n: 7, label: 'Agend. pagos', value: '48', chip: ['Tx. Agd', '20,00%'], cost: ['CPAgd', 'R$ 125,00'], hl: '80%' },
       { n: 8, label: 'Consultas', value: '36', chip: ['Tx. Cons.', '75,00%'], cost: ['CP Consulta', 'R$ 166,67'] },
       { n: 9, label: 'Procedimentos', value: '12', chip: ['Venda', '33,33%'], cost: ['CAC', 'R$ 500,00'] },
-      { n: 10, label: 'Faturamento', value: 'R$ 24.000,00', kind: 'fat', note: '= 48 agend. pagos × R$ 500', cost: ['ROAS', '4,0x'] },
+      { n: 10, label: 'Faturamento', value: 'R$ 38.400,00', kind: 'fat', note: '= 48 agend. pagos × R$ 800', cost: ['ROAS', '6,4x'] },
     ],
   },
   vsl: {
