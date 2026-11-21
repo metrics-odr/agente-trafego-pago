@@ -3,6 +3,7 @@ const path = require('path'), fs = require('fs');
 const HANDLE = '@eduardosmrm';
 const OUT = process.argv[2];
 const MK = path.join(__dirname, 'mockups');
+const ratioOf = f => { const b = fs.readFileSync(path.join(MK, f)); return b.readUInt32BE(20) / b.readUInt32BE(16); };
 const b64 = f => 'data:image/png;base64,' + fs.readFileSync(path.join(MK, f)).toString('base64');
 const O = '#FF5A36', INK = '#0E1116', CREAM = '#F5F3EE', TOTAL = 11;
 
@@ -121,22 +122,22 @@ S[11] = wrap('dark', 11, `<div class="col" style="justify-content:center;gap:90p
 
 // ---------- 6-8 ----------
 const MOCK = {
-  6: { cls:'light', file:'mockup-clinica-marcado.png', w0:740, ratio:1840/1800,
+  6: { cls:'light', file:'mockup-clinica-marcado.png', w0:720,
        title:'Clínica médica: 10 etapas até o faturamento.',
-       legenda:'De 240 MQLs, só 48 pagaram o agendamento.', q:'QUEBRA DE 80%.',
-       nota:'Cobrando R$ 800 por consulta, 48 agendamentos pagos viram R$ 38.400 de faturamento.',
-       fecho:'Cada agendamento perdido é receita que não entra.' },
-  7: { cls:'dark', file:'mockup-vsl-marcado.png', w0:680, ratio:2032/1800,
+       legenda:'De 12.500 form views, só 250 viraram leads.', q:'QUEBRA DE 98%.',
+       nota:'Cobrando R$ 800 por consulta, 100 agendamentos pagos viram R$ 80.000 de faturamento.',
+       fecho:'Antes de culpar o comercial, olhe o formulário.' },
+  7: { cls:'dark', file:'mockup-vsl-marcado.png', w0:720,
        title:'VSL: o meio da página também tem funil.',
-       legenda:'1.800 pessoas passaram de 1 minuto, mas só 450 chegaram ao pitch.', q:'QUEBRA DE 75%.',
+       legenda:'2.000 pessoas passaram de 1 minuto, mas só 500 chegaram ao pitch.', q:'QUEBRA DE 75%.',
        fecho:'O público fica, mas sai antes da oferta. O problema não é o anúncio: é o conteúdo antes do pitch.' },
-  8: { cls:'light', file:'mockup-ecommerce-marcado.png', w0:720, ratio:1906/1800,
+  8: { cls:'light', file:'mockup-ecommerce-marcado.png', w0:720,
        title:'Ecommerce: onde o cliente desiste?',
        legenda:'De 1.440 visualizações de produto, só 360 viraram carrinho.', q:'QUEBRA DE 75%.',
        fecho:'Muita visualização e pouco carrinho aponta para página, preço ou oferta. Não para o anúncio.' },
 };
 function mock(n, w) {
-  const m = MOCK[n], h = Math.round(w * m.ratio), x = Math.round((1080 - w) / 2);
+  const m = MOCK[n], h = Math.round(w * ratioOf(m.file)), x = Math.round((1080 - w) / 2);
   return wrap(m.cls, n, `
 <div class="T" style="position:absolute;left:90px;top:96px;width:900px;font-size:66px">${m.title}</div>
 <img src="${b64(m.file)}" style="position:absolute;left:${x}px;top:254px;width:${w}px;height:${h}px">
