@@ -1,6 +1,6 @@
 const { chromium } = require('playwright');
 const path = require('path'), fs = require('fs');
-const HANDLE = '[@ da marca]';
+const HANDLE = '@eduardosmrm';
 const OUT = process.argv[2];
 const MK = path.join(__dirname, 'mockups');
 const b64 = f => 'data:image/png;base64,' + fs.readFileSync(path.join(MK, f)).toString('base64');
@@ -8,14 +8,15 @@ const O = '#FF5A36', INK = '#0E1116', CREAM = '#F5F3EE', TOTAL = 11;
 
 const css = `
 *{box-sizing:border-box;margin:0;padding:0}
-.s{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'Inter',sans-serif}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'Inter',sans-serif;text-align:center}
 .dark{background:${INK};color:#fff}.light{background:${CREAM};color:${INK}}
 .col{position:absolute;left:90px;top:100px;width:900px;height:1160px;display:flex;flex-direction:column;justify-content:space-between}
 .mono{font-family:'JetBrains Mono',monospace}
 .o{color:${O}}
 .T{font-weight:800;letter-spacing:-0.035em;line-height:1.02;text-wrap:balance}
 .B{font-size:46px;line-height:1.28;font-weight:500;text-wrap:pretty}
-.F{font-size:54px;line-height:1.14;font-weight:800;letter-spacing:-0.02em;border-left:10px solid ${O};padding-left:30px;text-wrap:balance}
+.F{font-size:54px;line-height:1.14;font-weight:800;letter-spacing:-0.02em;text-wrap:balance}
+.F::before{content:'';display:block;width:120px;height:8px;background:${O};margin:0 auto 24px}
 .foot{position:absolute;left:90px;right:90px;bottom:30px;display:flex;justify-content:space-between;font:500 26px 'Inter';opacity:.5}
 .prog{position:absolute;left:90px;top:44px;width:900px;display:flex;gap:8px}
 .prog i{flex:1;height:7px;border-radius:4px}
@@ -35,11 +36,11 @@ function capa(titleHtml, fs) {
 <div style="position:absolute;left:90px;top:90px;width:900px;height:1080px;display:flex;flex-direction:column;justify-content:space-between">
   <div class="T" style="font-size:${fs}px">${titleHtml}</div>
   <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
-  ${bars.map(([l,w,bb])=>`<div style="position:relative;width:${w}px;height:54px;background:${bb?O:'rgba(255,255,255,.14)'};color:${bb?'#000':'rgba(255,255,255,.8)'};display:flex;align-items:center;justify-content:center;font:700 27px 'JetBrains Mono';border-radius:6px">${l}${bb?`<span style="position:absolute;left:${w+22}px;font:800 80px 'JetBrains Mono';color:${O};line-height:54px">?</span>`:''}</div>`).join('')}
+  ${bars.map(([l,w,bb])=>`<div style="position:relative;width:${w}px;height:54px;background:${bb?O:'rgba(255,255,255,.14)'};color:${bb?'#000':'rgba(255,255,255,.8)'};display:flex;align-items:center;justify-content:center;font:700 27px 'JetBrains Mono';border-radius:6px">${l}${bb?'<b style="font-size:46px;margin-left:16px">?</b>':''}</div>`).join('')}
   </div>
   <div style="font-size:44px;line-height:1.25;font-weight:500;color:#fff">Como achar o gargalo acompanhando cada etapa, do gasto ao faturamento.</div>
 </div>
-<div class="mono" style="position:absolute;right:90px;bottom:36px;background:${O};color:#000;font-size:36px;font-weight:800;padding:14px 30px;border-radius:999px">Arrasta →</div>`);
+<div class="mono" style="position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;bottom:36px;background:${O};color:#000;font-size:36px;font-weight:800;padding:14px 30px;border-radius:999px">Arrasta →</div>`);
 }
 S[1] = capa(`Seu funil <span class="o">quebra</span> em algum lugar. Você sabe onde?`, 116);
 S['1-alt'] = capa(`Onde seu funil está <span class="o">perdendo</span> dinheiro?`, 140);
@@ -102,15 +103,15 @@ ${[[240,0],[205,0],[170,0],[62,1],[48,0]].map(([h,g])=>`<div style="width:158px;
 S[9] = wrap('dark', 9, `<div class="col">
 <div class="T" style="font-size:108px">Otimizar a etapa errada custa caro.</div>
 <div style="display:flex;flex-direction:column;gap:18px">
-${['Trocar o criativo quando o gargalo está no comercial.','Subir a verba quando o gargalo está na página.','Cortar campanha boa porque o CPL parece alto.'].map(t=>`<div style="display:flex;align-items:center;gap:28px;background:rgba(255,255,255,.07);border-radius:18px;padding:30px 32px"><span class="mono o" style="font-size:88px;font-weight:800;line-height:1;flex:none;width:70px">X</span><span style="font-size:44px;line-height:1.22;font-weight:600">${t}</span></div>`).join('')}
+${['Trocar o criativo quando o gargalo está no comercial.','Subir a verba quando o gargalo está na página.','Cortar campanha boa porque o CPL parece alto.'].map(t=>`<div style="background:rgba(255,255,255,.07);border-radius:18px;padding:34px 36px;font-size:46px;line-height:1.2;font-weight:600;text-wrap:balance"><span class="mono o" style="font-weight:800;margin-right:14px">X</span>${t}</div>`).join('')}
 </div>
 <div class="F">Sem o funil mapeado, você corrige o sintoma e mantém a causa.</div></div>`);
 
 // ---------- 10 ----------
-S[10] = wrap('light', 10, `<div class="col" style="justify-content:flex-start;gap:70px">
-<div class="T" style="font-size:108px">3 passos para achar o seu gargalo.</div>
-<div style="display:flex;flex-direction:column;gap:44px">
-${[['1','<b>Defina as etapas</b> do seu funil, do gasto ao faturamento.'],['2','<b>Registre o volume</b> de cada etapa no mesmo período.'],['3','<b>Calcule a quebra</b> entre cada par de etapas e ache a que mais foge do padrão.']].map(([n,t])=>`<div style="display:flex;align-items:center;gap:36px"><span class="mono o" style="font-size:170px;font-weight:800;line-height:.9;flex:none;width:130px">${n}</span><span style="font-size:46px;line-height:1.22;font-weight:500">${t}</span></div>`).join('')}
+S[10] = wrap('light', 10, `<div class="col" style="justify-content:flex-start;gap:56px">
+<div class="T" style="font-size:100px">3 passos para achar o seu gargalo.</div>
+<div style="display:flex;flex-direction:column;gap:34px">
+${[['1','<b>Defina as etapas</b> do seu funil, do gasto ao faturamento.'],['2','<b>Registre o volume</b> de cada etapa no mesmo período.'],['3','<b>Calcule a quebra</b> entre cada par de etapas e ache a que mais foge do padrão.']].map(([n,t])=>`<div><div class="mono o" style="font-size:112px;font-weight:800;line-height:1">${n}</div><div style="font-size:44px;line-height:1.2;font-weight:500;margin-top:4px;text-wrap:balance">${t}</div></div>`).join('')}
 </div></div>`);
 
 // ---------- 11 ----------
@@ -143,7 +144,7 @@ function mock(n, w) {
   <div style="font-size:36px;line-height:1.22;font-weight:600">${m.legenda}</div>
   <div class="o" style="font-size:92px;line-height:1.02;font-weight:800;letter-spacing:-0.03em;white-space:nowrap;margin-top:4px">${m.q}</div>
   ${m.nota ? `<div style="font-size:28px;line-height:1.25;font-weight:500;opacity:.75;margin-top:8px">${m.nota}</div>` : ''}
-  <div style="font-size:32px;line-height:1.2;font-weight:800;margin-top:12px;border-left:8px solid ${O};padding-left:20px">${m.fecho}</div>
+  <div style="font-size:32px;line-height:1.2;font-weight:800;margin-top:12px;text-wrap:balance"><div style="width:90px;height:6px;background:${O};margin:0 auto 10px"></div>${m.fecho}</div>
 </div>`);
 }
 
