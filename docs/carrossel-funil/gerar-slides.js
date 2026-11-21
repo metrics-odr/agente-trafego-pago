@@ -1,154 +1,173 @@
 const { chromium } = require('playwright');
-const path = require('path');
+const path = require('path'), fs = require('fs');
 const HANDLE = '[@ da marca]';
 const OUT = process.argv[2];
 const MK = path.join(__dirname, 'mockups');
-const fs = require('fs');
 const b64 = f => 'data:image/png;base64,' + fs.readFileSync(path.join(MK, f)).toString('base64');
-const O = '#FF5A36', INK = '#0E1116', CREAM = '#F5F3EE';
-const TOTAL = 11;
+const O = '#FF5A36', INK = '#0E1116', CREAM = '#F5F3EE', TOTAL = 11;
 
 const css = `
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#888}
 .s{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'Inter',sans-serif}
 .dark{background:${INK};color:#fff}.light{background:${CREAM};color:${INK}}
-.abs{position:absolute;left:90px;width:900px}
-.t,.fecho,.corpo{text-wrap:balance}
-.t{font-weight:800;letter-spacing:-0.025em;line-height:1.08}
-.o{color:${O}}
+.col{position:absolute;left:90px;top:100px;width:900px;height:1160px;display:flex;flex-direction:column;justify-content:space-between}
 .mono{font-family:'JetBrains Mono',monospace}
-.foot{position:absolute;left:90px;right:90px;bottom:32px;display:flex;justify-content:space-between;font:500 26px 'Inter';opacity:.5}
-.corpo{font-size:40px;line-height:1.3;font-weight:500}
-.fecho{font-size:40px;line-height:1.25;font-weight:800;letter-spacing:-0.01em}
+.o{color:${O}}
+.T{font-weight:800;letter-spacing:-0.035em;line-height:1.02;text-wrap:balance}
+.B{font-size:46px;line-height:1.28;font-weight:500;text-wrap:pretty}
+.F{font-size:54px;line-height:1.14;font-weight:800;letter-spacing:-0.02em;border-left:10px solid ${O};padding-left:30px;text-wrap:balance}
+.foot{position:absolute;left:90px;right:90px;bottom:30px;display:flex;justify-content:space-between;font:500 26px 'Inter';opacity:.5}
+.prog{position:absolute;left:90px;top:44px;width:900px;display:flex;gap:8px}
+.prog i{flex:1;height:7px;border-radius:4px}
+.dark .prog i{background:rgba(255,255,255,.2)}.dark .prog i.on{background:#fff}
+.light .prog i{background:rgba(14,17,22,.15)}.light .prog i.on{background:${INK}}
+.prog i.cur{background:${O}!important}
 `;
+const prog = n => n === 1 ? '' : `<div class="prog">${Array.from({length:TOTAL},(_,i)=>`<i class="${i+1<n?'on':''} ${i+1===n?'cur':''}"></i>`).join('')}</div>`;
 const foot = n => n === 1 ? '' : `<div class="foot"><span>${HANDLE}</span><span>${n}/${TOTAL}</span></div>`;
-const wrap = (cls, n, body) => `<!doctype html><meta charset="utf-8"><style>${css}</style><div class="s ${cls}">${body}${foot(n)}</div>`;
+const wrap = (cls, n, body) => `<!doctype html><meta charset="utf-8"><style>${css}</style><div class="s ${cls}">${prog(n)}${body}${foot(n)}</div>`;
+const S = {};
 
-// ---------- slides 1-5 e 9-11 ----------
-const slides = {};
-
-slides[1] = wrap('dark', 1, `
-<div class="abs t" style="top:90px;font-size:84px;line-height:1.08">Seu funil <span class="o">quebra</span> em algum lugar. Você sabe onde?</div>
-<div class="abs" style="top:600px;height:190px;display:flex;align-items:center;justify-content:space-between">
-${[170,146,122,98,74,50,28].map((h,i,a)=>`<div style="width:96px;height:${h}px;border-radius:8px;background:${i===a.length-1?O:'rgba(255,255,255,.16)'};border:2px solid ${i===a.length-1?O:'rgba(255,255,255,.35)'}"></div>${i<a.length-1?'<div style="flex:1;height:3px;background:rgba(255,255,255,.3)"></div>':''}`).join('')}
-</div>
-<div class="abs" style="top:930px;font-size:42px;line-height:1.3;font-weight:500;color:rgba(255,255,255,.88)">Como achar o gargalo acompanhando cada etapa, do gasto ao faturamento.</div>
-<div class="mono" style="position:absolute;right:90px;bottom:90px;font-size:36px;font-weight:700;color:rgba(255,255,255,.7)">Arrasta →</div>`);
-
-slides[2] = wrap('light', 2, `
-<div class="abs t" style="top:90px;font-size:80px">Funil serve para seguir o dinheiro.</div>
-<div class="abs corpo" style="top:370px">A intenção do funil é acompanhar o caminho do gasto em mídia em todas as suas etapas, até chegar no faturamento.</div>
-<div class="abs mono" style="top:700px;height:120px;display:flex;align-items:center">
-  <div style="background:${INK};color:#fff;font-size:34px;font-weight:700;width:230px;height:120px;display:flex;align-items:center;justify-content:center">GASTO</div>
-  <div style="flex:1;height:4px;background:${INK}"></div>
-  <div style="display:flex;gap:14px;padding:0 14px;background:${CREAM}">${('<i style="display:block;width:14px;height:14px;border-radius:50%;background:'+INK+'"></i>').repeat(3)}</div>
-  <div style="flex:1;height:4px;background:${INK}"></div>
-  <div style="background:${INK};color:#fff;font-size:34px;font-weight:700;width:310px;height:120px;display:flex;align-items:center;justify-content:center">FATURAMENTO</div>
-</div>
-<div class="abs fecho" style="top:1000px;font-size:44px">Se você só olha o começo e o fim, perde tudo o que acontece no meio.</div>`);
-
-slides[3] = wrap('dark', 3, `
-<div class="abs t" style="top:90px;font-size:72px">Olhar só CPL e ROAS não diz por que o resultado está ruim.</div>
-<div class="abs mono" style="top:480px;height:140px;display:flex;align-items:center">
-  <div style="width:140px;height:140px;border-radius:50%;border:5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800">CPL</div>
-  <div style="flex:1;height:4px;background:rgba(255,255,255,.4)"></div>
-  <div style="width:380px;height:140px;background:#2b313c;display:flex;align-items:center;justify-content:center;font-size:110px;font-weight:800;color:${O}">?</div>
-  <div style="flex:1;height:4px;background:rgba(255,255,255,.4)"></div>
-  <div style="width:140px;height:140px;border-radius:50%;border:5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800">ROAS</div>
-</div>
-<div class="abs corpo" style="top:720px">O resultado final só mostra que algo deu errado. Ele não mostra onde.</div>
-<div class="abs fecho" style="top:960px;font-size:46px">Sem etapas definidas, qualquer ajuste é chute.</div>`);
-
-slides[4] = wrap('light', 4, `
-<div class="abs t" style="top:90px;font-size:84px">O que é quebra?</div>
-<div class="abs" style="top:260px;font-size:46px;line-height:1.25;font-weight:800;letter-spacing:-0.01em"><span class="o">Quebra</span> é a perda entre uma etapa e a próxima. É quanta gente entrou numa etapa e não chegou na seguinte.</div>
-<div class="abs mono" style="top:650px;height:200px;display:flex;align-items:flex-end;justify-content:space-between">
-  <div style="width:330px;height:130px;background:${INK};color:#fff;font-size:34px;font-weight:700;display:flex;align-items:center;justify-content:center">1.000 cliques</div>
-  <div style="flex:1;position:relative;height:130px;margin:0 20px">
-    <div style="position:absolute;top:-62px;left:0;right:0;text-align:center;font-size:52px;font-weight:800;color:${O}">-90%</div>
-    <div style="position:absolute;top:63px;left:0;right:26px;height:6px;background:${O}"></div>
-    <div style="position:absolute;top:44px;right:0;width:0;height:0;border-left:34px solid ${O};border-top:22px solid transparent;border-bottom:22px solid transparent"></div>
+// ---------- CAPA ----------
+function capa(titleHtml, fs) {
+  const bars = [['Impressão',900,0],['Clique',790,0],['Lead',680,0],['Agendamento',540,1],['Venda',380,0]];
+  return wrap('dark', 1, `
+<div style="position:absolute;left:90px;top:90px;width:900px;height:1080px;display:flex;flex-direction:column;justify-content:space-between">
+  <div class="T" style="font-size:${fs}px">${titleHtml}</div>
+  <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+  ${bars.map(([l,w,bb])=>`<div style="position:relative;width:${w}px;height:54px;background:${bb?O:'rgba(255,255,255,.14)'};color:${bb?'#000':'rgba(255,255,255,.8)'};display:flex;align-items:center;justify-content:center;font:700 27px 'JetBrains Mono';border-radius:6px">${l}${bb?`<span style="position:absolute;left:${w+22}px;font:800 80px 'JetBrains Mono';color:${O};line-height:54px">?</span>`:''}</div>`).join('')}
   </div>
-  <div style="width:250px;height:130px;background:${INK};color:#fff;font-size:34px;font-weight:700;display:flex;align-items:center;justify-content:center">100 leads</div>
+  <div style="font-size:44px;line-height:1.25;font-weight:500;color:#fff">Como achar o gargalo acompanhando cada etapa, do gasto ao faturamento.</div>
 </div>
-<div class="abs mono" style="top:880px;font-size:36px;font-weight:700">Conversão: 10% | <span class="o">Quebra: 90%</span></div>
-<div class="abs fecho" style="top:1040px;font-size:42px">Toda etapa tem quebra. O que importa é saber qual está fora do normal.</div>`);
+<div class="mono" style="position:absolute;right:90px;bottom:36px;background:${O};color:#000;font-size:36px;font-weight:800;padding:14px 30px;border-radius:999px">Arrasta →</div>`);
+}
+S[1] = capa(`Seu funil <span class="o">quebra</span> em algum lugar. Você sabe onde?`, 116);
+S['1-alt'] = capa(`Onde seu funil está <span class="o">perdendo</span> dinheiro?`, 140);
 
-slides[5] = wrap('dark', 5, `
-<div class="abs t" style="top:90px;font-size:72px">Gargalo é a quebra fora do normal.</div>
-<div class="abs" style="top:330px;height:270px;display:flex;align-items:flex-end;justify-content:space-between">
-${[[230,0],[200,0],[170,0],[64,1],[52,0]].map(([h,g])=>`<div style="width:150px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:270px">${g?`<div class="mono o" style="font-size:30px;font-weight:800;margin-bottom:10px">GARGALO</div>`:''}<div style="width:150px;height:${h}px;background:${g?O:'#3a414d'}"></div></div>`).join('')}
+// ---------- 2 ----------
+S[2] = wrap('light', 2, `<div class="col">
+<div class="T" style="font-size:112px">Funil serve para seguir o dinheiro.</div>
+<div class="B">A intenção do funil é acompanhar o caminho do gasto em mídia em todas as suas etapas, até chegar no faturamento.</div>
+<div class="mono" style="height:150px;display:flex;align-items:center">
+  <div style="background:${INK};color:#fff;font-size:44px;font-weight:800;width:270px;height:150px;display:flex;align-items:center;justify-content:center">GASTO</div>
+  <div style="flex:1;height:6px;background:${INK}"></div>
+  <div style="display:flex;gap:14px;padding:0 14px">${('<i style="display:block;width:22px;height:22px;border-radius:50%;background:'+O+'"></i>').repeat(3)}</div>
+  <div style="flex:1;height:6px;background:${INK}"></div>
+  <div style="background:${INK};color:#fff;font-size:44px;font-weight:800;width:400px;height:150px;display:flex;align-items:center;justify-content:center">FATURAMENTO</div>
 </div>
-<div class="abs" style="top:650px;font-size:38px;line-height:1.3;font-weight:500">Compare cada quebra com o seu próprio histórico e com o que é esperado para aquele tipo de negócio. A etapa que mais se afasta do padrão é o gargalo.</div>
-<div class="abs" style="top:900px;font-size:32px;line-height:1.3;font-weight:500;color:rgba(255,255,255,.78)">Atenção: a quebra entre impressão e clique é sempre alta. Quebra alta não é gargalo. Gargalo é a que foge do seu padrão.</div>
-<div class="abs fecho" style="top:1090px;font-size:42px">É nela que você mexe primeiro. Não na que é mais fácil de mexer.</div>`);
+<div class="F">Se você só olha o começo e o fim, perde tudo o que acontece no meio.</div></div>`);
 
-slides[9] = wrap('dark', 9, `
-<div class="abs t" style="top:90px;font-size:76px">Otimizar a etapa errada custa caro.</div>
-<div class="abs" style="top:370px">
-${['Trocar o criativo quando o gargalo está no comercial.','Subir a verba quando o gargalo está na página.','Cortar campanha boa porque o CPL parece alto.'].map((t,i)=>`<div style="display:flex;align-items:center;gap:30px;padding:40px 0;${i?'border-top:2px solid rgba(255,255,255,.2)':''}"><span class="mono o" style="font-size:64px;font-weight:800;width:60px;flex:none">X</span><span style="font-size:42px;line-height:1.25;font-weight:500">${t}</span></div>`).join('')}
+// ---------- 3 ----------
+S[3] = wrap('dark', 3, `<div class="col">
+<div class="T" style="font-size:96px">Olhar só CPL e ROAS não diz por que o resultado está ruim.</div>
+<div class="mono" style="height:200px;display:flex;align-items:center">
+  <div style="width:200px;height:200px;border-radius:50%;border:7px solid #fff;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;flex:none">CPL</div>
+  <div style="flex:1;height:6px;background:rgba(255,255,255,.4)"></div>
+  <div style="width:300px;height:200px;background:#2b313c;display:flex;align-items:center;justify-content:center;font-size:150px;font-weight:800;color:${O};flex:none">?</div>
+  <div style="flex:1;height:6px;background:rgba(255,255,255,.4)"></div>
+  <div style="width:200px;height:200px;border-radius:50%;border:7px solid #fff;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800;flex:none">ROAS</div>
 </div>
-<div class="abs fecho" style="top:1020px;font-size:46px">Sem o funil mapeado, você corrige o sintoma e mantém a causa.</div>`);
+<div class="B">O resultado final só mostra que algo deu errado. Ele não mostra onde.</div>
+<div class="F">Sem etapas definidas, qualquer ajuste é chute.</div></div>`);
 
-slides[10] = wrap('light', 10, `
-<div class="abs t" style="top:90px;font-size:76px">3 passos para achar o seu gargalo.</div>
-<div class="abs" style="top:370px">
-${[['1','<b>Defina as etapas</b> do seu funil, do gasto ao faturamento.'],['2','<b>Registre o volume</b> de cada etapa no mesmo período.'],['3','<b>Calcule a quebra</b> entre cada par de etapas e ache a que mais foge do padrão.']].map(([n,t])=>`<div style="display:flex;align-items:center;gap:36px;padding:34px 0"><span class="mono o" style="font-size:120px;font-weight:800;width:110px;flex:none;line-height:1">${n}</span><span style="font-size:42px;line-height:1.28;font-weight:500">${t}</span></div>`).join('')}
-</div>`);
+// ---------- 4 ----------
+S[4] = wrap('light', 4, `<div class="col">
+<div class="T" style="font-size:112px">O que é quebra?</div>
+<div style="font-size:48px;line-height:1.24;font-weight:800;letter-spacing:-0.015em;text-wrap:pretty"><span class="o">Quebra</span> é a perda entre uma etapa e a próxima. É quanta gente entrou numa etapa e não chegou na seguinte.</div>
+<div>
+  <div class="mono" style="display:flex;align-items:flex-end;justify-content:space-between">
+    <div style="width:330px;height:190px;background:${INK};color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><b style="font-size:76px;line-height:1">1.000</b><span style="font-size:34px;font-weight:700;margin-top:6px">cliques</span></div>
+    <div style="flex:1;position:relative;height:190px;margin:0 16px">
+      <div style="position:absolute;top:20px;left:0;right:0;text-align:center;font-size:62px;font-weight:800;color:${O}">-90%</div>
+      <div style="position:absolute;top:110px;left:0;right:30px;height:8px;background:${O}"></div>
+      <div style="position:absolute;top:86px;right:0;width:0;height:0;border-left:40px solid ${O};border-top:28px solid transparent;border-bottom:28px solid transparent"></div>
+    </div>
+    <div style="width:240px;height:190px;background:${INK};color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><b style="font-size:76px;line-height:1">100</b><span style="font-size:34px;font-weight:700;margin-top:6px">leads</span></div>
+  </div>
+  <div class="mono" style="margin-top:26px;font-size:40px;font-weight:800">Conversão: 10% | <span class="o">Quebra: 90%</span></div>
+</div>
+<div class="F">Toda etapa tem quebra. O que importa é saber qual está fora do normal.</div></div>`);
 
-slides[11] = wrap('dark', 11, `
-<div class="abs t" style="top:330px;font-size:80px">Precisa mapear e metrificar seu funil?</div>
-<div class="abs" style="top:760px"><div class="mono" style="display:inline-block;background:${O};color:#000;font-size:44px;font-weight:800;padding:34px 56px">Comenta FUNIL</div></div>`);
+// ---------- 5 ----------
+S[5] = wrap('dark', 5, `<div class="col">
+<div class="T" style="font-size:100px">Gargalo é a quebra fora do normal.</div>
+<div style="height:250px;display:flex;align-items:flex-end;justify-content:space-between">
+${[[240,0],[205,0],[170,0],[62,1],[48,0]].map(([h,g])=>`<div style="width:158px;height:250px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end">${g?`<div class="mono o" style="font-size:34px;font-weight:800;margin-bottom:10px">GARGALO</div>`:''}<div style="width:158px;height:${h}px;background:${g?O:'#3a414d'}"></div></div>`).join('')}
+</div>
+<div style="font-size:40px;line-height:1.28;font-weight:500">Compare cada quebra com o seu próprio histórico e com o que é esperado para aquele tipo de negócio. A etapa que mais se afasta do padrão é o gargalo.</div>
+<div style="font-size:34px;line-height:1.28;font-weight:500;color:rgba(255,255,255,.75)">Atenção: a quebra entre impressão e clique é sempre alta. Quebra alta não é gargalo. Gargalo é a que foge do seu padrão.</div>
+<div class="F" style="font-size:46px">É nela que você mexe primeiro. Não na que é mais fácil de mexer.</div></div>`);
 
-// ---------- slides 6-8 (mockups) ----------
+// ---------- 9 ----------
+S[9] = wrap('dark', 9, `<div class="col">
+<div class="T" style="font-size:108px">Otimizar a etapa errada custa caro.</div>
+<div style="display:flex;flex-direction:column;gap:18px">
+${['Trocar o criativo quando o gargalo está no comercial.','Subir a verba quando o gargalo está na página.','Cortar campanha boa porque o CPL parece alto.'].map(t=>`<div style="display:flex;align-items:center;gap:28px;background:rgba(255,255,255,.07);border-radius:18px;padding:30px 32px"><span class="mono o" style="font-size:88px;font-weight:800;line-height:1;flex:none;width:70px">X</span><span style="font-size:44px;line-height:1.22;font-weight:600">${t}</span></div>`).join('')}
+</div>
+<div class="F">Sem o funil mapeado, você corrige o sintoma e mantém a causa.</div></div>`);
+
+// ---------- 10 ----------
+S[10] = wrap('light', 10, `<div class="col" style="justify-content:flex-start;gap:70px">
+<div class="T" style="font-size:108px">3 passos para achar o seu gargalo.</div>
+<div style="display:flex;flex-direction:column;gap:44px">
+${[['1','<b>Defina as etapas</b> do seu funil, do gasto ao faturamento.'],['2','<b>Registre o volume</b> de cada etapa no mesmo período.'],['3','<b>Calcule a quebra</b> entre cada par de etapas e ache a que mais foge do padrão.']].map(([n,t])=>`<div style="display:flex;align-items:center;gap:36px"><span class="mono o" style="font-size:170px;font-weight:800;line-height:.9;flex:none;width:130px">${n}</span><span style="font-size:46px;line-height:1.22;font-weight:500">${t}</span></div>`).join('')}
+</div></div>`);
+
+// ---------- 11 ----------
+S[11] = wrap('dark', 11, `<div class="col" style="justify-content:center;gap:90px">
+<div class="T" style="font-size:132px">Precisa mapear e metrificar seu funil?</div>
+<div class="mono" style="background:${O};color:#000;font-size:70px;font-weight:800;padding:46px 0;text-align:center;border-radius:18px">Comenta FUNIL</div></div>`);
+
+// ---------- 6-8 ----------
 const MOCK = {
-  6: { cls:'light', file:'mockup-clinica-marcado.png', w0:780, ratio:1840/1800,
+  6: { cls:'light', file:'mockup-clinica-marcado.png', w0:740, ratio:1840/1800,
        title:'Clínica médica: 10 etapas até o faturamento.',
-       legenda:'De 240 MQLs, só 48 pagaram o agendamento. <b class="o" style="white-space:nowrap">QUEBRA DE 80%.</b>',
+       legenda:'De 240 MQLs, só 48 pagaram o agendamento.', q:'QUEBRA DE 80%.',
        nota:'Cobrando R$ 800 por consulta, 48 agendamentos pagos viram R$ 38.400 de faturamento.',
        fecho:'Cada agendamento perdido é receita que não entra.' },
-  7: { cls:'dark', file:'mockup-vsl-marcado.png', w0:740, ratio:2032/1800,
+  7: { cls:'dark', file:'mockup-vsl-marcado.png', w0:680, ratio:2032/1800,
        title:'VSL: o meio da página também tem funil.',
-       legenda:'1.800 pessoas passaram de 1 minuto, mas só 450 chegaram ao pitch. <b class="o" style="white-space:nowrap">QUEBRA DE 75%.</b>',
+       legenda:'1.800 pessoas passaram de 1 minuto, mas só 450 chegaram ao pitch.', q:'QUEBRA DE 75%.',
        fecho:'O público fica, mas sai antes da oferta. O problema não é o anúncio: é o conteúdo antes do pitch.' },
-  8: { cls:'light', file:'mockup-ecommerce-marcado.png', w0:780, ratio:1906/1800,
+  8: { cls:'light', file:'mockup-ecommerce-marcado.png', w0:720, ratio:1906/1800,
        title:'Ecommerce: onde o cliente desiste?',
-       legenda:'De 1.440 visualizações de produto, só 360 viraram carrinho. <b class="o" style="white-space:nowrap">QUEBRA DE 75%.</b>',
+       legenda:'De 1.440 visualizações de produto, só 360 viraram carrinho.', q:'QUEBRA DE 75%.',
        fecho:'Muita visualização e pouco carrinho aponta para página, preço ou oferta. Não para o anúncio.' },
 };
-function mockSlide(n, w) {
+function mock(n, w) {
   const m = MOCK[n], h = Math.round(w * m.ratio), x = Math.round((1080 - w) / 2);
   return wrap(m.cls, n, `
-<div class="abs t" style="top:90px;font-size:60px">${m.title}</div>
-<img src="${b64(m.file)}" style="position:absolute;left:${x}px;top:245px;width:${w}px;height:${h}px">
-<div id="blk" class="abs" style="top:${245 + h + 16}px">
-  <div style="font-size:30px;line-height:1.28;font-weight:500">${m.legenda}</div>
-  ${m.nota ? `<div style="font-size:28px;line-height:1.28;font-weight:500;opacity:.75;margin-top:8px">${m.nota}</div>` : ''}
-  <div style="font-size:30px;line-height:1.25;font-weight:800;margin-top:12px">${m.fecho}</div>
+<div class="T" style="position:absolute;left:90px;top:96px;width:900px;font-size:66px">${m.title}</div>
+<img src="${b64(m.file)}" style="position:absolute;left:${x}px;top:254px;width:${w}px;height:${h}px">
+<div id="blk" style="position:absolute;left:90px;width:900px;top:${254 + h + 14}px">
+  <div style="font-size:36px;line-height:1.22;font-weight:600">${m.legenda}</div>
+  <div class="o" style="font-size:92px;line-height:1.02;font-weight:800;letter-spacing:-0.03em;white-space:nowrap;margin-top:4px">${m.q}</div>
+  ${m.nota ? `<div style="font-size:28px;line-height:1.25;font-weight:500;opacity:.75;margin-top:8px">${m.nota}</div>` : ''}
+  <div style="font-size:32px;line-height:1.2;font-weight:800;margin-top:12px;border-left:8px solid ${O};padding-left:20px">${m.fecho}</div>
 </div>`);
 }
 
 (async () => {
   const b = await chromium.launch();
   const p = await (await b.newContext({ deviceScaleFactor: 1, viewport: { width: 1080, height: 1350 } })).newPage();
-  for (let n = 1; n <= TOTAL; n++) {
-    let w = null, info = '';
-    if (MOCK[n]) {
-      w = MOCK[n].w0;
-      for (let step = 0; step <= 4; step++) {
-        await p.setContent(mockSlide(n, w)); await p.evaluate(() => document.fonts.ready);
-        await p.waitForLoadState('load');
-        const bottom = await p.evaluate(() => document.querySelector('#blk').getBoundingClientRect().bottom);
-        if (bottom <= 1260 || step === 4) { info = ` mockup ${w}px, bloco termina em y=${Math.round(bottom)}`; break; }
-        w -= 10;
+  const keys = [...Array(TOTAL)].map((_, i) => i + 1).concat(['1-alt']);
+  for (const k of keys) {
+    let info = '';
+    if (MOCK[k]) {
+      let w = MOCK[k].w0;
+      for (; w >= 560; w -= 10) {
+        await p.setContent(mock(k, w)); await p.evaluate(() => document.fonts.ready);
+        const bt = await p.evaluate(() => document.querySelector('#blk').getBoundingClientRect().bottom);
+        if (bt <= 1262) { info = ` mockup ${w}px, texto termina em y=${Math.round(bt)}`; break; }
       }
     } else {
-      await p.setContent(slides[n]); await p.evaluate(() => document.fonts.ready);
+      await p.setContent(S[k]); await p.evaluate(() => document.fonts.ready);
+      const o = await p.evaluate(() => { const c = document.querySelector('.col'); return c ? c.scrollHeight - c.clientHeight : 0; });
+      if (o > 0) info = ` ⚠ overflow ${o}px`;
     }
-    const file = path.join(OUT, `slide-${String(n).padStart(2, '0')}.png`);
-    await p.screenshot({ path: file });
-    console.log(file + info);
+    const f = path.join(OUT, k === '1-alt' ? 'slide-01-alternativa.png' : `slide-${String(k).padStart(2, '0')}.png`);
+    await p.screenshot({ path: f });
+    console.log(path.basename(f) + info);
   }
   await b.close();
 })();
