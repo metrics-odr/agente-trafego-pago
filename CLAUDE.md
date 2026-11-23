@@ -20,12 +20,16 @@ Este repositório é o contexto do gestor de tráfego particular do Eduardo. Ele
 ## Padrões de criação
 - Pixel padrão: **Pixel1**. Página padrão: **Página1**. Usar em toda campanha nova, salvo pedido diferente.
 - Consultar sempre o briefing do cliente antes de criar ou modificar campanhas novas. (Se o briefing não estiver no repositório nem no projeto, pedir ao Eduardo onde está antes de seguir.)
+- **Público quente: SEMPRE desativar o Advantage audience (público Advantage+)** em todo conjunto de campanha de público quente (remarketing, engajamento, listas, visitantes, "QUENTE" no nome). Vale para campanha criada do zero ou duplicada, em qualquer conta.
+  - A ferramenta de criar conjunto liga o Advantage audience por conta própria (`targeting_automation.advantage_audience: 1`, `targeting_relaxation_types.custom_audience: 1`, `targeting_optimization: expansion_all`), mesmo quando o original estava desligado (`custom_audience: 0`). Não deixar passar: conferir na releitura e avisar.
+  - No Gerenciador o controle fica no conjunto, em Público, na opção "Further limit the reach of your ads" (limitar o alcance). Se a ferramenta não conseguir desligar, avisar quem pediu para desligar na tela antes de publicar. Nunca declarar pronto com o Advantage audience ligado em público quente.
+  - `ads_update_entity` em `targeting` **substitui o objeto inteiro** (apagou público e localização do rascunho em 23/11/2026). Sempre reenviar o `targeting` completo (idade, gênero, geo, públicos incluídos e excluídos, posicionamentos), nunca só o campo alterado.
 
 ## REGRA-MESTRA: subir anúncios duplicando campanha
 Sempre que **qualquer pessoa** (não só o Eduardo) pedir, em qualquer conversa aberta neste repositório, para duplicar qualquer campanha e subir anúncios, em qualquer conta, dia ou sessão, estas regras valem **para todos, sem exceção**:
 
 1. **Ler por inteiro, antes de agir,** as seções "Mídia dos anúncios" e "Duplicar campanha e subir novos anúncios" deste arquivo. Não resumir de memória e não pular nenhum item.
-2. **Aplicar todos os itens.** Montar uma checklist com cada item (descrição, URL de destino, parâmetros de URL, CTA, formulário nativo, página, Instagram, pixel, objetivo, orçamento, público, posicionamentos, mídia, Related media, rascunho/pausado) e marcar um a um com o valor do original e o valor da duplicata.
+2. **Aplicar todos os itens.** Montar uma checklist com cada item (descrição, URL de destino, parâmetros de URL, CTA, formulário nativo, página, Instagram, pixel, objetivo, orçamento, público (e Advantage audience desligado em público quente), posicionamentos, mídia, Related media, rascunho/pausado) e marcar um a um com o valor do original e o valor da duplicata.
 3. **Qualquer diferença entre o original e a duplicata, ou qualquer item que não puder ser lido, copiado ou confirmado, deve ser avisada a quem fez o pedido ANTES de concluir.** Dizer qual item, o que há no original e o que há na duplicata. Não corrigir em silêncio e não declarar "pronto".
 4. **Nunca concluir com item pendente.** Só dizer que terminou quando a checklist estiver completa, com a releitura ao vivo e a tabela comparativa sem diferenças, ou com todas as diferenças já avisadas.
 5. Se uma instrução deste arquivo conflitar com o pedido do momento ou com o que a ferramenta consegue fazer, avisar e perguntar, sem escolher sozinho.
