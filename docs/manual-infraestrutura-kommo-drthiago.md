@@ -193,7 +193,9 @@ Reaproveitável em qualquer conta: [`2cqdDHyFGAZOu0lz`](https://n8n.srv2164786.h
 `/api/v4/leads/pipelines`, `/api/v4/leads/custom_fields`, `/api/v4/contacts/custom_fields`, `/api/v4/leads/tags?limit=250`, `/api/v4/leads?filter[pipeline_id]=<id>&with=contacts&limit=100&order[created_at]=desc`, `/api/v4/leads/unsorted?filter[pipeline_id]=<id>&limit=50`.
 O **Salesbot e as automações não são legíveis pela API**: só pela tela (Automatize) ou por print.
 
-## 5. Integração Lead Ads → Kommo (EM PROJETO, nada construído)
+## 5. Integração Lead Ads → Kommo (PUBLICADA em 23/11/2026)
+
+> **23/11/2026:** o fluxo `ZOpMsL7IrL8w1wKo` foi **publicado por ordem do Eduardo**, com `DATA_CORTE` = 23/11/2026 10:36 (-03:00). Os itens (1) apagar lead/contato de teste, (2) conferir a fonte Facebook e (3) teste com número real do checklist abaixo **não foram feitos** antes de ligar. Risco aberto: lead duplicado se a fonte Facebook do Kommo estiver ligada ao Form 001, e possível WhatsApp automático de bot de entrada. A campanha Lead Ads foi publicada no mesmo dia (ver `clientes/drthiago.md`).
 
 **Fluxo construído em 20/11/2026 (INATIVO):** [`Flow | DrThiago | Lead Ads | Sheets > Kommo - Cria lead de entrada de quem não iniciou conversa`](https://n8n.srv2164786.hstgr.cloud/workflow/ZOpMsL7IrL8w1wKo) (`ZOpMsL7IrL8w1wKo`), tabela de controle `EbiBgy55PbLmHgmh`. Decisões do Eduardo: espera de **5 min**, destino **Leads de entrada**, fonte = aba `Lead Instant Form 👥` (o Lead Ads grava lá em tempo real). Formulário real: `DrThiago - Form 001` (`f:1887461179334504`), perguntas "Qual procedimento você tem interesse?" e "Quando você pretende realizar o procedimento?".
 

@@ -72,8 +72,21 @@ Chave para cruzar abas: **`entity_id` = lead_id do Kommo**. Na aba Conversas, `e
 |---|---|---|---|---|
 | [`Flow \| DrThiago \| WhatsApp \| Kommo > Sheets - Registra conversas iniciadas do Instagram`](https://n8n.srv2164786.hstgr.cloud/workflow/qPWy230Z8Cw5N8Uj) | `qPWy230Z8Cw5N8Uj` | `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-whatsapp-kommo-sheets-conversas` | [Kommo → Configurações → Integrações → Web hooks](https://contourculptclinique.kommo.com/settings/widgets/) (lead não triado). **Conferir se já aponta para cá e não mais para o Make** | Publicado |
 | [`Flow \| DrThiago \| Geral \| Kommo > Sheets - Registra leads agendados`](https://n8n.srv2164786.hstgr.cloud/workflow/iK9iVYgAMyxVUUyU) | `iK9iVYgAMyxVUUyU` | `https://n8n.srv2164786.hstgr.cloud/webhook/drthiago-geral-kommo-sheets-agendamentos` | [Kommo → funil digital](https://contourculptclinique.kommo.com/leads/pipeline/13296523) → etapa AGENDADO → gatilho Webhook "Quando movido para esta etapa", sem condição | Publicado e recebendo |
-| [`Flow \| DrThiago \| Lead Ads \| Sheets > Kommo - Cria lead de entrada de quem não iniciou conversa`](https://n8n.srv2164786.hstgr.cloud/workflow/ZOpMsL7IrL8w1wKo) | `ZOpMsL7IrL8w1wKo` | — (agendado a cada 1 min, lê a aba `Lead Instant Form 👥`) | Aba da Planilha Central preenchida pelo Lead Ads em tempo real | **INATIVO (criado em 20/11/2026). Não publicar sem ordem do Eduardo.** Regras: espera 5 min; 1 por id do Meta; telefone já com lead no Kommo = só nota; senão cria em Leads de entrada do funil `13296523` com a tag `Lead Ads - Recuperar` |
+| [`Flow \| DrThiago \| Lead Ads \| Sheets > Kommo - Cria lead de entrada de quem não iniciou conversa`](https://n8n.srv2164786.hstgr.cloud/workflow/ZOpMsL7IrL8w1wKo) | `ZOpMsL7IrL8w1wKo` | — (agendado a cada 1 min, lê a aba `Lead Instant Form 👥`) | Aba da Planilha Central preenchida pelo Lead Ads em tempo real | **PUBLICADO em 23/11/2026 por ordem do Eduardo.** `DATA_CORTE` = 23/11/2026 10:36 (-03:00): leads anteriores são ignorados. Regras: espera 5 min; 1 por id do Meta; telefone já com lead no Kommo = só nota; senão cria em Leads de entrada do funil `13296523` com a tag `Lead Ads - Recuperar` |
 | [`Flow \| DrThiago \| Geral \| Manual > Sheets - Regrava agendados sobrescritos (uso único)`](https://n8n.srv2164786.hstgr.cloud/workflow/PCyRC8FsN6p1q9Qw) | `PCyRC8FsN6p1q9Qw` | — | — | Já executado. Pode ser apagado |
+
+### Meta Ads: campanha Lead Ads (23/11/2026)
+Conta **CA 03 - Dr Thiago Virgili** (`1798165994636924`), BM `1268521450802238`. Página `556646554204800`, Instagram `17841408021639808`. Formulário nativo: `DrThiago - Form 001` (`1887461179334504`).
+
+| Tipo | Nome | ID | Pai | Mídia | Estado |
+|---|---|---|---|---|---|
+| Campanha | `DRTV \| E2-CAP \| P1-QUENTE \| ABO \| LEAD ADS \| 2026-11-07 \| Endomela \| Teste de Ads` | `52643121054382` | n/a | n/a | Publicada ACTIVE (23/11) |
+| Conjunto | AUTO \| Mix PQ (R$ 40/dia, ON_AD, LEAD_GENERATION) | `52643121092182` | `52643121054382` | n/a | Publicado (IN_PROCESS na primeira leitura) |
+| Anúncio | AD02_VID_Endomela | `52643121186182` | `52643121092182` | vídeo `1044854615117310` | Publicado |
+| Anúncio | AD03_VID_Endomela | `52643121166382` | `52643121092182` | vídeo `1478868656489026` | Publicado |
+| Rascunho descartável | mesma campanha (duplicata pela tela) | `52643109978782` | n/a | sem mídia | Com erro, público errado (Brasil 18-65). Descartar no Gerenciador |
+
+Origem: campanha de mensagem `52640779432782` (2 conjuntos de R$ 20, unidos em 1 conjunto de R$ 40). Público, posicionamentos (Feed, Stories e Reels do Instagram, mantidos por ordem do Eduardo), vídeos, Página e Instagram iguais ao original; muda só destino (WhatsApp → formulário), CTA (Cadastre-se) e otimização (geração de cadastros).
 
 ### Data tables
 Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
@@ -128,13 +141,15 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 - [ ] Limpar testes: linhas `TESTE-APAGAR` e `56433815` (gih) na aba Agendamentos e na tabela de agendamentos registrados.
 - [ ] Validar o append atômico com envios simultâneos reais.
 - [ ] Localizar no Drive do Kommo (páginas 5+) os vídeos de 0:54 (Dr Thiago) e 0:22 (Dra Fernanda) e saber qual Salesbot envia cada vídeo. Ver [vídeos do Kommo](../kommo-videos-contour-clinique.md).
-- [ ] **Lead Ads → Kommo (fluxo `ZOpMsL7IrL8w1wKo` pronto e INATIVO):** apagar o lead `56589051` e o contato `53863081` de teste no Kommo; conferir a fonte Facebook; teste com número real do Eduardo; trocar `DATA_CORTE`; publicar só com ordem. Ver [Manual de Infraestrutura §5](../manual-infraestrutura-kommo-drthiago.md).
+- [ ] **Lead Ads → Kommo (fluxo `ZOpMsL7IrL8w1wKo` PUBLICADO em 23/11/2026):** ligado por ordem do Eduardo **sem** estes itens do checklist: (a) apagar à mão o lead `56589051` e o contato `53863081` de teste no Kommo; (b) conferir Kommo → Fontes → Facebook (se estiver ligada ao Form 001, o lead entra duas vezes); (c) teste com número real do Eduardo (não se sabe se algum bot manda WhatsApp). Acompanhar os primeiros leads reais na tabela de controle `EbiBgy55PbLmHgmh` e no Kommo. Ver [Manual de Infraestrutura §5](../manual-infraestrutura-kommo-drthiago.md).
+- [ ] **Campanha Lead Ads (Meta, CA 03 `1798165994636924`)**: publicada em 23/11/2026, ver §Meta Ads abaixo. Falta conferir na tela: formulário selecionado nos 2 anúncios, mídias, Instagram e "Related media" em 0. Descartar à mão no Gerenciador o rascunho `52643109978782` (a API não exclui rascunho).
 - [ ] (histórico) Lead Ads → Kommo: ver projeto em [Manual de Infraestrutura §5](../manual-infraestrutura-kommo-drthiago.md). Falta abrir os Salesbots Distribuição e Entrada Thiago e documentar o FUP com vídeos.
 - [ ] Apagar o [fluxo de leitura do Kommo](https://n8n.srv2164786.hstgr.cloud/workflow/2cqdDHyFGAZOu0lz) (uso único).
 
 ## 11. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 23/11/2026 | Fluxo Lead Ads → Kommo **publicado** (ordem do Eduardo), `DATA_CORTE` ajustado para 23/11 10:36. Campanha Lead Ads `52643121054382` publicada na CA 03 com o formulário `DrThiago - Form 001` (`1887461179334504`). Rascunho duplicado `52643109978782` (público errado, com erro) marcado como DELETED pela API, mas ainda aparece como rascunho: descartar à mão |
 | 20/11/2026 | Fluxo Lead Ads → Kommo construído (inativo) e testado com lead fictício `56589051`: criado em Leads de entrada, movido pelos robôs para Atendimento IA com tag `Heloisa`; o fluxo de Conversas descartou o aviso |
 | 20/11/2026 | Estudo dos vídeos do Drive do Kommo (19 distintos nas 4 primeiras páginas, transcritos) e roteiros padronizados em [`roteiros-videos-medicos.md`](../roteiros-videos-medicos.md) |
 | 20/11/2026 | Levantamento do Kommo (9 funis, campos, tags, automações vistas em print) e criação dos Manuais de Infraestrutura e Implementação. Criado o fluxo temporário [`2cqdDHyFGAZOu0lz`](https://n8n.srv2164786.hstgr.cloud/workflow/2cqdDHyFGAZOu0lz) (só leitura, inativo, apagar). Projeto Lead Ads → Kommo definido, **nada ligado** |
