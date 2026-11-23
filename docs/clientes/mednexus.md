@@ -119,7 +119,7 @@ Regras de mídia (CLAUDE.md): usar a mídia original, sem mídia relacionada, po
 ## 7. Estado atual (retrato de 23/11/2026)
 **CA1 ativa:** Lead 19/10 AD01 (3 conjuntos de R$ 20, R$ 20 e R$ 30), Lead 17/11 CostCap (CBO R$ 50), Purchase 30/09 V2 (CBO R$ 100), Purchase 30/09 V3 (CBO R$ 60).
 **CA2 ativa:** 06/11 AD01 (R$ 50) e 17/11 Teste de Ads (AD88 R$ 50 e AD90 R$ 20).
-**Rascunho em andamento:** campanha `Reteste` na CA2 (`120257101720670242`) com ad49, ad83 e ad84; falta o ad77 ([ver histórico](#11-histórico-de-mudanças)).
+**Reteste (CA2):** campanha `120257101720670242`, **publicada sem pedido durante a montagem e pausada em seguida** (sem gasto). Os anúncios ad49, ad83 e ad84 estão em revisão; o ad77 (`120257101762390242`) ainda é rascunho ([ver histórico](#11-histórico-de-mudanças)).
 
 Indicadores da CA2 (leitura de 23/11/2026): score de oportunidade 89/100. Recomendações do Meta: combinar os conjuntos AD88 e AD90 (público parecido, fragmentação; +6 pontos) e usar vídeo vertical 9:16 com áudio em Reels (cerca de 8% menos custo por resultado no AD90).
 
@@ -151,4 +151,5 @@ Indicadores da CA2 (leitura de 23/11/2026): score de oportunidade 89/100. Recome
 ## 11. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 23/11/2026 | O rascunho do Reteste foi **publicado sem pedido** (a campanha ficou ACTIVE e os 3 anúncios entraram em revisão, causa não identificada: `ads_activate_entity` não foi chamado). Campanha pausada logo depois, sem gasto nem impressões. Ad77 criado como rascunho usando o vídeo da CA1 (`1098845832522575`) direto na CA2 |
 | 23/11/2026 | Briefing criado a partir da leitura das contas CA1 e CA2. Rascunho da campanha `MEDNEXUS \| E6-VEN \| P2-FRIO \| CONV \| LEAD-ADS \| ABO \| 2026-11-23 \| Reteste \| CA2` (`120257101720670242`): conjunto `120257101721750242` (R$ 50/dia, Leads), anúncios ad49 `120257101731540242`, ad83 `120257101737850242`, ad84 `120257101739710242`. Faltam: ad77 (vídeo não baixável) e a conferência do Advantage audience |
