@@ -39,13 +39,14 @@ Sempre que **qualquer pessoa** (não só o Eduardo) pedir, em qualquer conversa 
 Vale para todo anúncio criado ou duplicado.
 
 **1. Mídia original, sem recortes**
-- Usar só a mídia original, na proporção do arquivo. "Aspect ratios" desmarcado. Sem recortes automáticos nem melhorias automáticas de criativo (Advantage+ creative), salvo pedido de quem está pedindo.
+- Usar só a mídia original, na proporção do arquivo. "Aspect ratios" desmarcado. Sem recortes automáticos. **Melhorias automáticas de criativo (Advantage+ creative): desligar só em campanha de público quente.** Em campanha de **público frio**, manter igual ao modelo/original (ordem do Eduardo em 23/11/2026), sem desligar por conta própria.
 
 **2. Mídia relacionada (Related media)**
 - Nenhum anúncio pode ter mídia relacionada, seja imagem ou vídeo. O campo deve ficar em 0 selecionadas.
 - **Não há ferramenta que leia ou controle esse campo.** Nunca dizer que está em 0 sem quem fez o pedido ter conferido na tela. Sempre pedir a conferência.
 
 **3. Posicionamentos por proporção**
+- **Exceção (Eduardo, 23/11/2026):** campanhas de teste de ads/escala de público frio (série `EPN | E4-VEN | P1-FRIO`, conta CA Thata Junqueira USD) rodam com **todos os posicionamentos, inclusive Feed**, mesmo com vídeos só de Reels. **Não restringir nenhum conjunto** nem avisar sobre isso: copiar o conjunto do modelo como está.
 - Vertical 9:16 (ex.: 1080x1920): só Stories e Reels (Facebook e Instagram).
 - 4:5 ou 1:1 (ex.: 1080x1350): só Feed e In-stream. **Não incluir "Search results" do Instagram**: na tela ele aparece como posicionamento vertical do grupo de Stories e a imagem de feed fica errada ali. O Search do Facebook ainda não foi confirmado: só incluir se quem fez o pedido confirmar.
 - Qualquer outra proporção (inclusive 3:4): não adivinhar, perguntar a quem fez o pedido.
@@ -63,7 +64,7 @@ Ler de volta com `ads_get_ad_entities` (`object_state=draft`) e confirmar, anún
 2. Cada `image_hash` / `video_id` enviado aparece no anúncio.
 3. `instagram_user_id` presente.
 4. Cada mídia só em seus posicionamentos (as regras do rascunho batem com a tabela do item 3) e nenhuma posição repetida entre mídias.
-5. `adapt_to_placement` e melhorias automáticas em OPT_OUT.
+5. `adapt_to_placement` em OPT_OUT; melhorias automáticas em OPT_OUT só em público quente (em público frio, iguais ao modelo/original).
 A leitura da API **não prova** o que a tela mostra. Depois de criar, mandar a quem fez o pedido o link de edição do rascunho e pedir: as mídias aparecem, o Instagram está selecionado, cada mídia está no grupo certo e "Related media" está em 0. Só declarar concluído depois disso.
 
 **6. Rascunhos**
