@@ -77,9 +77,6 @@
 | 6 | **Lead respondeu à última pergunta e ninguém respondeu** | 451 leads responderam à última pergunta do bot. O Adriano respondeu a 412 (metade em até 9,5 minutos). **39 (9%) nunca receberam resposta**: 5 esperam há até 7 dias, 13 há entre 8 e 30 dias e 21 há mais de 30 dias | O lead respondeu e foi ignorado. O bot não marca esse lead como "esperando atendimento", então o time não tem como filtrar quem ficou sem resposta |
 | 7 | **O bot ignora o que o lead pergunta** | Antes de o humano entrar, 293 conversas tiveram mensagens do lead com "?" (466 mensagens no total) e 55 conversas tiveram áudios (138 áudios). Em 184 conversas o lead perguntou o valor durante o bot e em 61 delas (33%) o Adriano não mandou nenhuma mensagem com valor em reais | O bot segue o roteiro sem responder, e o humano precisa voltar à pergunta do lead |
 | 8 | **A tag `Sem contato` nunca é removida** | O fluxo coloca a tag no início e não tira. Ela continua em 35 dos 36 compradores e em 714 das 809 conversas em que houve resposta humana | Não dá para usar a tag para saber quem já foi atendido |
-| 9 | **Mensagens em massa enviadas fora da Umbler** | Encontrei 18 envios da mesma mensagem ("Gostaria de seguir o atendimento?" e variações) para 5 ou mais conversas no mesmo minuto, somando 357 mensagens. 67 leads (18,8%) responderam em até 6 horas | A Umbler não confirma a entrega dessas mensagens (aparecem como "Processing") e os envios não ficam registrados nem medidos |
-| 10 | **Anúncio com o ID quebrado** | 6 conversas começaram com `{{ad.id}}` escrito literalmente na primeira mensagem, em vez do número do anúncio | Não dá para saber de qual anúncio esses leads vieram |
-| 11 | **Mensagem vazia na entrada (`Unsupported`)** | 48 conversas começaram com uma mensagem vazia desse tipo. O bot entrou em 39 delas e nenhuma comprou | Pode ser um tipo de mensagem que a Umbler não lê. Não verifiquei o que são |
 
 ### 3.3 O fluxo de recuperação (é manual)
 O "Fluxo atendimento versão 2" tem dois gatilhos de recuperação que **só rodam quando alguém os inicia à mão** na Umbler, conversa por conversa ou em lote. Nenhuma regra os inicia sozinha.
@@ -132,7 +129,6 @@ O "Fluxo atendimento versão 2" tem dois gatilhos de recuperação que **só rod
 | 8 | Leads que perguntaram o valor e não receberam | Mais de 10% |
 | 9 | Percentual de não médicos por anúncio | Mais de 25% |
 | 10 | Compras por origem, por etapa e por faixa de horário | Acompanhamento semanal |
-| 11 | Mensagens em massa enviadas fora da Umbler | Registrar cada envio |
 
 ## 7. Recomendações (da mais fácil e de maior impacto para a mais trabalhosa)
 **A. Sem mexer no bot da Umbler**
@@ -141,7 +137,6 @@ O "Fluxo atendimento versão 2" tem dois gatilhos de recuperação que **só rod
 3. Ter uma **lista às 07:00** (ou plantão) para os leads que chegam à noite e no fim de semana, que são 44% e esperam de 6 a 20 horas.
 4. Montar uma **fila de reativação com template aprovado** para: os 39 leads que responderam e ninguém respondeu, os 57 que responderam depois do preço e ficaram sem retorno, e os 35 que disseram que iam pensar. As 189 conversas paradas há mais de 30 dias devem esperar uma mensagem de reaquecimento antes.
 5. **Acompanhar os templates do Lead Ads** nos próximos dias para confirmar a correção (24/11: 1 mensagem não entregue em 8 envios) e guardar o código de erro de qualquer nova falha.
-6. **Registrar cada mensagem em massa** enviada fora da Umbler (data, texto e lista de leads).
 
 **B. Ajustes no fluxo da Umbler (só com pedido explícito do Eduardo)**
 1. **Encurtar a sequência de lembretes** para que todos os textos livres saiam antes de 24 horas, ou trocar o lembrete 5 por um template.
@@ -149,7 +144,6 @@ O "Fluxo atendimento versão 2" tem dois gatilhos de recuperação que **só rod
 3. **Ao fim das 5 perguntas:** colocar a tag `Qualificado, aguardando humano` e passar a conversa para o Adriano. Tirar a tag `Sem contato` quando o humano responder.
 4. **Responder ao lead que pergunta o valor ou "como funciona", e ao que manda áudio**, com uma resposta padrão ou com o agente de IA da Umbler.
 5. **Separar quem não é médico** já na pergunta de especialidade, encerrando a conversa com educação, para poupar o tempo da equipe.
-6. Corrigir o `{{ad.id}}` e investigar as mensagens vazias do tipo `Unsupported`.
 
 **C. Anúncios e medição**
 1. Descobrir o nome dos anúncios pelo ID e pausar ou ajustar os que mais trazem não médicos.
