@@ -349,4 +349,5 @@ Nenhum fluxo de produção do MedNexus no n8n. Os webhooks de conversas e de ven
 | Data | O que aconteceu |
 |---|---|
 | 30/10/2026 | Verba do Meta ajustada de R$ 510 para R$ 99,77 (ver guia de Meta Ads) |
+| 24/11/2026 | Diagnóstico de 90 dias (996 chats) e dos 3 fluxos de bot: [mednexus-diagnostico-umbler-90d.md](mednexus-diagnostico-umbler-90d.md) |
 | 24/11/2026 | Primeiro estudo da conta de atendimento: 4 conversas de leads que fecharam, planilha central, API e fluxos da Umbler. Pasta e 2 fluxos de teste criados no n8n. Documento do cliente criado |
