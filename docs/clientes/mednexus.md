@@ -307,6 +307,8 @@ Nenhum fluxo de produção do MedNexus no n8n. Os webhooks de conversas e de ven
 - Mensagem recente do humano (menos de cerca de 6 h): ainda é cedo para cobrar.
 - Lead que já recebeu proposta de preço e não respondeu: **entra todos os dias**, até responder, recusar ou comprar.
 
+**Link do contato no relatório:** abrir direto o chat na Umbler, no formato `https://app-utalk.umbler.com/chats/<chatId>` (o `chatId` vem de `GET /v1/chats/`, campo `id` do chat). Não usar `wa.me`.
+
 **Cuidados na leitura:** ler a Umbler na hora de montar e enviar (uma leitura de 5 minutos atrás já perdeu uma resposta). `External` é eco do bot ou mensagem enviada fora da Umbler: não conta como resposta do lead.
 
 **Pendências de regra:** (a) confirmar se os follow-ups `External` ("Vamos seguir?", "Gostaria de seguir o atendimento?", disparo das 07:52 para ~30 chats) são automação e onde ficam; (b) decidir se "vou pensar" vira lista com 36 h (janela já fechada) ou com cerca de 20 h (ainda dá texto livre); (c) o Box Seat Productions ficou fora do relatório por causa de (a).
