@@ -42,6 +42,24 @@ Tempo até a compra: mediana de 1,1 dia. 44% compram em menos de 24 h e só 3 pa
 - Os leads respondem rápido: 76% a 92% em até 1h30. Só 2% respondem depois de 24 h. O primeiro follow-up em 1h30 está bem calibrado.
 - Follow-up 1 recupera 40,6% (192 de 473). Follow-ups 2, 3 e 4 recuperam 23,6%, 21,6% e 14,2%.
 
+### 3.1.1 Mensagem final da cadência ("vou dar uma pausa"), texto completo
+É o follow-up 5, a última mensagem de silêncio do bot. Repete-se depois de cada pergunta (especialidade, pacientes por semana, áudio, preço da consulta). Depois dela o fluxo espera 24 h e termina. Texto copiado da configuração do fluxo `Fluxo atendimento versão 2`:
+
+```
+Olá, tudo bem?
+Como não tive retorno, vou dar uma pausa no atendimento.
+
+Mas fico a disposição para te explicar de maneira clara e objetiva como podemos te ajudar a *captar mais pacientes sem que vc precise investir em marketing.*
+
+Nós não somos agência de mkt!
+
+Se quiser ter uma captação de pacientes independe, pode me chamar!
+
+Até logo
+```
+
+Por que ela sai depois das 24 h: pergunta, 1h30 até o follow-up 1, mais 5 h entre cada um dos seguintes (6 h na primeira pergunta) dá cerca de 21,5 h. Qualquer follow-up que caia entre 23:59 e 07:00 é adiado para as 07:00, e o total passa de 24 h. Exemplo: o lead cala às 10:00, os follow-ups saem às 11:30, 16:30 e 21:30, o quarto (02:30) vai para as 07:00 e o quinto sai às 12:00, 26 h depois. Resultado nos 90 dias: 189 enviadas, 116 falharam (61%).
+
 ### 3.2 Onde falha
 | # | Problema | Evidência | Efeito |
 |---|---|---|---|
