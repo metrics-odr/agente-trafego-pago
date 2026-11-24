@@ -291,6 +291,26 @@ Nenhum fluxo de produção do MedNexus no n8n. Os webhooks de conversas e de ven
 
 **Exclusões:** quem já comprou (cruzar telefone com `New Subscriptions`), quem já foi listado nos últimos N dias e quem disse que não tem interesse.
 
+### 7.1.1 Regras refinadas com o Eduardo (24/11/2026, valem para o relatório que vai ao comercial)
+**Categorias do relatório** (cada número aparece uma vez só, na categoria mais urgente):
+1. **Respondeu e está esperando o humano** (janela aberta). Mostrar a hora em que a janela fecha.
+2. **O humano falou por último e o lead não respondeu** (janela aberta). Nunca misturar com a categoria 1.
+3. **Janela de 24 h encerrada, automação sem funcionar:** mais de 24 h desde a última mensagem do lead e nenhuma automação pendente. Só template alcança. Inclui quem parou no bot e a mensagem final do bot falhou.
+4. **Nunca responderam:** só receberam template de primeiro contato e os follow-ups falharam. Contato por outro canal.
+
+**Quem sai da lista:**
+- Quem comprou ("Parabéns pela compra"), quem deu **negativa na última mensagem** (olhar só a última do lead) e quem do canal `Suporte Marina`.
+- Quem ainda está em automação: bot dentro da cadência ou sequência de templates com passos pendentes.
+- Bot que terminou com a mensagem de finalização **entregue** ("vou dar uma pausa"). Só entra se ela falhou.
+- Lead que disse que vai pensar, analisar ou averiguar ("Vou analisar", "Vou averiguar e te falarei") e foi confirmado: só entra depois de **36 h** sem resposta.
+- O humano já assumiu: a etapa passa a ser "Conversa com o humano", não a última pergunta do bot.
+- Mensagem recente do humano (menos de cerca de 6 h): ainda é cedo para cobrar.
+- Lead que já recebeu proposta de preço e não respondeu: **entra todos os dias**, até responder, recusar ou comprar.
+
+**Cuidados na leitura:** ler a Umbler na hora de montar e enviar (uma leitura de 5 minutos atrás já perdeu uma resposta). `External` é eco do bot ou mensagem enviada fora da Umbler: não conta como resposta do lead.
+
+**Pendências de regra:** (a) confirmar se os follow-ups `External` ("Vamos seguir?", "Gostaria de seguir o atendimento?", disparo das 07:52 para ~30 chats) são automação e onde ficam; (b) decidir se "vou pensar" vira lista com 36 h (janela já fechada) ou com cerca de 20 h (ainda dá texto livre); (c) o Box Seat Productions ficou fora do relatório por causa de (a).
+
 ### 7.2 Desenho
 1. Fluxo agendado diário (ex.: 09:00) lê as conversas da Umbler (`/v1/chats/`) e as mensagens necessárias, aplica as regras e grava a lista numa aba nova da planilha, com o link `wa.me` de cada lead.
 2. Primeiro entregar **sem enviar nada**, só a aba, para o Eduardo validar a lista.
