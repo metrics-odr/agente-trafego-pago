@@ -207,6 +207,14 @@ Pausas entre passos: 5 s, 30 s, 40 s, 2 min e 3 min.
 ### 4.6 Como distinguir bot, humano e lead na API
 O objeto do chat traz `lastMessage` com `source` (por exemplo `Bot`), `sentByOrganizationMember`, `fromContact`, `botInstance` (nome do fluxo), `messageState` (visto `Received` em mensagem do bot), `question` (id da pergunta do bot) e `eventAtUTC`. Também traz `contact.tags`, `organizationMember` e o setor. Os **valores possíveis de `messageState`** e a forma de reconhecer falha de entrega **não foram verificados**.
 
+### 4.6.1 O que a leitura real mostrou (24/11/2026, 250 chats abertos)
+- `source` das mensagens: `Contact` (lead), `Bot`, `Member` (enviada pelo Adriano na Umbler ou por integração em nome dele) e `External` (enviada fora da Umbler; inclui **eco** das mensagens do bot e mensagens do Adriano pelo celular). `External` fica sempre em `Processing`: a Umbler não sabe se chegou.
+- `messageState` vistos: `Processing`, `Received`, `Read`, `Played`, `Failed`, `Edited`, `Deleted`.
+- **Falhas (`Failed`):** 107 mensagens de `Member` e 11 do `Bot` nos 250 chats. Quase todas as falhas com mensagem anterior do lead aconteceram **mais de 24 h depois da última mensagem do lead** (janela de 24 h da API oficial do WhatsApp). As outras são mensagens de texto livre enviadas a quem **nunca escreveu** no canal (ex.: "Olá! Fico feliz com o seu interesse na MedNexus..."), o que a API oficial só aceita como template. Causa provável, a confirmar com o código de erro.
+- Consequência no bot: a cadência de follow-up (1h30 + 6h + 5h + 5h + 5h, mais o adiamento noturno) passa das 24 h, e a mensagem 5 ("vou dar uma pausa") costuma falhar.
+- Existe um fluxo de **contato ativo** para leads que não escreveram (formulário): primeira mensagem, follow-up cerca de 1h30 depois e outro às 07:00 do dia seguinte, enviados como `Member`. Os horários sugerem automação fora da Umbler. **Não verificado** de onde vem.
+- O parâmetro `DateStartCreatedAtUTC` da lista de chats **não filtrou** (vieram chats de agosto). Filtrar pela data de criação no próprio n8n. A lista vem ordenada pela última mensagem: com `Take=250` cobriu tudo com atividade desde 19/11.
+
 ### 4.7 Falha de entrega: soluções possíveis (a decidir)
 O destino de falha (`onDeliveryFail`) está vazio em todos os passos. A causa das falhas **não é conhecida**: só a medição nas mensagens reais diz se é número inválido, contato sem WhatsApp, janela de 24 h ou bloqueio. Opções:
 | Opção | O que faz | Mexe no bot? |
@@ -246,6 +254,8 @@ Pasta: `MedNexus` (`hR1cAjU9b5L0fJ9l`), projeto pessoal do Eduardo.
 |---|---|---|
 | [`Flow \| MedNexus \| Geral \| Manual > Umbler - Testa leitura da API`](https://n8n.srv2164786.hstgr.cloud/workflow/ZZ0OtrIo47IOHAUf) | `ZZ0OtrIo47IOHAUf` | Teste manual, só leitura. Apagar à mão quando não for mais necessário |
 | [`Flow \| MedNexus \| Geral \| Manual > Umbler - Explora canais, bots e chats`](https://n8n.srv2164786.hstgr.cloud/workflow/b5DfDkADtzgqYsHx) | `b5DfDkADtzgqYsHx` | Exploração manual, só leitura. Apagar à mão quando não for mais necessário |
+
+| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Lista leads dos últimos 3 dias (teste)`](https://n8n.srv2164786.hstgr.cloud/workflow/qotDB1WrfoorLNDX) | `qotDB1WrfoorLNDX` | Teste manual, só leitura: chats abertos e até 100 mensagens de cada. A classificação foi feita fora do n8n (1º teste em 24/11/2026). Base para o fluxo diário |
 
 Nenhum fluxo de produção do MedNexus no n8n. Os webhooks de conversas e de vendas que alimentam a planilha **não estão no n8n** (origem a descobrir: pode ser Make ou outro).
 
