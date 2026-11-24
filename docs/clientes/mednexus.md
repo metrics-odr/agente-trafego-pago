@@ -197,15 +197,24 @@ Pausas entre passos: 5 s, 30 s, 40 s, 2 min e 3 min.
 
 ### 4.5 Lacunas encontradas (por que o lead se perde)
 1. **Falha de entrega sem plano B.** Toda mensagem espera 2 minutos pela confirmação de entrega, mas o destino de falha (`onDeliveryFail`) está **vazio em todos os passos**. Pelo desenho o bot para em silêncio. **Não verificado** nas execuções reais.
-2. **O fluxo termina sem humano.** Depois do follow-up 5 e das 24 h, e depois da última pergunta, o fluxo acaba sem transferir para ninguém e sem tag. Se o lead responder depois, o bot não responde e nada avisa o Adriano.
+2. **O fluxo termina sem marca.** Depois do follow-up 5 e das 24 h, e depois da última pergunta, o fluxo acaba sem tag e sem registro de que o lead parou. **Não é para o bot avisar o Adriano** (a conversa é dele, decisão do Eduardo em 24/11/2026): o problema é o Adriano perder o controle de quem ficou parado. É isso que a lista diária (§7) resolve.
 3. **Fim de semana atrasa.** Na pergunta 1, dois dos agendamentos noturnos valem só de segunda a sexta. Quem calar no sábado à noite recebe o follow-up só na segunda.
 4. **A tag `Sem contato` nunca sai sozinha** (o fluxo só adiciona). Só serve de filtro se o Adriano a remover à mão.
-5. **Pergunta fora do roteiro é ignorada.** Qualquer resposta avança o passo (visto nas conversas de leads que perguntaram preço e contrato no meio do roteiro).
+5. **Pergunta fora do roteiro é ignorada.** Qualquer resposta avança o passo (visto nas conversas de leads que perguntaram preço e contrato no meio do roteiro). Sem ação: limitação do desenho do bot (Eduardo, 24/11/2026).
 6. **Contato recorrente** vai direto ao Adriano, sem o bot e sem alerta além do aviso normal da Umbler.
 7. **Mensagens duplicadas no histórico exportado:** as mensagens enviadas pela API aparecem duas vezes, uma como bot e outra como `<sem nome> (usuário desconhecido)`. As do Adriano e da Rosi também aparecem como "sem nome" em parte das conversas. Cuidado ao contar mensagens e ao separar humano de bot por nome.
 
 ### 4.6 Como distinguir bot, humano e lead na API
 O objeto do chat traz `lastMessage` com `source` (por exemplo `Bot`), `sentByOrganizationMember`, `fromContact`, `botInstance` (nome do fluxo), `messageState` (visto `Received` em mensagem do bot), `question` (id da pergunta do bot) e `eventAtUTC`. Também traz `contact.tags`, `organizationMember` e o setor. Os **valores possíveis de `messageState`** e a forma de reconhecer falha de entrega **não foram verificados**.
+
+### 4.7 Falha de entrega: soluções possíveis (a decidir)
+O destino de falha (`onDeliveryFail`) está vazio em todos os passos. A causa das falhas **não é conhecida**: só a medição nas mensagens reais diz se é número inválido, contato sem WhatsApp, janela de 24 h ou bloqueio. Opções:
+| Opção | O que faz | Mexe no bot? |
+|---|---|---|
+| A. Detectar e listar | A lista diária (§7) inclui, na lista 1, o lead cuja mensagem do bot não teve entrega confirmada. O Adriano tenta por ligação ou Instagram | Não |
+| B. Marcar o lead | Além de listar, o n8n coloca a tag `Falha de entrega` no chat (`POST /v1/chats/{id}/tags/`), para o Adriano filtrar na Umbler | Não (grava tag, exige aprovação) |
+| C. Plano B dentro do fluxo | Em cada passo, `onDeliveryFail` vai para: esperar alguns minutos, reenviar uma vez e, se falhar de novo, adicionar tag `Falha de entrega` e transferir para o Adriano | Sim (editar o fluxo de 98 passos, só com pedido explícito) |
+Recomendação: começar por A, medir quantas falhas existem e de que tipo, e só então decidir B ou C.
 
 ---
 
@@ -279,7 +288,9 @@ Nenhum fluxo de produção do MedNexus no n8n. Os webhooks de conversas e de ven
 - [ ] Descobrir onde estão os webhooks de conversas e de vendas que alimentam a planilha (não estão no n8n).
 - [ ] Localizar o briefing do cliente.
 - [ ] Corrigir no guia de Meta Ads a campanha de 02/09 (R$ 9,50 contra R$ 11,76).
-- [ ] Consertar as lacunas do bot (§4.5), se o Eduardo pedir: destino de falha de entrega, transferência para humano ao fim do fluxo e cron de fim de semana. **Não alterar o fluxo da Umbler sem pedido explícito.**
+- [ ] Falha de entrega (§4.5, item 1): decidir a solução (ver §4.7). **Não alterar o fluxo da Umbler sem pedido explícito.**
+- [ ] Cron de fim de semana (§4.5, item 3): Eduardo respondeu "ok" em 24/11/2026; confirmar se é para corrigir ou deixar como está.
+- [ ] Itens 2 e 5 da §4.5: sem ação no bot. O item 2 é coberto pela lista diária (§7).
 
 ## 9. Acessos
 | Data | O quê | Com quem / qual conta |
