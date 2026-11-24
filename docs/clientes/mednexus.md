@@ -210,9 +210,22 @@ O objeto do chat traz `lastMessage` com `source` (por exemplo `Bot`), `sentByOrg
 ### 4.6.1 O que a leitura real mostrou (24/11/2026, 250 chats abertos)
 - `source` das mensagens: `Contact` (lead), `Bot`, `Member` (enviada pelo Adriano na Umbler ou por integração em nome dele) e `External` (enviada fora da Umbler; inclui **eco** das mensagens do bot e mensagens do Adriano pelo celular). `External` fica sempre em `Processing`: a Umbler não sabe se chegou.
 - `messageState` vistos: `Processing`, `Received`, `Read`, `Played`, `Failed`, `Edited`, `Deleted`.
-- **Falhas (`Failed`):** 107 mensagens de `Member` e 11 do `Bot` nos 250 chats. Quase todas as falhas com mensagem anterior do lead aconteceram **mais de 24 h depois da última mensagem do lead** (janela de 24 h da API oficial do WhatsApp). As outras são mensagens de texto livre enviadas a quem **nunca escreveu** no canal (ex.: "Olá! Fico feliz com o seu interesse na MedNexus..."), o que a API oficial só aceita como template. Causa provável, a confirmar com o código de erro.
-- Consequência no bot: a cadência de follow-up (1h30 + 6h + 5h + 5h + 5h, mais o adiamento noturno) passa das 24 h, e a mensagem 5 ("vou dar uma pausa") costuma falhar.
-- Existe um fluxo de **contato ativo** para leads que não escreveram (formulário): primeira mensagem, follow-up cerca de 1h30 depois e outro às 07:00 do dia seguinte, enviados como `Member`. Os horários sugerem automação fora da Umbler. **Não verificado** de onde vem.
+- **Falhas (`Failed`):** 107 mensagens de `Member` e 11 do `Bot` nos 250 chats. São dois casos diferentes:
+  1. **Bot (texto livre):** as falhas aconteceram **mais de 24 h depois da última mensagem do lead** (janela de 24 h da API oficial do WhatsApp). A cadência de follow-up (1h30 + 6h + 5h + 5h + 5h, mais o adiamento noturno) passa das 24 h, e a mensagem 5 ("vou dar uma pausa") costuma falhar. Causa provável, a confirmar com o código de erro.
+  2. **Contato ativo (templates):** as mensagens de `Member` a quem nunca escreveu **são templates** (têm `templateId`), não texto livre. Alguns templates falham quase sempre:
+
+| Template | Texto inicial | Entregues | Falharam |
+|---|---|---|---|
+| `avSFKwtgN-FsNLP8` | "Olá! Fico feliz com o seu interesse na MedNexus" | 1 | 32 |
+| `ann8kFZQ7E6feKjE` | "Oi! Tudo bem? Conseguiu verificar minha última mensagem?" | 1 | 20 |
+| `anTT4os8TA3cZ5ef` | "Olá! Tudo certo?? Passando pra saber se ficou..." | 1 | 19 |
+| `anTRAwR_zqiFVZm0` | "Olá! Será um prazer explicar! Me informa..." | 3 | 17 |
+| `av7_a08f7k3tFLSv` | "Olá! Fico feliz com o seu interesse na MedNexus" (versão nova) | 31 | 18 |
+| `av7_5U8f7k3tF4t-` | "Oi! Tudo bem? Conseguiu verificar..." (versão nova, 24/11) | 1 | 0 |
+
+  Causa **não verificada** (template pausado ou rejeitado, categoria, limite de frequência de marketing do Meta). Ver o status de cada template no Gerenciador do WhatsApp e o código de erro da mensagem.
+- Existe uma **sequência de contato ativo** para leads que não escreveram (provavelmente formulário): template de boas-vindas, template "Conseguiu verificar" cerca de 1h30 a 3h depois e template "Tudo certo?" horas depois, todos enviados como `Member` (Adriano). Depois disso, às 07:52 de 24/11, uma mensagem "Olá, bom dia! Gostaria de seguir o atendimento?" saiu como `External` (fora da Umbler) para vários leads ao mesmo tempo. **Não verificado** onde essa sequência está configurada (não é um bot da Umbler nem fluxo do n8n).
+- Regra da lista diária (Eduardo, 24/11/2026): **não listar** lead sem resposta que ainda está numa automação (bot em cadência ou sequência de templates com passos pendentes). Só listar quando a automação já terminou.
 - O parâmetro `DateStartCreatedAtUTC` da lista de chats **não filtrou** (vieram chats de agosto). Filtrar pela data de criação no próprio n8n. A lista vem ordenada pela última mensagem: com `Take=250` cobriu tudo com atividade desde 19/11.
 
 ### 4.7 Falha de entrega: soluções possíveis (a decidir)
