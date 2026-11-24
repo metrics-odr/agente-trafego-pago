@@ -298,6 +298,8 @@ Nenhum fluxo de produção do MedNexus no n8n. Os webhooks de conversas e de ven
 3. **Janela de 24 h encerrada, automação sem funcionar:** mais de 24 h desde a última mensagem do lead e nenhuma automação pendente. Só template alcança. Inclui quem parou no bot e a mensagem final do bot falhou.
 4. **Nunca responderam:** só receberam template de primeiro contato e os follow-ups falharam. Contato por outro canal.
 
+**Quem entra (Eduardo, 24/11/2026):** só **médicos que confirmaram a especialidade** (o lead respondeu a pergunta de especialidade com uma especialidade médica). Ficam de fora psicólogos, psicanalistas, terapeutas, fisioterapeutas, dentistas e outros profissionais que não sejam médicos, e quem nunca escreveu (sem especialidade confirmada). Clínico geral, generalista e psiquiatria contam como médico.
+
 **Quem sai da lista:**
 - Quem comprou ("Parabéns pela compra"), quem deu **negativa na última mensagem** (olhar só a última do lead) e quem do canal `Suporte Marina`.
 - Quem ainda está em automação: bot dentro da cadência ou sequência de templates com passos pendentes.
