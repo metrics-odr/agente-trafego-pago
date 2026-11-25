@@ -58,13 +58,15 @@
 - **Os leads respondem rápido às perguntas:** de 76% a 92% respondem em até 1 hora e 30 minutos. Só 2% respondem depois de 24 horas. Por isso o primeiro lembrete, enviado depois de 1h30, está no tempo certo.
 - **Os lembretes funcionam, principalmente o primeiro:**
 
-| Lembrete | Texto começa com | Quando é enviado | Enviados | Não entregues | Lead respondeu em até 8 horas |
-|---|---|---|---|---|---|
-| 1 | "Muitos médicos chegam até nós..." | 1h30 depois da pergunta, se o lead não respondeu | 473 | 15 (3,2%) | 192 (40,6%) |
-| 2 | "Olá! Conseguiu verificar minha última mensagem?" | 6 horas depois do lembrete 1 (na pergunta de especialidade) ou 5 horas depois (nas outras perguntas) | 313 | 21 (6,7%) | 74 (23,6%) |
-| 3 | "Imagino que esteja corrido por aí..." | 5 horas depois do lembrete 2 | 259 | 20 (7,7%) | 56 (21,6%) |
-| 4 | "Não tenho a intenção de te enviar mensagens em excesso..." | 5 horas depois do lembrete 3 | 218 | 21 (9,6%) | 31 (14,2%) |
-| 5 (mensagem final) | "Olá, tudo bem? Como não tive retorno, vou dar uma pausa..." | 5 horas depois do lembrete 4. Depois dela o bot espera mais 24 horas e o fluxo termina | 189 | **116 (61,4%)** | 4 (2,1%) |
+| Lembrete | Texto começa com | Quando é enviado | Enviados | Não entregues | Desses, enviados depois de 24 horas | Lead respondeu em até 8 horas |
+|---|---|---|---|---|---|---|
+| 1 | "Muitos médicos chegam até nós..." | 1h30 depois da pergunta, se o lead não respondeu | 473 | 15 (3,2%) | 13 de 15 | 192 (40,6%) |
+| 2 | "Olá! Conseguiu verificar minha última mensagem?" | 6 horas depois do lembrete 1 (na pergunta de especialidade) ou 5 horas depois (nas outras perguntas) | 313 | 21 (6,7%) | 19 de 21 | 74 (23,6%) |
+| 3 | "Imagino que esteja corrido por aí..." | 5 horas depois do lembrete 2 | 259 | 20 (7,7%) | 19 de 20 | 56 (21,6%) |
+| 4 | "Não tenho a intenção de te enviar mensagens em excesso..." | 5 horas depois do lembrete 3 | 218 | 21 (9,6%) | 20 de 21 | 31 (14,2%) |
+| 5 (mensagem final) | "Olá, tudo bem? Como não tive retorno, vou dar uma pausa..." | 5 horas depois do lembrete 4. Depois dela o bot espera mais 24 horas e o fluxo termina | 189 | **116 (61,4%)** | **116 de 116** | 4 (2,1%) |
+
+**Falhas dos lembretes e a janela de 24 horas:** dos 193 lembretes não entregues (13,3% dos 1.452 enviados), **187 (97%) foram enviados mais de 24 horas depois da última mensagem do lead** e só 6 foram enviados dentro das 24 horas (6 em 1.189 enviados, 0,5%). Depois das 24 horas, 71% dos lembretes não foram entregues (187 de 263).
 
 Os tempos são contados a partir da mensagem anterior do bot, enquanto o lead continua sem responder. Se o lead responde, a sequência volta para o início e o bot segue para a próxima pergunta. Somando os tempos, a mensagem final sai cerca de 21,5 horas depois da pergunta (22,5 horas na pergunta de especialidade).
 
