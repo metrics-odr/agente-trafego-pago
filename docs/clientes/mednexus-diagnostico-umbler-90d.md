@@ -90,7 +90,7 @@ O "Fluxo atendimento versão 2" tem dois gatilhos de recuperação que **só rod
 - **O que ele faz:** o gatilho "Recuperação" coloca a tag `Sem contato`, espera 24 horas e, se o lead responder nesse prazo, o bot retoma as perguntas ("Recuperação com resposta"). Se o lead não responder, o fluxo só grava uma nota interna ("Recuperação: o lead não respondeu em 24 h..."). **Ele não envia nenhuma mensagem ao lead por conta própria.**
 - **Como a equipe usa:** nos últimos 14 dias (10 a 24/11) o fluxo teve 235 execuções: 85 automáticas (começam quando uma conversa nova chega) e 150 manuais (145 de "Recuperação" e 5 de "Recuperação com resposta"), em 61 conversas. Foram 62 execuções manuais em 23/11 e 30 em 24/11, contra no máximo 14 por dia nos dias anteriores. Das 138 recuperações de conversas que estão na base, 96 (70%) começaram até 60 minutos depois de uma mensagem da equipe, ou seja, a equipe escreve ao lead e inicia a recuperação para o bot retomar se ele responder.
 - **Resultado:** das 54 recuperações iniciadas há mais de 48 horas (conversas da base), em 38 (70%) o lead não respondeu e só ficou a nota interna. Em 16 (30%) o lead respondeu e o bot retomou a sequência de perguntas. O lead respondeu em até 48 horas em 17 (31%).
-- **Limite desta leitura:** a Umbler só devolveu as execuções dos últimos 14 dias. Não sei como foi a recuperação antes disso.
+- **Limite desta leitura:** li só as execuções dos últimos 14 dias (foi uma escolha minha, para a leitura não ficar pesada: a Umbler aceita períodos maiores). Não sei como foi a recuperação antes disso.
 - **As mensagens "Gostaria de seguir o atendimento?" enviadas em massa não estão ligadas a esse fluxo:** só 2 das 143 recuperações tiveram uma mensagem enviada fora da Umbler até 30 minutos de distância.
 
 ## 4. Diagnóstico da abordagem da equipe
@@ -161,3 +161,17 @@ O "Fluxo atendimento versão 2" tem dois gatilhos de recuperação que **só rod
 - As 36 compras contra a aba `New Subscriptions` da planilha.
 - As 59 conversas com 100 ou mais mensagens, que perderam o começo.
 - Quais itens do bloco B o Eduardo autoriza.
+
+## 9. Como cada número foi calculado
+- **Conversas:** as 996 criadas de 26/08 a 24/11/2026 nos canais `Adriano API Oficial`, `Equipe Mednexus API` e `Equipe MedNexus`. Dados lidos pelo fluxo do n8n `Diagnóstico de todas as conversas (teste)` (`YK6SkGRgB4VZwV1n`), com as últimas 100 mensagens de cada conversa. As execuções do bot vêm do fluxo `Testa chats fechados e execuções (teste)` (`7lK5t2zFTG7cxu9N`). Os cálculos foram feitos fora do n8n e **os scripts não estão salvos no repositório**.
+- **Quem escreveu:** lead = mensagem de origem `Contact`. Bot = origem `Bot`. Equipe = origem `Member` ou `External` que não seja eco de uma mensagem do bot.
+- **Lembrete 1 a 5:** reconhecido pelo começo do texto (ver a tabela da seção 3.1).
+- **Dentro ou depois das 24 horas:** diferença entre o horário do envio e a última mensagem do lead antes dele. Sem mensagem anterior do lead, conta como depois das 24 horas. Vale para mensagens de texto livre; template não tem essa regra.
+- **"Lead respondeu em até 8 horas" (lembretes):** o lead escreveu em até 8 horas depois do lembrete.
+- **Primeira resposta:** primeira mensagem do bot ou da equipe depois da primeira mensagem do lead.
+- **Compra:** mensagem da equipe com "Parabéns pela compra". **Preço enviado:** mensagem da equipe com "Preço: R$". **Convite de vídeo:** mensagem da equipe com "vídeo chamada" ou link do Google Meet.
+- **Toque:** mensagem da equipe depois de pelo menos 2 horas da anterior, sem resposta do lead entre elas. Contado a partir do preço enviado.
+- **Especialidade:** primeira resposta do lead depois da pergunta de especialidade, classificada por palavras-chave (especialidades médicas contra psicologia, terapia, nutrição, fisioterapia, odontologia e outras profissões). O que não casa com nenhuma lista fica "indefinido".
+- **Assuntos levantados:** palavras-chave nas mensagens do lead (por exemplo, preço, valor, quanto custa para "preço"; contrato, anual, fidelidade para "contrato").
+- **Faixas de horário:** horário de São Paulo. Comercial 07h às 19h, noite 19h às 24h, madrugada 00h às 07h, e fim de semana (sábado e domingo) separado.
+- **Mediana:** valor do meio. "1 em cada 4" e "1 em cada 10" correspondem aos percentis 75 e 90.

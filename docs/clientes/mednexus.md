@@ -147,6 +147,14 @@ Contrato anual ("não tenho interesse em anual"), quando começam os resultados,
 
 Cuidados da API: várias rotas são marcadas **Unstable** (não suportadas, podem mudar). O campo `totalItems` da lista de chats vem 0 ou -1 e **não é confiável**. Webhooks existem ("Monitorar Canais"), mas o formato do payload **não foi verificado**.
 
+**Notas de uso da API (aprendidas na leitura de 24/11/2026):**
+- **Limite de chamadas:** 100 a cada 5 segundos. Passar disso devolve erro **429**. Na primeira tentativa de ler as mensagens de cerca de 3.000 chats, 2.459 chamadas deram 429. Solução usada: o nó HTTP Request do n8n com a opção de lotes, 40 chamadas a cada 5,5 segundos.
+- **`GET /v1/chats/`:** devolve no máximo 250 por página (paginar com `Skip`), na ordem da última mensagem. O padrão de `ChatState` é `Open` e **não traz chats fechados**: para trazer tudo usar `All` (também existe `Closed`). `DateStartCreatedAtUTC` **não filtrou** (vieram chats de agosto): filtrar pela data de criação no próprio n8n. `totalItems` não é confiável.
+- **`GET /v1/chats/{id}/relative-messages/`:** pede `FromEventUTC` (usar o momento atual) e devolve as mensagens mais recentes. A resposta vem como `{hasMessagesBeforeAllowedOrganizationPlan, messages[]}`. Com `Take=100`, conversas com 100 ou mais mensagens perdem o começo. O campo `hasMessagesBeforeAllowedOrganizationPlan` sugere que o plano limita o histórico: **não verificado**.
+- **`GET /v1/bots/flowchart/botinstances/`:** cada execução vem com a **configuração inteira do bot embutida (cerca de 90 KB)**, então uma página de 250 execuções pesa mais de 20 MB. Reduzir com um nó Code logo depois da leitura. Campos úteis: `status` (`Running` ou `Complete`), `chat.id`, `createdAtUTC`, `navigationPath` (lista de passos com `stepId`, `enteredAtUTC` e `detail`, que traz o erro quando há) e `botQuestions`. O primeiro passo mostra se a execução foi automática (`FlowchartBotChatStartedEvent`) ou manual (`FlowchartBotManualStartedEvent` com o nome do gatilho).
+- **Campos da mensagem que importam:** `source` (`Contact`, `Bot`, `Member`, `External`), `messageState`, `templateId` (preenchido quando é template), `botInstance` (nome do fluxo), `question.key` (pergunta do bot) e `eventAtUTC`.
+- Manual genérico para outras contas: [`../manual-umbler-fluxos-e-api.md`](../manual-umbler-fluxos-e-api.md).
+
 ### 4.2 Canais
 | Canal | ID | Tipo | Estado |
 |---|---|---|---|
@@ -163,7 +171,11 @@ Cuidados da API: várias rotas são marcadas **Unstable** (não suportadas, pode
 |---|---|---|---|---|
 | **Fluxo atendimento versão 2** | `amtTEItDWzqY2xax` | **Sim** | Adriano API Oficial | 98 passos. 36 execuções contadas, a última em 24/11/2026 |
 | Primeiro atendimento (antigo) | `ajM-W18X47lFCGbM` | Não | Adriano Freitas (desabilitado) | Última alteração em 30/07/2026. Foi o fluxo da conversa de 30/07 |
-| Recuperação MQL | `atPl8d914OXV6Svr` | Não | nenhum | Criado em 17/10/2026, sem execuções |
+| Recuperação MQL | `atPl8d914OXV6Svr` | Não | nenhum | Criado em 17/10/2026. A API conta 0 execuções, mas mensagens dele aparecem em chats recentes (12 em 24/11), mesmo marcado como inativo. Não sei como são iniciadas |
+
+**Estrutura dos outros dois fluxos (lida em 24/11/2026):**
+- **Primeiro atendimento (antigo, 48 passos).** Entrada: se for a primeira conversa ("Validação Conversa"), espera 2 s, põe a tag `Sem contato` e pergunta a área de atuação; se não for, transfere para o Adriano. Perguntas: área de atuação, "Vc chegou por indicação? Me envia seu site ou Instagram", explicação do sistema, 4 imagens de resultados, "Quantos pacientes em média você atende por semana?", "Posso te enviar um áudio?" (aqui é uma mensagem simples, não uma pergunta que espera), áudio, "Qual o preço da sua consulta e ticket médio...", mensagem do modelo de assinatura anual ("estilo NetFlix") e, por fim, "Vc investe em marketing?", onde o fluxo termina. **Lembretes de cada pergunta:** a pergunta espera 1 h e manda "Olá?"; espera 4 h e manda "Gostaria de dar continuidade no atendimento?"; espera 8 h e manda "Olá! Conseguiu verificar minha última mensagem?"; espera 12 h e manda "Não tenho a intenção de te enviar mensagens em excesso..."; espera 24 h e manda "Tudo bem? Nossa empresa evita mensagens em excesso..."; espera mais 24 h e termina. Ou seja, os lembretes saem 1 h, 5 h, 13 h, 25 h e 49 h depois da pergunta: **os dois últimos passam das 24 h**. Não tem controle de horário, então os lembretes saem também de madrugada. Foi substituído pela versão 2.
+- **Recuperação MQL (90 passos, inativo).** Gatilho manual "Recuperação": se for a primeira conversa, espera 5 s, põe a tag `Sem contato` e **espera 1 dia**; se não for, transfere para o Adriano. Depois roda a sequência de lembretes da versão 2 (começando em "Muitos médicos chegam até nós...", com 6 h, 5 h, 5 h, 5 h e a mensagem final de pausa) e, quando o lead responde, refaz o roteiro (apresentação, resultados, pacientes por semana, áudio, preço da consulta, curva de crescimento e "Vc investe em marketing?"), cada pergunta com seus lembretes. Como começa com 24 h de espera, o primeiro texto livre sairia depois da janela de 24 h.
 
 ### 4.4 Fluxo atendimento versão 2: como está configurado
 **Entrada**
@@ -263,12 +275,13 @@ Leitura pelo conector do Drive entrega apenas uma amostra de cada aba. Para ler 
 Pasta: `MedNexus` (`hR1cAjU9b5L0fJ9l`), projeto pessoal do Eduardo.
 
 ### Fluxos
-| Nome | ID | Status |
-|---|---|---|
-| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Testa leitura da API`](https://n8n.srv2164786.hstgr.cloud/workflow/ZZ0OtrIo47IOHAUf) | `ZZ0OtrIo47IOHAUf` | Teste manual, só leitura. Apagar à mão quando não for mais necessário |
-| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Explora canais, bots e chats`](https://n8n.srv2164786.hstgr.cloud/workflow/b5DfDkADtzgqYsHx) | `b5DfDkADtzgqYsHx` | Exploração manual, só leitura. Apagar à mão quando não for mais necessário |
-
-| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Lista leads dos últimos 3 dias (teste)`](https://n8n.srv2164786.hstgr.cloud/workflow/qotDB1WrfoorLNDX) | `qotDB1WrfoorLNDX` | Teste manual, só leitura: chats abertos e até 100 mensagens de cada. A classificação foi feita fora do n8n (1º teste em 24/11/2026). Base para o fluxo diário |
+| Nome | ID | Para que serve | Status |
+|---|---|---|---|
+| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Testa leitura da API`](https://n8n.srv2164786.hstgr.cloud/workflow/ZZ0OtrIo47IOHAUf) | `ZZ0OtrIo47IOHAUf` | Testa se o token funciona (`GET /v1/members/me/`) | Teste manual, só leitura. Apagar à mão quando não for mais necessário |
+| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Explora canais, bots e chats`](https://n8n.srv2164786.hstgr.cloud/workflow/b5DfDkADtzgqYsHx) | `b5DfDkADtzgqYsHx` | Lê canais, bots, fluxos e uma amostra de chats | Exploração manual, só leitura. Apagar à mão quando não for mais necessário |
+| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Lista leads dos últimos 3 dias (teste)`](https://n8n.srv2164786.hstgr.cloud/workflow/qotDB1WrfoorLNDX) | `qotDB1WrfoorLNDX` | Lê chats abertos e até 100 mensagens de cada. Base do relatório diário | Teste manual, só leitura. A classificação foi feita fora do n8n (24/11/2026) |
+| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Diagnóstico de todas as conversas (teste)`](https://n8n.srv2164786.hstgr.cloud/workflow/YK6SkGRgB4VZwV1n) | `YK6SkGRgB4VZwV1n` | Lê os chats abertos e fechados dos últimos 90 dias (3 canais) com as últimas 100 mensagens de cada, em formato compacto. Dados do [diagnóstico](mednexus-diagnostico-umbler-90d.md) | Teste manual, só leitura. Demora cerca de 2,5 minutos. Os cálculos foram feitos fora do n8n |
+| [`Flow \| MedNexus \| Geral \| Manual > Umbler - Testa chats fechados e execuções (teste)`](https://n8n.srv2164786.hstgr.cloud/workflow/7lK5t2zFTG7cxu9N) | `7lK5t2zFTG7cxu9N` | Lê as execuções do "Fluxo atendimento versão 2" dos últimos 14 dias, em formato compacto (passo inicial, situação, último passo). Também tem 3 nós de teste desligados | Teste manual, só leitura. Apagar à mão quando não for mais necessário |
 
 Nenhum fluxo de produção do MedNexus no n8n. Os webhooks de conversas e de vendas que alimentam a planilha **não estão no n8n** (origem a descobrir: pode ser Make ou outro).
 
@@ -327,11 +340,12 @@ Nenhum fluxo de produção do MedNexus no n8n. Os webhooks de conversas e de ven
 - [ ] Apagar o token da Umbler que foi colado no chat, gerar outro e colar direto na credencial do n8n.
 - [ ] Renomear a credencial para `Cred | MedNexus | Umbler API - mednexus`.
 - [ ] Definir o nome do funil para o padrão de nomes (usar `Geral` por enquanto).
-- [ ] Medir nas execuções reais (`/v1/bots/flowchart/botinstances/`): tempo de resposta do bot, mensagens que falham e o que acontece quando `onDeliveryFail` está vazio.
+- [ ] Ler as execuções do "Fluxo atendimento versão 2" além dos últimos 14 dias e ver o que acontece quando `onDeliveryFail` está vazio (a leitura de 14 dias já confirmou que o bot termina na última pergunta).
 - [ ] Descobrir os valores possíveis de `messageState` e o formato do webhook da Umbler.
 - [ ] Confirmar com o Adriano: se ele remove a tag `Sem contato` à mão; quem dispara os gatilhos "Recuperação"; qual é a tabela oficial de preços e vagas.
 - [ ] Definir como a lista chega ao Adriano (template aprovado ou outro canal) e o número ou canal de destino.
 - [ ] Compartilhar a Planilha Central com a conta de serviço (para o n8n ler) e ler a aba `Testes`.
+- [ ] Salvar no repositório os scripts de cálculo do diagnóstico (hoje os cálculos foram feitos em arquivos temporários; só as definições estão no diagnóstico, seção 9).
 - [ ] Descobrir onde estão os webhooks de conversas e de vendas que alimentam a planilha (não estão no n8n).
 - [ ] Localizar o briefing do cliente.
 - [ ] Corrigir no guia de Meta Ads a campanha de 02/09 (R$ 9,50 contra R$ 11,76).

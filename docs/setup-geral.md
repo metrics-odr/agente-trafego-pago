@@ -48,6 +48,9 @@ Limitação: com o fluxo despublicado ou o servidor fora do ar, o webhook respon
 |---|---|---|
 | `us2.make.com` | Token de API do Make do Thiago (`hooks:read`) usado na migração de 15/11/2026 | **Exposto no chat: apagar no Make (Profile → API access)** |
 
+## 4.1 Umbler Talk (atendimento por WhatsApp)
+Manual de acesso, limites da API e como ler fluxos de bot e conversas: [`manual-umbler-fluxos-e-api.md`](manual-umbler-fluxos-e-api.md). Cliente com Umbler hoje: [`MedNexus`](clientes/mednexus.md). Credencial no n8n: **Bearer Auth** com só o token.
+
 ## 5. Regras do repositório
 - Configurações e documentação (`CLAUDE.md`, `.claude/`, `docs/`) vão direto para a `main`, sem PR.
 - Cada cliente tem um arquivo em [`docs/clientes/`](clientes/README.md) criado a partir de [`clientes/_modelo.md`](clientes/_modelo.md). O inventário de ativos do n8n de cada cliente fica **só** no arquivo dele.
