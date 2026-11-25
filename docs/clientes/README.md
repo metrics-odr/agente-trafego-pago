@@ -11,7 +11,7 @@ Regras:
 | Cliente (campo) | Nome comercial | Funis | Automações n8n | Arquivo | Status |
 |---|---|---|---|---|---|
 | `DrThiago` | Dr Thiago Virgili | `WhatsApp`, `Geral`, `Lead Ads` | 3 fluxos publicados | [drthiago.md](drthiago.md) | Ativo |
-| `MedNexus` | MedNexus (Clã da Medicina, Clínica Mantelli) | A mapear | — | [../mednexus.md](../mednexus.md) (guia Meta Ads) | Ativo |
+| `MedNexus` | MedNexus (Clã da Medicina, Clínica Mantelli) | `Lead Ads` (demais a mapear) | 1 fluxo publicado (recuperação via Umbler) | [mednexus.md](mednexus.md) · [guia Meta Ads](../mednexus.md) | Ativo |
 | `LarissaTopper` | Larissa Topper | `APD-BR`, `APD-INTER`, `DIAG-INTER` | — | [larissatopper.md](larissatopper.md) | Ativo |
 | `MadeInColors` | Made in Colors (Noovamik) | A mapear | — | [madeincolors.md](madeincolors.md) | Ativo |
 | `ThaisJunqueira` | Thais Junqueira | A mapear | — | só em `contas.md` | Ativo |
