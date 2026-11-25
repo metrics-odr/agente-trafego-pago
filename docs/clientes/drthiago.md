@@ -149,6 +149,7 @@ Abrir em [Data tables](https://n8n.srv2164786.hstgr.cloud/home/datatables).
 ## 11. Histórico de mudanças
 | Data | Mudança |
 |---|---|
+| 25/11/2026 | Fluxo Lead Ads → Kommo: no caminho do **lead que já existia** (mandou mensagem antes dos 5 min), as respostas do formulário agora vão para o campo **Queixa / Área de Interesse** (`2613405`), igual ao lead novo, em vez de nota. Lê o lead antes: campo vazio = grava o bloco; com texto = acrescenta no fim; já com o `ID Lead Ads` = não duplica. Nota removida. Publicado por ordem do Eduardo. **Ainda não testado em lead real** e leads antigos (ex.: #56739479, Sara) seguem só com a nota |
 | 23/11/2026 | Fluxo Lead Ads → Kommo: telefone normalizado (DDD + 8 dígitos) e checagem também na tabela `Conversas registradas`; corrige risco de duplicata por 9º dígito (a tabela tem números de 12 e 13 dígitos). Simulado offline e testado em execução manual (sem leads elegíveis) |
 | 23/11/2026 | Fluxo Lead Ads → Kommo **publicado** (ordem do Eduardo), `DATA_CORTE` ajustado para 23/11 10:36. Campanha Lead Ads `52643121054382` publicada na CA 03 com o formulário `DrThiago - Form 001` (`1887461179334504`). Rascunho duplicado `52643109978782` (público errado, com erro) marcado como DELETED pela API, mas ainda aparece como rascunho: descartar à mão |
 | 20/11/2026 | Fluxo Lead Ads → Kommo construído (inativo) e testado com lead fictício `56589051`: criado em Leads de entrada, movido pelos robôs para Atendimento IA com tag `Heloisa`; o fluxo de Conversas descartou o aviso |

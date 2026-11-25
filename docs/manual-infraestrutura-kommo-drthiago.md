@@ -207,6 +207,8 @@ O **Salesbot e as automações não são legíveis pela API**: só pela tela (Au
 - Busca de contato por telefone: `GET /api/v4/contacts?with=leads&query=<telefone>` acha o contato tanto pelo número completo (`5511...`) quanto pelos 9 últimos dígitos (o Kommo guarda `+55...`); número inexistente devolve **204 sem corpo**.
 - **Lead de teste e contato precisam ser apagados à mão no Kommo** (a API usada não apaga). A tag `Lead Ads - Recuperar` fica criada.
 
+**25/11/2026 (padronização):** as respostas do formulário ficam **sempre no campo Queixa / Área de Interesse** (`2613405`). Lead novo: o fluxo cria já com o texto. Lead que já existia (mandou mensagem antes): o fluxo lê o lead e grava o mesmo bloco no campo (acrescenta no fim se já houver texto; não duplica se já tem o `ID Lead Ads`). Não cria mais nota. Leads anteriores a essa data com `resultado = ja_existia_no_kommo` ficaram só com a nota. **Não verificado em lead real.**
+
 **Antes de ligar (checklist):** (1) apagar o lead e o contato de teste; (2) conferir em Kommo → fontes se a fonte **Facebook** (Lead Ads nativo do Kommo) está conectada ao mesmo formulário: se estiver, o lead entraria duas vezes; (3) teste final com **o número do próprio Eduardo** para ver se algum bot manda WhatsApp ao lead; (4) trocar `DATA_CORTE` no nó `Selecionar linhas prontas`; (5) ordem expressa do Eduardo para **publicar**.
 
 **Estado em 20/11/2026 e próximos passos (para retomar em outra conversa):**
