@@ -208,6 +208,13 @@ Exemplo: `EPN | E4-VEN | P1-FRIO | CBO | 2026-11-12 | Repescagem 9 | 52g3-53g1-8
 - Ajuste proporcional direto ("aumente para X proporcionalmente") segue a skill `gestor-trafego-meta-ads` e não precisa de aprovação prévia.
 - **Todo ajuste de verba usa múltiplos de 5, sem valor quebrado** (nada de R$ 7,97 ou R$ 91,60), em campanha ou conjunto. Calcular o proporcional e arredondar para o múltiplo de 5 mais próximo, fechando o total no valor pedido (ou o mais próximo possível, avisando o desvio). Se o múltiplo de 5 cair abaixo do mínimo da conta (BRL ~R$ 5,70), usar R$ 10 e nunca R$ 5. Orçamento que o ajuste não toca continua como está.
 
+## Pergunta "quanto está o budget?" (ordem do Eduardo, 26/11/2026)
+- **Responder sucinto**: só os valores, sem tabela, sem lista de campanhas, sem explicação. Detalhar só se o Eduardo pedir.
+- **Em qualquer conta do Meta, sempre dar os dois valores: valor da conta (sem imposto) e valor com imposto.** Formato: `Conta: R$ X | Com imposto: R$ Y`.
+- Contas "MedNexus CA1/CA2" = `900675294624191` (MedNexus - CA1) e `621590540931248` (MedNexus - CA2).
+- Contagem: só `effective_status = ACTIVE`; CBO = valor da campanha, ABO = soma dos conjuntos ativos (regra da seção "Orçamento por funil").
+- **Fator de imposto: A DEFINIR.** Não está registrado em nenhum lugar do repositório; não chutar. Registrar aqui o fator de cada conta (ex.: `tax_factor` da dashboard do cliente) assim que o Eduardo informar.
+
 ## Orçamento por funil
 Os funis e seus nomes mudam de cliente para cliente (ex.: APD-INTER, APD-BR, DIAG-INTER, ou outros). Usar sempre os nomes de funil que o cliente já usa nas campanhas ou que o Eduardo indicar. Se não estiver claro qual campanha pertence a qual funil, perguntar antes de somar, e registrar o mapeamento no guia do cliente em `docs/`.
 
