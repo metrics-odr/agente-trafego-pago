@@ -167,17 +167,18 @@ Quando o Eduardo pedir para otimizar a verba com base em resultados de prints:
 Repescagem = nova campanha que reaproveita anúncios que **não escalaram por volume, mas tiveram bom ROAS**.
 
 **Critério de seleção dos anúncios**
-- Menos de **10 vendas** no período e ROAS: **mínimo 1,6x; preferencial acima de 1,7x; ideal 2x**. Ordenar candidatos do maior para o menor ROAS.
-- Janela: **tentar tudo em 7 dias**. Se não houver 5 anúncios nas condições, ampliar para **14 dias**. Se ainda assim não houver, subir com os que for possível levantar (mínimo de 3; abaixo disso, avisar o Eduardo antes).
+- **Até 5 vendas** no período (de 0 a 5; na prática, ao menos 1) e ROAS: **mínimo 1,6x; preferencial acima de 1,7x; ideal 2x**. Ordenar candidatos do maior para o menor ROAS.
+- **7 a 10 vendas com ROAS dentro dos critérios é outro tipo de campanha (Escala)**, ainda não definido: não incluir na repescagem e avisar o Eduardo que o anúncio é candidato à Escala.
+- Janela: **tentar tudo em 7 dias**. Se não houver 5 anúncios nas condições, ampliar para **14 dias**. Se ainda assim não houver, subir com os que for possível levantar, mesmo 1 ou 2 (ver verba reduzida abaixo).
 - Dar preferência a anúncios de **campanhas mais recentes**; na falta deles, usar campanhas mais antigas.
 - Métricas (vendas, ROAS) vêm dos prints/dashboard que o Eduardo fornecer, nunca do gerenciador de anúncios (ver "Otimização de verba"). Se não houver print, pedir antes de selecionar.
 - **Não mexer nos anúncios originais** (nem pausar, nem editar): a repescagem só duplica.
 
 **Estrutura**
-- **Mínimo 3 e máximo 5 anúncios** por campanha de repescagem.
+- **Ideal de 3 a 5 anúncios** por campanha de repescagem (máximo 5). Com 1 ou 2 anúncios, subir mesmo assim, com **verba menor**.
 - **CBO, estrutura 1-1-X**: 1 campanha, 1 conjunto, X anúncios (X entre 3 e 5).
 - **Público aberto, com Advantage audience (Advantage+) LIGADO.** É público frio: a regra de desligar o Advantage audience vale só para público quente.
-- **Verba: depende do projeto. Sempre perguntar ao Eduardo antes de criar.** Nunca assumir valor.
+- **Verba: depende do projeto. Sempre perguntar ao Eduardo antes de criar.** Nunca assumir valor. Referência: se as repescagens da conta estão subindo com US$ 50, a campanha com **1 ou 2 anúncios sobe com metade (US$ 25)**. Propor esse valor reduzido (múltiplo de 5) e confirmar com o Eduardo.
 - **Modelo do conjunto:** usar como modelo a **última campanha de repescagem criada na conta** (posicionamentos, evento de otimização, país, idade, gênero, públicos excluídos). Se não houver nenhuma, criar assim: evento de otimização **Purchase**, país **Brasil**, idade e gênero conforme o **briefing do projeto** (ex.: Thata Junqueira: 30-50 anos, mulheres). Se o briefing não disser, perguntar.
 
 **Nomenclatura da campanha**
@@ -188,7 +189,7 @@ Exemplo: `EPN | E4-VEN | P1-FRIO | CBO | 2026-11-12 | Repescagem 9 | 52g3-53g1-8
 - **Prefixo:** segue as regras da conta de cada projeto e leva o nome do funil. No exemplo (Thata Junqueira): `EPN` = funil, `E4-VEN` = Etapa 4, Vendas, `P1-FRIO` = Público 1, Frio. Em outra conta, usar o padrão que ela já usa; se não estiver claro, perguntar.
 - `AAAA-MM-DD` = data de criação.
 - `N` continua a numeração a partir da **última campanha de repescagem da conta** (buscar "Repescagem" em campanhas ativas e pausadas; maior número + 1). Se não houver, começar em 1 e avisar.
-- **No final do nome, listar os ads selecionados** (código de cada um, separados por hífen, como no exemplo). O código é o identificador do anúncio no nome dele; se não ficar claro como extrair, confirmar com o Eduardo na primeira vez.
+- **No final do nome, listar os ads selecionados** (código de cada um, separados por hífen, como no exemplo). O código já está na nomenclatura de cada anúncio: **apenas replicar o que existe**, sem criar nem alterar códigos.
 
 **Fluxo**
 1. Listar os candidatos (nome, campanha de origem, vendas, ROAS, janela) numa tabela e mostrar ao Eduardo, junto com a pergunta da verba.
