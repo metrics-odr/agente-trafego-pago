@@ -197,6 +197,12 @@ Exemplo: `EPN | E4-VEN | P1-FRIO | CBO | 2026-11-12 | Repescagem 9 | 52g3-53g1-8
 3. Anúncios entram **duplicando o original** (mesmo criativo, copy, URL, CTA, pixel, página, Instagram), aplicando "Duplicar campanha e subir novos anúncios" e "Mídia dos anúncios".
 4. Tudo como rascunho/pausado. Publicar só com pedido explícito. Fechar com a "Dupla verificação dos ativos subidos".
 
+**Como foi feita a Repescagem 10 (26/11/2026, CA Thata Junqueira USD) — passo a passo que funcionou**
+- Dados: HTML da dashboard (`https://metrics-odr.github.io/dash-thata-epn/`) tem o JSON em `<script id="payload">` (`meta[]` e `sales[]` por anúncio). Gasto × `tax_factor` e faturamento `val` das vendas `meta=1`; vendas = `main=1`. O ROAS sai 4 a 7% abaixo da aba Relatórios (cotação): usar só para ranquear.
+- Criação: `ads_create_campaign` (CBO, `OUTCOME_SALES`, `LOWEST_COST_WITHOUT_CAP`, verba em centavos) → `ads_create_ad_set` copiando o modelo (Repescagem anterior: `VALUE`, pixel Purchase, BR, `age_range` 20-50, Advantage audience ligado, posicionamentos automáticos, atribuição 7d click + 1d view + 1d engaged view) → `ads_duplicate_entity` (`entity_type: ad`, `destination_parent_id` = conjunto novo, todos os anúncios numa chamada).
+- A duplicação cria os anúncios com o sufixo **" - Copy"**: renomear cada um para o nome original com `ads_update_entity`.
+- Anúncio de origem que veio de post/vídeo sem acesso para a API volta com `active_errors` **3858756** ("You don't have permission to promote post"): avisar o Eduardo e pedir para abrir o rascunho no Gerenciador e revalidar antes de publicar.
+
 ## Ajustes de verba (subir ou reduzir)
 - Considerar só estruturas **realmente ativas**, que estão gastando e entregando. Não pegar campanha ativa com conjuntos desativados.
 - Ajuste proporcional direto ("aumente para X proporcionalmente") segue a skill `gestor-trafego-meta-ads` e não precisa de aprovação prévia.
