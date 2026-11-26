@@ -167,37 +167,34 @@ Quando o Eduardo pedir para otimizar a verba com base em resultados de prints:
 Repescagem = nova campanha que reaproveita anúncios que **não escalaram por volume, mas tiveram bom ROAS**.
 
 **Critério de seleção dos anúncios**
-- Menos de **10 vendas** no período e **ROAS 2x** (ou próximo: **1,7x a 1,8x**).
-- Janela de análise: **últimos 7 ou 14 dias**.
-- Dar preferência a anúncios de **campanhas mais recentes**; na falta deles, pode usar campanhas mais antigas.
+- Menos de **10 vendas** no período e ROAS: **mínimo 1,6x; preferencial acima de 1,7x; ideal 2x**. Ordenar candidatos do maior para o menor ROAS.
+- Janela: **tentar tudo em 7 dias**. Se não houver 5 anúncios nas condições, ampliar para **14 dias**. Se ainda assim não houver, subir com os que for possível levantar (mínimo de 3; abaixo disso, avisar o Eduardo antes).
+- Dar preferência a anúncios de **campanhas mais recentes**; na falta deles, usar campanhas mais antigas.
 - Métricas (vendas, ROAS) vêm dos prints/dashboard que o Eduardo fornecer, nunca do gerenciador de anúncios (ver "Otimização de verba"). Se não houver print, pedir antes de selecionar.
+- **Não mexer nos anúncios originais** (nem pausar, nem editar): a repescagem só duplica.
 
 **Estrutura**
 - **Mínimo 3 e máximo 5 anúncios** por campanha de repescagem.
 - **CBO, estrutura 1-1-X**: 1 campanha, 1 conjunto, X anúncios (X entre 3 e 5).
 - **Público aberto, com Advantage audience (Advantage+) LIGADO.** É público frio: a regra de desligar o Advantage audience vale só para público quente.
 - **Verba: depende do projeto. Sempre perguntar ao Eduardo antes de criar.** Nunca assumir valor.
+- **Modelo do conjunto:** usar como modelo a **última campanha de repescagem criada na conta** (posicionamentos, evento de otimização, país, idade, gênero, públicos excluídos). Se não houver nenhuma, criar assim: evento de otimização **Purchase**, país **Brasil**, idade e gênero conforme o **briefing do projeto** (ex.: Thata Junqueira: 30-50 anos, mulheres). Se o briefing não disser, perguntar.
 
 **Nomenclatura da campanha**
 ```
-EPN | E4-VEN | P1-FRIO | CBO | AAAA-MM-DD | Repescagem N
+<PREFIXO DO FUNIL> | CBO | AAAA-MM-DD | Repescagem N | <códigos dos ads>
 ```
-Exemplo: `EPN | E4-VEN | P1-FRIO | CBO | 2026-09-21 | Repescagem 5`
-- `AAAA-MM-DD` = data de criação da campanha.
-- `N` continua a numeração a partir da **última campanha de repescagem já subida na conta** (buscar por "Repescagem" nas campanhas da conta, ativas e pausadas, e pegar o maior número + 1). Se não houver nenhuma, começar em 1 e avisar.
-- O prefixo (`EPN | E4-VEN | P1-FRIO`) segue o modelo acima; em outra conta ou funil, confirmar o prefixo antes.
+Exemplo: `EPN | E4-VEN | P1-FRIO | CBO | 2026-11-12 | Repescagem 9 | 52g3-53g1-82v4-65`
+- **Prefixo:** segue as regras da conta de cada projeto e leva o nome do funil. No exemplo (Thata Junqueira): `EPN` = funil, `E4-VEN` = Etapa 4, Vendas, `P1-FRIO` = Público 1, Frio. Em outra conta, usar o padrão que ela já usa; se não estiver claro, perguntar.
+- `AAAA-MM-DD` = data de criação.
+- `N` continua a numeração a partir da **última campanha de repescagem da conta** (buscar "Repescagem" em campanhas ativas e pausadas; maior número + 1). Se não houver, começar em 1 e avisar.
+- **No final do nome, listar os ads selecionados** (código de cada um, separados por hífen, como no exemplo). O código é o identificador do anúncio no nome dele; se não ficar claro como extrair, confirmar com o Eduardo na primeira vez.
 
 **Fluxo**
-1. Listar os anúncios candidatos (nome, campanha de origem, vendas, ROAS, período) numa tabela e mostrar ao Eduardo, junto com a pergunta da verba.
+1. Listar os candidatos (nome, campanha de origem, vendas, ROAS, janela) numa tabela e mostrar ao Eduardo, junto com a pergunta da verba.
 2. Montar a estrutura (campanha, conjunto, anúncios) e mostrar antes de criar, conforme "Criação de campanhas".
-3. Anúncios entram **duplicando o anúncio original** (mesmo criativo, copy, URL, CTA, pixel, página, Instagram), aplicando "Duplicar campanha e subir novos anúncios" e "Mídia dos anúncios".
+3. Anúncios entram **duplicando o original** (mesmo criativo, copy, URL, CTA, pixel, página, Instagram), aplicando "Duplicar campanha e subir novos anúncios" e "Mídia dos anúncios".
 4. Tudo como rascunho/pausado. Publicar só com pedido explícito. Fechar com a "Dupla verificação dos ativos subidos".
-
-**Pontos ainda não definidos (perguntar ao Eduardo, não assumir)**
-- Verba diária da campanha (por projeto).
-- Posicionamentos, evento de otimização, país/idade/gênero e público excluído do conjunto (copiar de qual modelo?).
-- Anúncios candidatos já ativos em outra campanha: mantêm ativos lá ou pausam?
-- Meta de ROAS exata e nº de vendas mínimo por anúncio (há piso?) e se o prefixo muda por cliente.
 
 ## Ajustes de verba (subir ou reduzir)
 - Considerar só estruturas **realmente ativas**, que estão gastando e entregando. Não pegar campanha ativa com conjuntos desativados.
