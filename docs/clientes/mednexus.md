@@ -53,12 +53,15 @@ Endpoints usados: `GET /contacts/phone/` (contato pelo telefone, com `channels[]
 | Nome | ID | Status |
 |---|---|---|
 | [Flow \| MedNexus \| Lead Ads \| Sheets > Umbler - Envia template para lead que não iniciou conversa](https://n8n.srv2164786.hstgr.cloud/workflow/pKztD0C0GcKtXdWW) | `pKztD0C0GcKtXdWW` | Publicado em 25/11/2026 |
-| Fluxos manuais `... Manual > Umbler - ... (teste)` | vários | Só leitura, apagar depois |
+| [Flow \| MedNexus \| Geral \| Umbler > Sheets - Registra conversa iniciada](https://n8n.srv2164786.hstgr.cloud/workflow/7oUC0QOdKQUzALGB) | `7oUC0QOdKQUzALGB` | Publicado em 26/11/2026; aguardando troca da URL na Umbler (webhook `mednexus-geral-umbler-sheets-conversas-<sufixo secreto>`, sufixo no nó do fluxo) |
+| [Flow \| MedNexus \| Geral \| Greenn > Sheets - Registra nova assinatura na aba New Subscriptions](https://n8n.srv2164786.hstgr.cloud/workflow/MKQxr9JxAgs9R1oD) | `MKQxr9JxAgs9R1oD` | Publicado em 26/11/2026; aguardando troca da URL na Greenn (webhook `mednexus-geral-greenn-sheets-novas-assinaturas-<sufixo secreto>`) |
+| Fluxos manuais `... Manual > ... (teste)` | vários (inclui `yqZlLRg808Z3gVZR`) | Só leitura, apagar depois |
 
 ### Data tables
 | Nome | ID | Colunas | Para quê |
 |---|---|---|---|
 | Table \| MedNexus \| Lead Ads \| Leads conferidos na Umbler (anti-duplicata) | `VEPTHg2QPq4ZmDXd` | lead_ads_id, telefone, resultado (`template_enviado`, `erro_envio`, `iniciou_conversa`, `sem_telefone_valido`), umbler_http, umbler_mensagem_id, erro, lead_criado_em, registrado_em | 1 conferência/envio por lead e log do resultado |
+| Table \| MedNexus \| Geral \| Webhooks recebidos (histórico) | `CUJMISycDPGrbBCa` | evento_id, origem, status (`recebido`, `gravado`, `ignorado`, `erro`), detalhe, recebido_em, processado_em, payload | Payload bruto de Umbler e Greenn; permite reprocessar. Contém linhas de teste (evento_id `TESTE...` e `99900...`) |
 
 ### Credenciais
 | Nome | Status |
@@ -71,6 +74,12 @@ Endpoints usados: `GET /contacts/phone/` (contato pelo telefone, com `channels[]
 - "Iniciou conversa" = o lead mandou mensagem no canal oficial a partir de 15 min antes do formulário (`lastActiveUTC` do contato na Umbler). Não usa a aba Conversas.
 - Não iniciou: envia o template e grava o resultado na tabela. Não escreve na planilha.
 
+## 7. Regras dos fluxos Umbler e Greenn (migrados do Make em 26/11/2026)
+- **Umbler > Conversas** (gid 718101807): grava A Data (fuso Brasília), B Mensagem, C Nome, D Telefone. Sem anti-duplicata (2 conversas = 2 linhas). Colunas E a L são fórmulas de matriz na linha 1: não escrever nelas.
+- **Greenn > New Subscriptions** (gid 510373601) e All Payments: só status pago (ou sem status). Se o telefone (DDD + 8 últimos dígitos) ou o email já existir em New Subscriptions, não insere lá; All Payments recebe todo pagamento. Receita só vem preenchida se a Greenn mandar `currentSale.seller_balance` (como no Make). UF/Cidade/Zip Code gravados pelo nome da coluna.
+- Colunas K a N de New Subscriptions (utm_cap-source, Campanha, Conjunto, Anúncio) são fórmulas de matriz: não escrever nelas.
+- Testado em cópia da planilha (já apagada) antes de apontar para a real.
+
 ## 9. Legado
 - Existe uma **automação antiga externa** (não está no n8n nem no Make do Eduardo; provável Apps Script na planilha) que envia o mesmo template ~3 min após o lead e preenche `Iniciou Recuperação` / `Erro Umbler`. Usa o usuário Adriano na API. Confirmado no chat do lead da linha 415 em 25/11/2026.
 - Por ordem do Eduardo (25/11/2026), as duas rodam em paralelo: o lead pode receber o template duas vezes.
@@ -80,8 +89,12 @@ Endpoints usados: `GET /contacts/phone/` (contato pelo telefone, com `channels[]
 - [ ] Coluna `Iniciou Conversa?` marca SIM em lead que só respondeu depois do template (linha 415): revisar a regra da automação antiga.
 - [ ] Mapear demais funis.
 - [ ] Apagar os fluxos manuais de teste da pasta MedNexus.
+- [ ] Trocar (não adicionar) a URL do webhook na Umbler e na Greenn pelas do n8n e desligar no Make os cenários `Umbler > Sheets` e `Assinatura Green > Google Sheets` no mesmo momento.
+- [ ] `New Subscriptions` linha 113: UF/Cidade/CEP foram gravados nas colunas M/N/O (deslocados) pelo Make; o "SC" em M quebra a fórmula da coluna Anúncio (#REF!). Corrigir à mão (limpar M113, mover valores para N/O/P).
+- [ ] Rotacionar o token da Meta que está no cenário de leads do Make (Leads Gerados, desligado) e decidir o destino desse fluxo.
 
 ## 11. Histórico de mudanças
 | Data | Mudança |
 |---|---|
 | 25/11/2026 | Criado o fluxo de recuperação de Lead Ads via Umbler e a tabela de controle; publicado |
+| 26/11/2026 | Criados e publicados os fluxos Umbler > Conversas e Greenn > New Subscriptions (migração do Make) e a tabela de histórico de webhooks. Plano em [`../plano-migracao-make-n8n-mednexus.md`](../plano-migracao-make-n8n-mednexus.md) |
